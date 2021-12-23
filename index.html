@@ -1,0 +1,280 @@
+<!DOCTYPE html><head>
+<meta charset="utf-8" />
+<base lang="en-US" title="Introduction to Color and Accessibility">
+<style>
+body {
+  position: relative;  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: arial, sans-serif;  
+  background-color: #F9F2DD;
+}
+#mainBlock {
+  padding: 16px 2px;
+  text-align: center;
+  --samplesBG: red;
+  --samplesBGhalf: green;
+  background-color: #808080;
+  background-color: var(--samplesBG);  
+}
+
+.patch {
+  display: inline-block;
+  margin: 6px;
+  padding: 16px 4px;
+  vertical-align: middle;
+  width: 110px;
+  height: 150px;
+  text-align: center;
+  line-height: 1.1;
+  border-radius: 20px;
+  text-shadow:  4px 5px 4px #0004;
+  box-shadow: inset 6px 6px 14px #1346,
+    inset 2px 2px 9px 2px var(--samplesBGhalf),
+          2px 2px 6px #2468;
+}
+
+h1 {
+  position: relative;
+  margin: 16px 0 -14px;
+  padding: 16px 26px 16px 132px;
+  color: #308;
+  top: -16px;
+  text-align: left;
+  font-style: oblique;
+  background-color: #efe8aa; 
+  box-shadow: inset 6px 6px 14px #1349,
+              inset 2px 2px 9px 2px #fff9,
+                    2px 2px 6px #2468;  
+}
+
+h2 {
+  position: relative;
+  margin: 8px 0 0 132px;
+  color: #308;
+  top:-6px;
+  text-align: left;
+  font-style: oblique;
+}
+
+h3 {
+  position: relative;
+  margin: 12px 0;
+  padding: 4px 24px 22px 162px;
+  color: #308;
+  top: 18px;
+  font-size: 1.4em;
+  text-align: left;
+  font-style: oblique;
+  background-color: #efe8aa; 
+  box-shadow: inset 6px 6px 14px #1349,
+              inset 2px 2px 9px 2px #fff9,
+                    2px 2px 6px #2468;  
+}
+
+h3 input {
+  position: relative;
+  width: 120px;
+  height: 60px;
+  top: 8px;
+  background: currentColor;
+  border: 2px solid #123;
+  border-radius: 18px;
+}
+
+p {
+  position: relative;  
+  max-width: 720px;
+  left:112px;
+  margin: 4px 24px;
+  padding: 4px 12px;
+  vertical-align: middle;
+  text-align: left;
+  color: #005;
+  font-size: 18.8px;
+  font-weight: 400;
+}
+
+.copy {
+  margin: 2px;
+  padding: 4px;
+  vertical-align: bottom;
+  text-align: center;
+  font-size: 12px;
+}
+  </style>
+
+</head>
+ <body>
+  <h1>Fancy Font Flipping For Fun!</h1>
+  <h2>Automatic Font Color based on Background Lightness &nbsp;&nbsp;</h2>
+  <p>Each patch has data which also serves as an example. The font is smaller than optimum to stress the critical importance of spatial frequency.
+  <p>The top few lines are those automatically set based on the background color, and should always be easilly readable. The bottom line is the opposite color for comparison purposes, and may often be unreadable.
+  <p>The technology shown here is part of the <a href="https://github.com/Myndex/SAPC-APCA#apca-the-revolution-will-be-readable">SAPC Research Project. </a>
+    
+  <h3><input id="picker" type="color" onBlur="setBG(value)" onInput="setBG(value)" value="#555555" /> ⇦ Click to Set Overall Page Background</h3> 
+  <div id="mainBlock">
+  </div>
+  <div class="copy">Copyright &copy; 2021 by Myndex Research. All Rights Reserved.
+  </div>
+</body>
+<script>
+/////  FOR DISCUSSION OF THIS TOPIC SEE: ///////////////////////////////////
+/////  https://gist.github.com/Myndex/e1025706436736166561d339fd667493
+/////  OR
+/////  See: https://stackoverflow.com/a/69869976/10315269
+/////
+/////  Also See: https://www.myndex.com/APCA/
+
+
+/////  BEGIN DEMO  /////////////////////////////////////////////////////////
+
+          ///// Main Variables /////
+
+   const greyscales = 11; // How many patches of grey from black to white
+                         // Set to 0 to disable greyscales
+                        // Greyscales are useful to better see flip point
+
+   const rgbTRC   = 2.35;   // 2.213;    // The simple sRGB exponent (unity #777)
+   const rgbEnc   = 1 / rgbTRC;          // The sRGB inversion
+   const lightExp = 0.678;  // 0.7833;  // SAPC perceptual lightness (mode a)
+                                   //determines center contrast (experimental)
+   const darkExp  = 1 / lightExp; // Inversion of lightExp
+
+
+                          // Place exponents in this array to 
+                         // make the grayscale grads
+   const perceptExp = [darkExp,1.0,1/0.75,1/0.678,1/0.5,1/0.4,1/0.4108,1/0.333333]; // last is ~LAB
+   const greyOffset = [0,0,0,0,0,0,0,0.16]; // last is LAB
+
+   const patches = 1001;    // total patches including greyscale
+     let gsc = 0;    // grayscale counter
+   const greyRows = perceptExp.length - 1; // Number of differrent greyscale rows
+   const greyLength = greyscales - 1; 
+
+     let container = document.getElementById('mainBlock');
+     let picker = document.getElementById('picker');
+
+   const flipPointY = 0.42;
+   const flipPointLs = 0.46;      // flip factor
+   const lo = 0.4, hi = 0.92;    // Y Mid range area (font enlarging)  hi+lo = 1
+   const centerLs = ( lo + hi ) * flipPointLs; // flip point
+   const font = 12;            // pick a value 8 to 14
+   const offset = font * 2.0; // amount of text size increase for mid contrast
+                             // contrast is related to spatial freq. i.e. size & weight
+
+       // utility to set the underlying BG color
+      // Accessed using the color picker
+function setBG (bg = "#bbaadd") {  
+    // container.setAttribute('style','background-color:' + bg );
+    container.style.setProperty("--samplesBG", bg);
+    container.style.setProperty("--samplesBGhalf", bg + "88");
+    picker.setAttribute('style','color:' + bg );
+};   // Sets the overall page background.
+    // Notice how black or white changes your perception of contrast
+
+
+
+function getTextAttributes (Rs,Gs,Bs,pExp = darkExp) { // Do the stuff
+
+    let textSize = font; 
+    let textWeight = "normal";
+  
+    let Ys = Math.pow(Rs,rgbTRC) * 0.2126 +
+             Math.pow(Gs,rgbTRC) * 0.7152 +        
+             Math.pow(Bs,rgbTRC) * 0.0722; // Andy's Easy Luminance Estimate for sRGB.
+                                          // For Rec709 HDTV change the 2.2 to 2.4,
+                                         // and use different coefficients for P3 etc!!
+ 
+    let Ls = Math.pow(Ys, 1 / pExp);   // Ls is SAPC Screen lightness, similar to L* but 
+                                      // for self illuminated monitors & contrast
+   
+                                    // perceptual text color flipper. 
+    let textColor = (Ls < centerLs) ? ["#fff","#000"] : ["#000","#fff"]; 
+ // let textColor = (Ys < flipPointY) ? ["#fff","#000"] : ["#000","#fff"];   // alt luminance text color flipper. 
+
+    if (Ls > lo && Ls < hi) {  // Determine center based on range.
+         let offsetF = offset; 
+         offsetF = (Ls < centerLs) ? (Ls - lo) * offsetF : (hi - Ls) * offsetF;
+         textSize = textSize + offsetF;
+         textWeight = "normal";
+       }      // scale up fonts for the lower contrast mid luminances.
+             // **Loosely** based on part of APCA for WCAG 3 beta (spot reading)
+   
+    return [textColor[0],textSize.toFixed(1) + 'px',textWeight,(Ys*100).toFixed(1), 
+           (Ls*100).toFixed(1), textColor[1], pExp.toFixed(3),]
+  
+};      // End getTextAttributes
+
+
+      // vars needed for rand colors and output
+  let r = 0.0, g = 0.0, b = 0.0;
+  let elemt;
+  let bgRGB = [0,0,0], bgColor = "#bad", textAttr = [];
+  let i = 0;
+
+
+                     // Creates the greyscale and random colors
+                    // There is the assumption that the random values are already
+                   // in sRGB space so random colors are better distributed
+  let createRGB = function (LsValue) { // Create random colors and greyscales
+    if (greyscales && LsValue < greyLength * greyRows + greyRows) {// perceptual greyscale
+      if (LsValue > (greyLength * (gsc + 1) + (1 * gsc))) { gsc++ };
+      
+      r = g = b = Math.pow(Math.pow((((LsValue -
+         (greyLength*gsc+(gsc*1)))/greyLength)+greyOffset[gsc])/(greyOffset[gsc]+1),perceptExp[gsc]),rgbEnc); 
+    } else {
+      gsc = 0;
+      r = Math.random();
+      g = Math.random();
+      b = Math.random();
+    };
+    return [r, g, b, perceptExp[gsc]]
+  };  // End createRGB
+
+
+                      // take decimal 0-1 RGB and make #hex string
+                     // NOTE: This assumes sRGB encoded values on input
+  let intRGBcolor = function (r, g, b) { 
+    return '#'+((r*255)&0xff).toString(16).padStart(2,'0')
+              +((g*255)&0xff).toString(16).padStart(2,'0')
+              +((b*255)&0xff).toString(16).padStart(2,'0');
+    }; // End intRGBcolor
+
+
+    setBG('#999999');  // starting BG color
+
+       /////  OUTPUT (NAKED LOOP) //////////////////////
+    for ( ; i < patches; i++) { // output loop
+
+      bgRGB = createRGB(i);
+      bgColor = intRGBcolor(bgRGB[0], bgRGB[1], bgRGB[2]);
+      textAttr = getTextAttributes(bgRGB[0], bgRGB[1], bgRGB[2], bgRGB[3]);
+
+      elemt = document.createElement('div');
+      elemt.setAttribute('class', 'patch');
+      elemt.setAttribute('style','font-size: ' + textAttr[1]
+                      + '; font-weight:' + textAttr[2] 
+                      + '; background-color:' + bgColor 
+                      + '; color:' + textAttr[0]
+                   // + '; text-shadow: 4px 5px 4px '+textAttr[5]+'5;'
+                        );
+      
+      elemt.innerHTML = bgColor+"<br>"+textAttr[1]+"<br>Ys " + textAttr[3]
+                      + "<br>Ls " + textAttr[4]
+                      + "<br>| | |||||||||| | |<br><span style='position:relative;"
+                      + "top:-6px; color:" + textAttr[5]
+                   // + "; text-shadow: 4px 5px 4px #0006;"
+                      + "'>| | |||||||||| | |<br>pEx "
+                      + textAttr[6] + "</span>"; // Text on Patches
+
+      container.appendChild(elemt);
+    }  // End loop
+
+// Copyright © 2021 by Myndex Research. All Rights Reserved.
+/////  END DEMO  ///////////////////////////////////////////////////////////  
+</script>  
+</html>
+  
+  
