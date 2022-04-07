@@ -1,6 +1,6 @@
 <!DOCTYPE html><head>
 <meta charset="utf-8" />
-<base lang="en-US" title="Introduction to Color and Accessibility">
+<base lang="en-US" title="Fancy Font Flipping For Fun!">
 <style>
 body {
   position: relative;  
@@ -13,10 +13,10 @@ body {
 #mainBlock {
   padding: 16px 2px;
   text-align: center;
-  --samplesBG: red;
-  --samplesBGhalf: green;
-  background-color: #808080;
-  background-color: var(--samplesBG);  
+  --samplesBG: #bad;
+  --samplesBGhalf: #bad;
+  background-color: #a0a0a0;
+  background-color: var(--samplesBG); 
 }
 
 .patch {
@@ -29,8 +29,9 @@ body {
   text-align: center;
   line-height: 1.1;
   border-radius: 20px;
-  text-shadow:  4px 5px 4px #0004;
-  box-shadow: inset 6px 6px 14px #1346,
+  text-shadow:  4px 5px 4px var(--textShadow);
+  box-shadow:
+    inset 6px 6px 14px #1346,
     inset 2px 2px 9px 2px var(--samplesBGhalf),
           2px 2px 6px #2468;
 }
@@ -49,11 +50,12 @@ h1 {
                     2px 2px 6px #2468;  
 }
 
-h2 {
+h2, summary {
   position: relative;
   margin: 8px 0 0 132px;
   color: #308;
-  top:-6px;
+  top:-6px;    
+  font-size: 1.4em;
   text-align: left;
   font-style: oblique;
 }
@@ -73,11 +75,14 @@ h3 {
                     2px 2px 6px #2468;  
 }
 
-h3 input {
+.inputLabel {position: relative;font-size: 0.6em; top: -8px;}
+
+.inputLabel input {
   position: relative;
+  margin: -12px 0 0 24px;
   width: 120px;
-  height: 60px;
-  top: 8px;
+  height: 50px;
+  top: 14px;
   background: currentColor;
   border: 2px solid #123;
   border-radius: 18px;
@@ -106,14 +111,14 @@ p {
   </style>
 
 </head>
- <body>
-  <h1>Fancy Font Flipping For Fun!</h1>
-  <h2>Automatic Font Color based on Background Lightness &nbsp;&nbsp;</h2>
+<body>
+  <h1>Fancy Font Flipping For Fun!<span class="inputLabel"><input id="picker" type="color" onBlur="setBG(value)" onInput="setBG(value)" value="#a0a0a0" /> ⇦ Set Page Background</span> </h1>
+  <details><summary>Automatic Font Color based on Background Lightness (v02)</summary>
   <p>Each patch has data which also serves as an example. The font is smaller than optimum to stress the critical importance of spatial frequency.
   <p>The top few lines are those automatically set based on the background color, and should always be easilly readable. The bottom line is the opposite color for comparison purposes, and may often be unreadable.
-  <p>The technology shown here is part of the <a href="https://github.com/Myndex/SAPC-APCA#apca-the-revolution-will-be-readable">SAPC Research Project. </a>
+  <p>The technology shown here is part of the <a href="https://github.com/Myndex/SAPC-APCA#apca-the-revolution-will-be-readable">SAPC Research Project. </a></details>
     
-  <h3><input id="picker" type="color" onBlur="setBG(value)" onInput="setBG(value)" value="#555555" /> ⇦ Click to Set Overall Page Background</h3> 
+  
   <div id="mainBlock">
   </div>
   <div class="copy">Copyright &copy; 2021 by Myndex Research. All Rights Reserved.
@@ -127,47 +132,77 @@ p {
 /////
 /////  Also See: https://www.myndex.com/APCA/
 
-
 /////  BEGIN DEMO  /////////////////////////////////////////////////////////
 
-          ///// Main Variables /////
+
+////////  APPEARANCE SETTINGS ////////////////////////////
+
+   const textShadow = "0.3";     // text shadow, is an alpha 0.0 to 1.0. 0.0 is OFF
+                                // Note that it affects perceived text contrast!
+   const shadowSelect = true; // trendy shadows set true or false
+
+   const font = 12;             // pick a value 8 to 14
+   const offset = font * 3.33; // amount of text size increase for mid contrast
+                              // contrast is related to spatial freq. i.e. size & weight
 
    const greyscales = 11; // How many patches of grey from black to white
                          // Set to 0 to disable greyscales
                         // Greyscales are useful to better see flip point
+   const greyAlternates = 0; // 1 = show alternate grey exponents.
+                            //  0 = show only current
 
-   const rgbTRC   = 2.35;   // 2.213;    // The simple sRGB exponent (unity #777)
+////////   PERCEPTUAL LIGHTNESS SETTINGS ////////////////////////////
+
+   const rgbTRC   = 2.2;   // 2.213;    // The simple sRGB exponent
    const rgbEnc   = 1 / rgbTRC;          // The sRGB inversion
-   const lightExp = 0.678;  // 0.7833;  // SAPC perceptual lightness (mode a)
-                                   //determines center contrast (experimental)
+   const lightExp = 0.66; // 0.678;  // 0.7833;  // SAPC perceptual contrast lightness (mode a) (experimental)
    const darkExp  = 1 / lightExp; // Inversion of lightExp
+   const percOffset = 0.02; 
 
+////////   FLIP POINT SETTINGS ////////////////////////////
+
+   // const flipPointY = 0.42;      // for Y flip, unused.
+   const flipPointLs = 0.505;      // flip factor
+   const lo = 0.35, hi = 0.65;    // Ls Mid range area (font enlarging)  hi+lo = 1 ... .4 .92
+   const centerLs = ( lo + hi ) * flipPointLs; // flip point
+
+
+////////   GREYSCALE SETTINGS ////////////////////////////
 
                           // Place exponents in this array to 
                          // make the grayscale grads
    const perceptExp = [darkExp,1.0,1/0.75,1/0.678,1/0.5,1/0.4,1/0.4108,1/0.333333]; // last is ~LAB
-   const greyOffset = [0,0,0,0,0,0,0,0.16]; // last is LAB
-
+   const greyOffset = [percOffset,0,0,0,0,0,0,0.16]; // last is LAB
    const patches = 1001;    // total patches including greyscale
-     let gsc = 0;    // grayscale counter
-   const greyRows = perceptExp.length - 1; // Number of differrent greyscale rows
+     let gsc = 0;          // grayscale counter
    const greyLength = greyscales - 1; 
+   const greyRows = 1 + greyAlternates * (perceptExp.length - 2); // Number of differrent greyscale rows
+
+////////   DOM VARIABLES  ////////////////////////////
 
      let container = document.getElementById('mainBlock');
      let picker = document.getElementById('picker');
+     // container.style.setProperty("--textShadow", "rgba(0,0,0,"+textShadow+")");
+     let boxShadow = (shadowSelect) ?
+         "--textShadow: rgba(0,0,0,"+textShadow+");" :
+         "box-shadow: none; text-shadow:none;";
 
-   const flipPointY = 0.42;
-   const flipPointLs = 0.46;      // flip factor
-   const lo = 0.4, hi = 0.92;    // Y Mid range area (font enlarging)  hi+lo = 1
-   const centerLs = ( lo + hi ) * flipPointLs; // flip point
-   const font = 12;            // pick a value 8 to 14
-   const offset = font * 2.0; // amount of text size increase for mid contrast
-                             // contrast is related to spatial freq. i.e. size & weight
+////////   MISC VARIABLES  ////////////////////////////
 
-       // utility to set the underlying BG color
-      // Accessed using the color picker
+      // vars needed for rand colors and output
+  let r = 0.0, g = 0.0, b = 0.0;
+  let elemt;
+  let bgRGB = [0,0,0], bgColor = "#bad", textAttr = [];
+  let i = 0;
+
+
+////////   FUNCTIONS  ////////////////////////////
+
+///// setBG /////
+                    // utility to set the underlying BG color
+                   // Accessed using the color picker
 function setBG (bg = "#bbaadd") {  
-    // container.setAttribute('style','background-color:' + bg );
+         // container.setAttribute('style','background-color:' + bg );
     container.style.setProperty("--samplesBG", bg);
     container.style.setProperty("--samplesBGhalf", bg + "88");
     picker.setAttribute('style','color:' + bg );
@@ -175,8 +210,9 @@ function setBG (bg = "#bbaadd") {
     // Notice how black or white changes your perception of contrast
 
 
+///// getTextAttributes /////
 
-function getTextAttributes (Rs,Gs,Bs,pExp = darkExp) { // Do the stuff
+function getTextAttributes (Rs,Gs,Bs,pExp = darkExp, pOff = percOffset) { // Do the stuff
 
     let textSize = font; 
     let textWeight = "normal";
@@ -187,7 +223,7 @@ function getTextAttributes (Rs,Gs,Bs,pExp = darkExp) { // Do the stuff
                                           // For Rec709 HDTV change the 2.2 to 2.4,
                                          // and use different coefficients for P3 etc!!
  
-    let Ls = Math.pow(Ys, 1 / pExp);   // Ls is SAPC Screen lightness, similar to L* but 
+    let Ls = Math.pow(Ys, 1/pExp) * (pOff + 1) - pOff;   // Ls is SAPC Screen lightness, similar to L* but 
                                       // for self illuminated monitors & contrast
    
                                     // perceptual text color flipper. 
@@ -208,12 +244,8 @@ function getTextAttributes (Rs,Gs,Bs,pExp = darkExp) { // Do the stuff
 };      // End getTextAttributes
 
 
-      // vars needed for rand colors and output
-  let r = 0.0, g = 0.0, b = 0.0;
-  let elemt;
-  let bgRGB = [0,0,0], bgColor = "#bad", textAttr = [];
-  let i = 0;
 
+///// createRGB /////
 
                      // Creates the greyscale and random colors
                     // There is the assumption that the random values are already
@@ -230,9 +262,11 @@ function getTextAttributes (Rs,Gs,Bs,pExp = darkExp) { // Do the stuff
       g = Math.random();
       b = Math.random();
     };
-    return [r, g, b, perceptExp[gsc]]
+    return [r, g, b, perceptExp[gsc], greyOffset[gsc]]
   };  // End createRGB
 
+
+///// intRGBcolor /////
 
                       // take decimal 0-1 RGB and make #hex string
                      // NOTE: This assumes sRGB encoded values on input
@@ -243,14 +277,18 @@ function getTextAttributes (Rs,Gs,Bs,pExp = darkExp) { // Do the stuff
     }; // End intRGBcolor
 
 
-    setBG('#999999');  // starting BG color
 
-       /////  OUTPUT (NAKED LOOP) //////////////////////
+/////////  MAIN  //////////////////////
+
+    setBG('#a0a0a0');  // starting BG color
+
+///// OUTPUT (NAKED LOOP) /////
+
     for ( ; i < patches; i++) { // output loop
 
       bgRGB = createRGB(i);
       bgColor = intRGBcolor(bgRGB[0], bgRGB[1], bgRGB[2]);
-      textAttr = getTextAttributes(bgRGB[0], bgRGB[1], bgRGB[2], bgRGB[3]);
+      textAttr = getTextAttributes(bgRGB[0], bgRGB[1], bgRGB[2], bgRGB[3], bgRGB[4]);
 
       elemt = document.createElement('div');
       elemt.setAttribute('class', 'patch');
@@ -258,22 +296,21 @@ function getTextAttributes (Rs,Gs,Bs,pExp = darkExp) { // Do the stuff
                       + '; font-weight:' + textAttr[2] 
                       + '; background-color:' + bgColor 
                       + '; color:' + textAttr[0]
-                   // + '; text-shadow: 4px 5px 4px '+textAttr[5]+'5;'
+                      + ';' + boxShadow
                         );
       
       elemt.innerHTML = bgColor+"<br>"+textAttr[1]+"<br>Ys " + textAttr[3]
                       + "<br>Ls " + textAttr[4]
                       + "<br>| | |||||||||| | |<br><span style='position:relative;"
                       + "top:-6px; color:" + textAttr[5]
-                   // + "; text-shadow: 4px 5px 4px #0006;"
                       + "'>| | |||||||||| | |<br>pEx "
                       + textAttr[6] + "</span>"; // Text on Patches
 
       container.appendChild(elemt);
     }  // End loop
 
-// Copyright © 2021 by Myndex Research. All Rights Reserved.
-/////  END DEMO  ///////////////////////////////////////////////////////////  
+/////  END DEMO  ///////////////////////////////////////////////////////////
+//// Copyright © 2021 by Myndex Research. All Rights Reserved. ////////////
 </script>  
 </html>
   
