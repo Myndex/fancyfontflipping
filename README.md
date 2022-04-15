@@ -11,6 +11,9 @@ The live CodePen is https://codepen.io/myndex/pen/GRyxrrm
 
 There are a number of constants you can adjust to see how different levels of luminance *or* percepual lightness affect the readability of the text. In conjuction with this, near the middle range, the font is increased in size. This is because small fonts need more contrast than is available between the actual middle contrast (on an sRGB monitor) and either black or white. 
 
+### Related Repo: APCA - Accessible Perceptual Contrat Algorithm
+The [SAPC-APCA Repo on GitHub](https://github.com/Myndex/SAPC-APCA/tree/master/documentation) APCA is a perceptually uniform contrat prediction method and the candidate method for WCAG 3.
+
 ### Example Output
 <img src="IMAGES/fancyfontflip1.png">
 
