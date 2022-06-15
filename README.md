@@ -1,5 +1,5 @@
 # Fancy Font Flipping
-Fancy Font Flipping is a demo I first put up in CodePen to illustrate the issues with flipping the text color from black to white based on a given estimated background luminance. For details and explainations, please [see this article](https://gist.github.com/Myndex/e1025706436736166561d339fd667493#lets-flip-for-color) that more fully describes the science behind all of this. The index.html file here contains the CSS and JS, and is viewable [live on this link.](https://myndex.github.io/fancyfontflipping/)
+Fancy Font Flipping is a demo I first put up in CodePen to illustrate the issues with flipping the text color from black to white based on a given estimated background luminance. For details and explainations, please [see this Gist](https://gist.github.com/Myndex/e1025706436736166561d339fd667493#lets-flip-for-color) that briefly describes the science behind all of this. The index.html file here contains the CSS and JS, and is viewable [live on this link.](https://myndex.github.io/fancyfontflipping/)
 
 ## Features
 - Flips font color from black to white, depending on background
