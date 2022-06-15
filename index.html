@@ -1,13 +1,21 @@
 <!DOCTYPE html><head>
 <meta charset="utf-8" />
 <base lang="en-US" title="Fancy Font Flipping For Fun!">
+
+<!-- CSS -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
 <style>
 body {
   position: relative;  
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: arial, sans-serif;  
+  font-family: Barlow, arial, sans-serif;  
   background-color: #F9F2DD;
 }
 #mainBlock {
@@ -137,42 +145,52 @@ p {
 
 ////////  APPEARANCE SETTINGS ////////////////////////////
 
-   const textShadow = "0.3";     // text shadow, is an alpha 0.0 to 1.0. 0.0 is OFF
+   const textShadow = "0.0";     // text shadow, is an alpha 0.0 to 1.0. 0.0 is OFF
                                 // Note that it affects perceived text contrast!
    const shadowSelect = true; // trendy shadows set true or false
 
    const font = 12;             // pick a value 8 to 14
-   const offset = font * 3.33; // amount of text size increase for mid contrast
-                              // contrast is related to spatial freq. i.e. size & weight
+   const fontWeight = 300;     // pick a value 200,300,400,500,600,700
+   const offset = font * 3.33;// amount of text size increase for mid contrast
+                             // contrast is related to spatial frequency
+                            // i.e. size & weight of the font
 
    const greyscales = 11; // How many patches of grey from black to white
                          // Set to 0 to disable greyscales
                         // Greyscales are useful to better see flip point
+                       // Suggested values 11, 31, 76 — you want the flip
+                      // in the horizontal middle to see side by side.
+
    const greyAlternates = 0; // 1 = show alternate grey exponents.
-                            //  0 = show only current
+                            //  0 = show only main page lightness exponent
 
 ////////   PERCEPTUAL LIGHTNESS SETTINGS ////////////////////////////
 
-   const rgbTRC   = 2.2;   // 2.213;    // The simple sRGB exponent
-   const rgbEnc   = 1 / rgbTRC;          // The sRGB inversion
-   const lightExp = 0.66; // 0.678;  // 0.7833;  // SAPC perceptual contrast lightness (mode a) (experimental)
+   const rgbTRC   = 2.2;   // 2.213;  // 2.4;    // The simple sRGB exponent
+   const rgbEnc   = 1 / rgbTRC;        // The sRGB inversion
+   const lightExp = 0.678 //0.678; // 0.678;  // 0.7833; 
+         // SAPC perceptual contrast lightness (mode a) (experimental)
    const darkExp  = 1 / lightExp; // Inversion of lightExp
-   const percOffset = 0.02; 
+   const percOffset = 0.03; 
 
+                    // For grayscale based on flip curve (or not)
+   const darkExpGrad = darkExp; // 3.5; // Smoother grad
+   const percOffGrad = percOffset; // 0.3; // Smoother rag
 ////////   FLIP POINT SETTINGS ////////////////////////////
 
-   // const flipPointY = 0.42;      // for Y flip, unused.
-   const flipPointLs = 0.505;      // flip factor
-   const lo = 0.35, hi = 0.65;    // Ls Mid range area (font enlarging)  hi+lo = 1 ... .4 .92
+   // const flipPointY = 0.42;    // for Y flip, unused.
+   const flipPointLs = 0.5;      // flip factor
+   const lo = 0.35, hi = 0.65;  // Ls Mid range area (font enlarging) 
+                               // ( lo + hi ) * flipPointLs should be 0.5
    const centerLs = ( lo + hi ) * flipPointLs; // flip point
 
 
 ////////   GREYSCALE SETTINGS ////////////////////////////
 
                           // Place exponents in this array to 
-                         // make the grayscale grads
-   const perceptExp = [darkExp,1.0,1/0.75,1/0.678,1/0.5,1/0.4,1/0.4108,1/0.333333]; // last is ~LAB
-   const greyOffset = [percOffset,0,0,0,0,0,0,0.16]; // last is LAB
+                         // make additional grayscale grads
+   const perceptExp = [darkExpGrad,3.5,1/0.75,1/0.678,1/0.5,1/0.4,1/0.4108,1/0.333333]; // last is ~LAB
+   const greyOffset = [percOffGrad,0.3,0,0,0,0,0,0.16]; // last is LAB
    const patches = 1001;    // total patches including greyscale
      let gsc = 0;          // grayscale counter
    const greyLength = greyscales - 1; 
@@ -215,7 +233,7 @@ function setBG (bg = "#bbaadd") {
 function getTextAttributes (Rs,Gs,Bs,pExp = darkExp, pOff = percOffset) { // Do the stuff
 
     let textSize = font; 
-    let textWeight = "normal";
+    let textWeight = fontWeight;
   
     let Ys = Math.pow(Rs,rgbTRC) * 0.2126 +
              Math.pow(Gs,rgbTRC) * 0.7152 +        
@@ -234,7 +252,7 @@ function getTextAttributes (Rs,Gs,Bs,pExp = darkExp, pOff = percOffset) { // Do 
          let offsetF = offset; 
          offsetF = (Ls < centerLs) ? (Ls - lo) * offsetF : (hi - Ls) * offsetF;
          textSize = textSize + offsetF;
-         textWeight = "normal";
+         textWeight = fontWeight;
        }      // scale up fonts for the lower contrast mid luminances.
              // **Loosely** based on part of APCA for WCAG 3 beta (spot reading)
    
@@ -255,7 +273,8 @@ function getTextAttributes (Rs,Gs,Bs,pExp = darkExp, pOff = percOffset) { // Do 
       if (LsValue > (greyLength * (gsc + 1) + (1 * gsc))) { gsc++ };
       
       r = g = b = Math.pow(Math.pow((((LsValue -
-         (greyLength*gsc+(gsc*1)))/greyLength)+greyOffset[gsc])/(greyOffset[gsc]+1),perceptExp[gsc]),rgbEnc); 
+                 (greyLength*gsc+(gsc*1)))/greyLength)+greyOffset[gsc])/
+                 (greyOffset[gsc]+1),perceptExp[gsc]),rgbEnc); 
     } else {
       gsc = 0;
       r = Math.random();
@@ -288,7 +307,7 @@ function getTextAttributes (Rs,Gs,Bs,pExp = darkExp, pOff = percOffset) { // Do 
 
       bgRGB = createRGB(i);
       bgColor = intRGBcolor(bgRGB[0], bgRGB[1], bgRGB[2]);
-      textAttr = getTextAttributes(bgRGB[0], bgRGB[1], bgRGB[2], bgRGB[3], bgRGB[4]);
+      textAttr = getTextAttributes(bgRGB[0], bgRGB[1], bgRGB[2]); //, bgRGB[3], bgRGB[4]);
 
       elemt = document.createElement('div');
       elemt.setAttribute('class', 'patch');

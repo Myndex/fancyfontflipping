@@ -3,7 +3,7 @@ Fancy Font Flipping is a demo I first put up in CodePen to illustrate the issues
 
 ## Features
 - Flips font color from black to white, depending on background
-- Adjust font size based on resultant contrast.
+- Adjusts font size based on resultant contrast.
 - Secondary sample text in opposite color
 - Color picker to set the overall background.
 
