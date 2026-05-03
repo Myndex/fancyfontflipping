@@ -1,0 +1,5200 @@
+/* ************************************************************* */
+/* ************************************************************* */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Myndex Basic Responsive Style Sheet.
+
+This CSS Sheet Update History:
+April 1, 2019	Added a ton of stuff from the other sites.
+Feb 24, 2019   sticky footer, better media queries,  and other goodies
+feb 22: MOD FOR PARKING
+
+2019 B
+June 23 2019: Many adds and adjustments, some for Perception Test
+July 12 2019: Added multi color glow buttons and accordion menus
+Sept xx 2019: Trimmed and adjusted elements
+				ALSO: Added Myndex TinyTrim™
+Oct  xx 2019: Cleaning out overly specific selectors
+Copyright © 2019 by Myndex Technologies. All Rights Reserved. */
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* ************************************************************* */
+/* ************************************************************* */
+
+
+
+/* ************************************************************* */
+/* ************************************************************* */
+/* *****      SET USER AGENT DEFAULTS        ******************* */
+/* ************************************************************* */
+/* ************************************************************* */
+
+/*
+html {	/* enforce standard font size ... or don't * /
+	font-size: 16px;
+	}
+*/
+
+
+
+/* ************************************************************* */
+/* *****         FONT FAMILIES            ********************** */
+/* *****  FontFace now in separate sheet(s)  ******************* */
+/* ************************************************************* */
+
+
+/* ************************************************************* */
+
+/* 		These are Myndex and Google Font Names as Reference:
+
+		HINT: The BASE NAME will be the SAME as the CSS sheet name
+				EXCEPT for the "_simple" which is sometimes used
+				for a conflict reason.
+
+For this CSS sheet, always use at at least AvenirLT, but BaskervilleMT is good also,
+
+/F*botblock*ONTS/AvenirLT/AvenirLT.css
+
+			AvenirLT
+			Slant is called italic
+	NOTE: May consider moving 500 to bold and making current bold 800
+
+
+
+/F*botblock*ONTS/BaskervilleMT/BaskervilleMTPro.css
+
+	BaskervilleMTPro   Weights: Normal, 600, Bold
+	Slant is called italic
+
+/F*botblock*ONTS/HelveticaNeueLT/HelveticaNeueLT_simple.css
+
+	HelveticaNeueLT
+	HelveticaNeueLTOut (outline - wgt 800 only)
+	HelveticaNeueLTCond (also has weight 900)
+	HelveticaNeueLTExt
+
+	Weights: 100, 200, 300, Normal, 500, 600, Bold, 800, 900 for Cond only
+
+	Slant is called Oblique for COND and EXT, but Italic for Regular
+
+/F*botblock*ONTS/TimesLT/TimesLTStd_simple.css
+
+			TimesLTStd
+			Slant is called italic
+
+*/
+
+/* ************************************************************* */
+/* ************************************************************* */
+
+/*
+GOOGLE:
+
+https://fonts.googleapis.com/css?family=Syncopate:400,700|Michroma|Oswald:200,300,400,500,600,700|Henny+Penny&display=swap
+
+			Syncopate
+			Michroma
+			Oswald
+
+			'Henny Penny'
+
+*/
+
+/* ************************************************************* */
+
+
+/* ************************************************************* */
+/* ************************************************************* */
+
+
+
+
+/* ************************************************************* */
+/* *****     BEGIN CSS STYLE SHEET       *********************** */
+/* ************************************************************* */
+/* *****     BEGIN CSS STYLE SHEET       *********************** */
+/* ************************************************************* */
+/* *****     BEGIN CSS STYLE SHEET       *********************** */
+/* ************************************************************* */
+/* *****     BEGIN CSS STYLE SHEET       *********************** */
+/* ************************************************************* */
+/* *****     BEGIN CSS STYLE SHEET       *********************** */
+/* ************************************************************* */
+
+*	{ box-sizing: border-box; } /* Set all box sizes to include border */
+
+body {
+	height:100%;
+	margin: 0;
+	padding: 0;
+
+	font-size: 1rem;  /* Body font size 1 rem establishes standard default size */
+	font-family: "AvenirLT", "HelveticaNeueLT", Avenir, Helvetica, Roboto, Arial, Verdana,"sans-serif";
+	color: #206;
+	font-style: normal;
+	font-weight: 500;
+	text-decoration: none;
+
+	background-color: #B4A254;
+
+	/*	background-image: url("/web/20230109171922im_/http://myndex.com/images/bg.jpg");
+		background-position: top center;
+		background-repeat: repeat-y;
+		background-attachment: fixed;	*/
+	}
+
+.wrapper {		/* Content wrapper - NEW: Can optionally include header or footer. */
+	position: relative;
+	width: 100vw;
+	max-width: 800px;  /* set this width per site needs, ideally in the responsive section!
+					 		NEW : setup for 1024  1000 + 12 + 12 borders*/
+	margin: 0 auto;
+
+	background-color: #FFF;
+	border-left-style: solid;
+	border-right-style: solid;
+	border-color: #30A;
+	}
+
+main {
+	position: relative;
+	padding: 0;
+	margin: 0 auto;
+	}	/* Primary Generic content container */
+
+.content {
+	position: relative;
+	margin: 0;
+	padding: 0.75em 1.5em 6em;
+
+	background-color: #F9F7FF;
+	box-shadow: inset 0.3em 0.3em 1em 0.25em #99B;
+	}	/* **** DEPRECIATED **** Primary Generic content container */
+
+.banner {
+	position: absolute;
+	width: 100%;
+	max-width: 800px;
+	height: 0;
+	background-image: url('/web/20230109171922im_/http://myndex.com/images/head.jpg');
+	background-position: top;
+	background-size: contain;
+	background-repeat: no-repeat;
+	}
+
+article {
+	}
+
+section {
+	}
+
+
+/* ************************************************************* */
+/* ******   Header/Footer/Specials   *************************** */
+/* ************************************************************* */
+
+
+
+header {
+	width: 100%;
+	min-height: 40px;
+	max-height: 150px;
+
+	background-color: #30A;
+	background-image: url('/web/20230109171922im_/http://myndex.com/images/myndexhead7.png');
+	background-position: top;
+	background-size: contain;
+	background-repeat: no-repeat;
+	}
+
+
+
+footer {	/*  STICKY FOOTER  a wrapper for footer and content */
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	max-width: 800px;
+	}
+
+#footContent {	 /* one of the very few ID selectors worth doing.  */
+	background-color: #FFF;
+	opacity: 0.8;
+	margin: 0 4%;
+	padding: 0 2%;
+	overflow: hidden;
+	max-height: 3.5em;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	box-shadow: 0em -0.5em 0.8em rgba(0,0,0,0.3);
+	}
+
+#footImg {
+	position: relative;
+	bottom: 0;
+	background-image: url('/web/20230109171922im_/http://myndex.com/images/myndexfoot7.png');
+	background-position: bottom;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-color: #30A;
+	padding-bottom: 6.25%;
+	}
+
+.copyright {
+	text-align: center;
+	margin: 0 auto;
+	line-height: 1.17em;
+	font-size: 0.75em;
+	color: #205;
+	}
+
+.byLine, .byline, .byLine2, .byline2 {
+	margin: 0 auto 2em;
+	font-family: "Palatino Linotype", Palatino, Garamond, serif;
+	font-size: 1em;
+	font-style: oblique;
+	font-weight: bold;
+	color: #22A;
+	}
+
+.byLine2, .byline2 {
+	font-family:  "BaskervilleMTPro", "Garamond", "Baskerville", "Didot", "Bodini", Times, serif;
+	font-size: 0.9em;
+	margin: -0.2em auto 2em 2em;
+	color: #321;
+	}
+
+.legal { font-size: 0.75em;
+	text-align: center;
+	margin: 0 auto;
+	}
+
+
+article {
+	margin: 0;
+	padding: 0 25px;
+	max-width: 560px;  /* adjust per site  */
+	font-size: 1em;
+	}
+
+article p {
+	margin: 0.2em 0;
+	}
+
+article div {
+	margin: 0;
+	}
+
+
+ul {
+	list-style-type: none;
+	}
+
+ol {
+	list-style-position: outside;
+	}
+
+
+/* ************************************************************* */
+/* ************************************************************* */
+/* *****   MUST BE BEFORE MEDIA QUERIES FOR DEVICE TYPE   ****** */
+/* ************************************************************* */
+/* ************************************************************* */
+
+
+
+div.leftCol {
+	width: 150px;	  /* adjust per site  */
+	margin: 0 ;
+	border: 0;
+	padding-left: 0;
+}
+
+div.rightCol {
+	width: 160px;	  /* adjust per site  */
+	margin: 0 5px;
+	border: 0;
+	padding: 0;
+}
+.gamma {
+	position: Relative;
+	Margin: 1em auto;
+
+	padding: 1em;
+	width: 98vw;
+	max-width: 755px;
+
+	color: #000;
+	background: #777;
+	font-size: 1em;
+	font-weight: bold;
+	border: 0.25em solid #000;
+	border-radius: 2em;
+}
+
+.gamma img {
+    position: Relative;
+    Margin: 1em auto;
+    image-rendering: crisp-edges;
+}
+
+.crisp { image-rendering: crisp-edges; }
+.pixelated { image-rendering: pixelated; }
+
+
+/*  .leftNav, .leftNav a, .leftNav a:link { margin: -2px 0px ;}
+*/
+
+
+
+
+/* ************************************************************* */
+
+/* ************************************************************* */
+
+/* ************************************************************* */
+
+/* ************************************************************* */
+
+/* ************************************************************* */
+/* ************************************************************* */
+/* *****   SET MEDIA QUERIES FOR DEVICE TYPE   ***************** */
+/* ************************************************************* */
+/* ************************************************************* */
+
+/* ************************************************************* */
+
+/* ************************************************************* */
+
+/* ************************************************************* */
+
+/* ************************************************************* */
+
+
+
+@media (max-width: 599.99px) {
+
+		/* Cell Phones in Portrait mode  */
+
+	body { font-size: 2vw; }
+
+	header {
+		background-image: url('/web/20230109171922im_/http://myndex.com/images/myndexheadmobile7.png');
+		padding-top: 20%;
+		}
+
+	.wrapper {
+		max-width: 98vw;
+		border-width: 2vw;
+		min-height: calc(100vh - 20vw);  /* the "-24" should be set to the header height */
+		}
+
+	.mobileNav {
+		display: block;
+		}
+
+	.leftCol, .rightCol { display: none; }
+
+	.globalNav a {
+		position: absolute;
+		top: 0px;
+		right: 5px;
+		transform: scale(0.66);
+		}
+
+
+	.mainCol {
+		width: 100vw;
+		margin: 0 0 0em ;
+		padding: 0 calc((100vw - 460px )/2) 1em;
+		}
+
+	}
+
+@media  (orientation: landscape) and (max-width: 799.99px) {
+
+		/* NEW : ALL devices in landscape, this just removes the sticky footer  and uses thin header */
+
+	body { font-size: 2vw; }
+
+	header {
+		background-image: url('/web/20230109171922im_/http://myndex.com/images/myndexhead7.png');
+		padding-top: 18.75%;
+		}
+	}
+
+@media (min-width: 600px) and (max-width: 799.99px) {
+
+		/* for iPad sized devices */
+
+	body { font-size: 2vw; }
+
+	header {
+		background-image: url('/web/20230109171922im_/http://myndex.com/images/myndexhead7.png');
+		padding-top: 18.75%;
+		}
+
+	.wrapper {
+		max-width: 98vw;
+		border-width: 4vw;
+		min-height: calc(100vh - 10vw);
+		}
+
+	.mobileNav {
+		display: block;
+		}
+
+	.leftCol { display: none; }
+
+	div.rightCol { padding-top: 55px; }
+
+	.globalNav a {
+		position: absolute;
+		top: 0px;
+		right: 25px;
+		}
+
+	.mainCol {
+		max-width: calc(100vw - 180px);
+		margin: 0 175px 0 20px;
+		padding: 0 calc((100vw - 460px - 180px)/2) 1em;
+		}
+	}
+
+@media (min-width: 800px) {
+
+		/* for normal desktops */
+
+	body { font-size: 1rem; }
+
+	header {
+		margin: auto;
+		width: 800px;
+		height: 150px;
+		}
+
+	footer {
+		left: calc(50% - 400px);
+		border-width: 2em;
+		}
+
+	.wrapper {
+		border-width: 2em;
+		min-height: calc(100% + 160px);
+		}
+
+	header, .wrapper, footer {
+		box-shadow: .5em 2em 2em #532;
+		}
+
+	.wrapper  {
+		box-shadow: 0.5em 2em 2em #235;
+		}
+
+
+	.globalNav a {
+		position: absolute;
+		top: 0px;
+		right: 175px;
+		}
+
+	.mobileNav {
+		display: none;
+		}
+
+	.leftCol { display: block; }
+
+	.mainCol {
+		max-width: 800px;
+		margin: 0 180px 0em 150px;
+		padding: 0 5px 1em;
+		}
+
+	}
+
+@media  (max-height: 610px) and (orientation: landscape) {
+
+		/* Adjustment for browsers set short (under 610 px) effectively being landscape UNSTICKS sticky footer  */
+
+	footer { position: relative; }
+
+	#footContent {
+		max-height: 5em;
+		height: 5em;
+		}
+
+	.wrapper {
+		margin-bottom: -6.5em;
+		min-height: calc(100vh - 20vw);
+		}
+
+	.content { padding-bottom: 6em; }
+
+	}
+
+/* ************************************************************* */
+/***********************************************/
+/***********************************************/
+
+/** END RESPONSIVE MEDIA QUERIES ***************/
+
+/***********************************************/
+/***********************************************/
+/* ************************************************************* */
+
+
+
+/*** classes with special adjustments that may need TLC in Responsive:  ****/
+
+.bannerPad {
+	position: relative;
+	top: 0;
+	width: 100%;
+	max-width: 800px;
+	}
+
+.globalNav {
+	position: relative;
+	width: 100vw;
+	max-width: 800px;
+	right: 0;
+	top: 0;
+	}
+
+.mobileNav {
+	margin: 18px 0;
+	width: 460px; 	  /* adjust per site  */
+	height: 275px;
+	}
+
+.mobileNav .linkBox {
+	padding: 8px 0 0 20px;
+	border-radius: 1.2em;
+	border-style: solid;
+	border-width: 1px;
+	background-color: #EDEDFE;
+	box-shadow: inset 0.2em 0.2em 0.6em #369;
+	}
+
+.linkBox a img {
+	margin: 10px 2px;
+	}
+
+/*  .leftNav a img {
+	margin: 0;
+	}
+*/
+
+
+/* ************************************************************* */
+
+	/***********************************************/
+	/***********************************************/
+	/** HEADLINES AND OTHER STD ELEMENTS ***********/
+	/***********************************************/
+	/***********************************************/
+
+/* ************************************************************* */
+
+/* ************************************************************* */
+
+/* ************************************************************* */
+/* ************************************************************* */
+/* *****   SET STANDARD ELEMENTS     *************************** */
+/* ************************************************************* */
+/* ************************************************************* */
+
+/* ************************************************************* */
+
+/* ************************************************************* */
+
+
+
+
+/* ************************************************************* */
+		/* *****   NO!! This was a stupid idea!!!
+
+div.content, .content div {margin-bottom: 0.66em;}
+div.content:last-child {margin-bottom: 0;}
+
+
+And this is also not good: "generic" states should be set in more general selectors like body.
+
+For div, position: relative; not relevant for p unless it's set to inline block.
+
+div, p {
+	position: relative;
+
+	font-size: 1em;
+	font-family: "AvenirLT", "optima","verdana", "helvetica", "sans-serif";
+	color: #000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	}
+
+		*/
+/* ************************************************************* */
+
+div, p { position: relative; }
+
+/* ***** BAD for DIVs but does make sense for paragraphs in general?  ***** */
+
+p.content, .content p {margin-bottom: 0.66em;}
+p.content:last-child   {margin-bottom: 0;}
+
+
+/* ************************************************************* */
+/* ************************************************************* */
+/* *****   H and A LINKS     *********************************** */
+/* *****  Note: if you use Shadow on an A LINK, you have to put
+	at least an empty shadow on ALL, due to security provisions  */
+/* ************************************************************* */
+/* ************************************************************* */
+
+/* ************************************************************* */
+/* *****    These are generic initializers, MORE BELOW    ****** */
+/* ************************************************************* */
+
+/*
+
+a:link {
+	color: #30A;
+	text-decoration: underline;
+	font-weight: normal;
+	text-shadow: 0 0 0 #FFF;
+	}
+a:visited {
+	color: #51B;
+	text-decoration: none;
+	font-weight: normal;
+	text-shadow: 0 0 0 #FFF;
+	}
+a:hover {
+	color: #42C;
+	text-decoration: underline;
+	font-weight: normal;
+	text-shadow: 0 0 0 #FFF;
+	}
+
+*/
+
+/* ************************************************************* */
+/* ************************************************************* */
+/* ************************************************************* */
+
+h1,h2,h3,h4,h5,h6,
+.h1,.h2,.h3,.h4,.h5,.h6 {
+	color: #30A;
+	text-shadow: 0.05em 0.05em 0.08em #3696;
+	font-weight: normal;
+	font-style: italic;
+	}
+
+h1 {
+	font-size: 2.4em;
+	margin-top: 0.4em;
+	margin-bottom: 0.4em;
+	font-weight: normal;
+	}
+
+h2 {
+	font-size: 2em;
+	margin-top: 0.2em;
+	margin-bottom: 0.2em;
+	font-weight: normal;
+	}
+
+h3 {
+	font-size: 1.6em;
+	margin-top: 0.2em;
+	margin-bottom: 0.1em;
+	font-weight: normal;
+	}
+
+h4 {
+	font-size: 1.2em;
+	margin-top: 0.1em;
+	margin-bottom: 0.05em;
+	font-weight: bold;
+	text-transform: uppercase;
+	}
+
+h5 {
+	font-size: 0.8em;
+	font-weight: bold;
+	font-style: oblique;
+	}
+
+
+
+/* ************************************************************* */
+/* ************************************************************* */
+/* *****     SET CLASSES      ********************************** */
+/* ************************************************************* */
+/* ************************************************************* */
+
+/* ************************************************************* */
+/* *****  Standards and Evergreens for ActionCMS    ************ */
+/* ************************************************************* */
+
+
+.breadcrumbs {
+	margin-bottom: 0.7em;
+	margin-left: 0;
+	margin-right: 0;
+
+	font-size: 0.8em;
+	font-style: oblique;
+	color: #30A;
+	}
+
+.bclabel {
+	margin-top: 0.5em;
+	margin-bottom: -0.3em;
+	margin-left: 1em;
+	font-size: 0.5em;
+	}
+
+
+/* ************************************************************* */
+/* *****  Standard Specific Formats (PRE, CODE, SUP, etc)  ***** */
+/* ************************************************************* */
+
+
+.tm, tm {font-size: 0.3em; vertical-align: super;}
+.tm::after, tm::after {content: "\2122";}
+
+sup, .sup, sub, .sub { font-size: 0.7em; }
+sup, .sup { vertical-align: super; }
+sub, .sub { vertical-align: sub; }
+
+sup.LAB, sup.Lab, sup.Large {
+	font-size: 1em;
+	vertical-align: 10%;
+	}
+
+pre, .pre {
+	margin: 0.25em;
+	font-size: 1.2em;
+	line-height: 1.3;
+	padding: 0.25em;
+	background-color: #EDA;
+	overflow: auto;
+	}
+
+code, .code {
+	tab-size: 4;
+	}
+
+
+
+/* ************************************************************* */
+
+/* ************************************************************* */
+/* ************************************************************* */
+/* *****  EXTRAS FOR SPECIFIC PAGES AND MISC CLASSES   ********* */
+/* ************************************************************* */
+/* ************************************************************* */
+
+/* ************************************************************* */
+
+
+
+/* ************************************************************* */
+/* *****  ORNAMENTATION  *************************************** */
+/* ************************************************************* */
+
+
+/* ************************************************************* */
+/* *****   DROP CAP (from AMS)   ******************************* */
+/* ************************************************************* */
+
+
+.dropCap::first-letter,
+.dropCap p:first-child::first-letter,
+.dropCap:first-child::first-letter,
+p.dropCap::first-letter,
+div.dropCap::first-letter
+	{  /* Call it as a class  dropCap (this one has a box) ***/
+	float: left;
+			/* BOX -- sizes below are relative to drop cap size */
+	margin: -0.15em 0.05em -0.13em -0.25em;
+	padding: 0.03em 0.12em;	/* Box Padding */
+	height: 1em; 	/* Box Height */
+
+	font-size: 2.5em;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 1em; /* height  of drop cap above line - bigger numbers make it LOWER*/
+	color: #50C;
+	font-family:  "BaskervilleMTPro", "Garamond", "Baskerville", "Didot", "Bodini", Times, serif;
+
+	text-shadow:
+				-0.02em -0.02em 0.03em #DEF,
+				0.02em 0.02em 0.02em #00B,
+				-0.02em 0.02em 0.02em #00B,
+				0.02em 0.02em 0.03em #003,
+				0.07em 0.07em 0.11em #44A;
+
+	border-radius: 0.18em;
+	background-color: #ACF7;
+
+	box-shadow:
+				inset 0.03em 0.03em 0.06em #DEF,
+				inset -0.03em -0.03em 0.06em #789,
+				0.03em 0.03em 0.06em #44A;
+	}
+
+
+
+.dropCapSimple::first-letter,
+.dropCapSimple p:first-child::first-letter,
+.dropCapSimple:first-child::first-letter,
+p.dropCapSimple::first-letter,
+div.dropCapSimple::first-letter
+	{  /* Call it as a class  dropCapSimple ***/
+	float: left;
+			/* BOX -- sizes below are relative to drop cap size */
+	margin: 0em 0.1em -0.23em -0.15em;
+	height: 1em; 	/* Box Height */
+
+	font-size: 2.65em;
+	font-weight: normal;
+	font-style: normal;
+	line-height: 0.8em; /* height of drop cap above line - bigger numbers make it LOWER */
+	color: #50C;
+	font-family: "Times New Roman",  Times, serif;
+	
+	/* "BaskervilleMTPro", "Garamond", "Baskerville", "Didot", "Bodini", Times, serif; */
+
+	text-shadow:
+				-0.02em -0.02em 0.04em #BCD,
+				0.02em -0.02em 0.02em #30BB,
+				-0.02em 0.02em 0.02em #30BB,
+				0.02em 0.02em 0.03em #006,
+				0.07em 0.07em 0.08em #44AB;
+	}
+
+
+
+/* ************************************************************* */
+
+/* ************************************************************* */
+/* *****   A LINK ELEMENTS  (Site Specific) ******************** */
+/* ************************************************************* */
+
+/* ************************************************************* */
+
+
+
+a:link {
+	color: #22B;
+	text-decoration: underline;
+	font-weight: 500;
+	text-shadow: 0 0 0 #FFF0; /* Null Shadow as it needed to be present in LINK to be accessible by the psudo elements ***/
+	}
+
+a:visited {
+	color: #62D;
+	text-decoration: none;
+	font-weight: 500;
+	text-shadow: 0 0 0 #FFF0;
+	}
+
+a:hover {
+	color: #40D;
+	text-decoration: none;
+	text-shadow: 0.1em 0.1em 0.12em #789;
+	}
+
+a:visited:hover {
+	color: #94D;
+	text-decoration: none;
+	font-weight: 500;
+	text-shadow: 0.05em 0.05em 0.1em #A98;
+	}
+
+a:active {
+	position: relative;
+	top: 0.1em;
+	color: #77F;
+	text-decoration: none;
+	font-weight: 500;
+	text-shadow: 0 0 0.1em #7777;
+	}
+
+.creditsList a:visited, .insetBlue a:visited,
+.insetYellow a:visited, .insetOrange a:visited,
+.referenceList a:visited
+	{
+	color: #44A;
+	text-decoration: none;
+	font-weight: 500;
+	text-shadow: 0 0 0 #FFF;
+	}
+
+.creditsList a:hover, .insetBlue a:hover,
+.insetYellow a:hover, .insetOrange a:hover,
+.referenceList a:hover
+	{
+	color: #50F;
+	text-decoration: none;
+	font-weight: 500;
+	letter-spacing: 0.045em;
+	text-shadow:
+				-0.03em -0.03em 0.04em #CCE,
+				0 0 0.12em #4AF,
+				0.12em 0.12em 0.2em #248;
+	}
+
+.insetOrange a:hover {
+	color: #60B;
+	letter-spacing: -0.02em;
+	text-shadow:
+				-0.03em -0.03em 0.04em #DDF,
+				0 0 0.08em #4AF,
+				0.16em 0.16em 0.18em #469;
+	}
+
+
+/* ************************************************************* */
+
+/* ************************************************************* */
+
+/* ************************************************************* */
+/* *****    H ELEMENTS  H1 H2 H3 H4 H5 H6 HR    **************** */
+/* ************************************************************* */
+
+/* ************************************************************* */
+
+/* ************************************************************* */
+
+
+/* *****  HORIZONTAL LINES   ***** */
+
+hr {
+	border: 0.08em solid #58B;
+	}
+
+hr.thick {
+	border: 1.5em double #BDF;
+	border-radius: .5em;
+	}
+
+.referenceList hr {
+	border: 0.1em solid #58B;
+	background: #7AC;
+	padding: 0.05em;
+	}
+
+/* *****  H1  **************** */
+
+h1 {
+	font-size: 2.4em;
+	letter-spacing: 0.1em;
+	margin: 0.2em auto 0.2em;
+	font-weight: normal;
+	color: #33A;
+	text-shadow: 0.06em 0.06em 0.13em #66A;
+	}
+
+h1.essay, .essay h1, .creditsList h1,
+.insetBlue h1, .insetYellow h1, .insetOrange h1
+	{
+	font-size: 2em;
+	letter-spacing: 0.1em;
+	margin: 0.2em auto;
+	font-weight: normal;
+	color: #229;
+	text-shadow: 0.06em 0.06em 0.13em #66A;
+	}
+
+h1.redError {
+	color: #A00;
+	text-shadow:
+	0 0 0.05em #110,
+	0.06em 0.06em 0.13em #944;
+	}
+
+h1.yellowError, .yellowError h1 {
+	line-height: 1.2em;
+	color: #EB0;
+	text-shadow:
+				0 0 0.05em #110,
+				0.06em 0.06em 0.13em #741;
+	}
+
+h1.orangeError, .orangeError h1 {
+	line-height: 1.2em;
+	color: #F80;
+	text-shadow:
+				0 0 0.05em #110,
+				0.06em 0.06em 0.13em #147;
+	}
+
+h1.whiteError, h2.whiteError, div.whiteError,
+.whiteError h1, .whiteError h2, .whiteError a
+	{
+	color: #FFF;
+	text-shadow:
+				0 0 0.05em #000,
+				0 0 0.2em #000,
+				0.06em 0.06em 0.13em #69F;
+	}
+
+/* *****  H2  **************** */
+
+h2 {
+	font-size: 1.7em;
+	margin: 0.3em auto 0.15em;
+	font-weight: bold;
+	color: #229;
+	}
+
+h2.essay, .essay h2, .creditsList h2, .insetBlue h2, .insetYellow h2, .insetOrange h2  {
+	font-size: 1.7em;
+	margin: 0.3em auto 0.15em;
+	font-weight: normal;
+	color: #229;
+	text-shadow: 0.05em 0.05em 0.08em #66Aa;
+	}
+
+h2.yellowError, .yellowError h2 {
+	font-size: 1.9em;
+	margin: 0.3em auto 0.15em;
+	font-weight: bold;
+	color: #DA0;
+	text-shadow:
+				0 0 0.05em #110,
+				0.05em 0.05em 0.08em #741a;
+	}
+
+h2.orangeError, .orangeError h2 {
+	font-size: 1.9em;
+	margin: 0.3em auto 0.15em;
+	font-weight: bold;
+	color: #F80;
+	text-shadow:
+				0 0 0.05em #110,
+				0.05em 0.05em 0.08em #147a;
+	}
+
+h2.whiteError, .whiteError h2 {
+	font-size: 1.9em;
+	}
+
+/* *****  H3  **************** */
+
+h3 {
+	font-size: 1.3em;
+	margin: 0.2em auto 0.1em;
+	font-weight: normal;
+	color: #33A;
+	text-shadow: 0.05em 0.05em 0.08em #2488;
+	}
+
+.h3 {
+	font-size: 1.3em;
+	margin: 0.2em 0 1em;
+	font-weight: normal;
+	line-height: 1.2em;
+	color: #229;
+	text-shadow: 0.05em 0.05em 0.08em #48B8;
+	}
+
+.essay .h3, .creditsList h3,
+.insetBlue h3, .insetYellow h3, .insetOrange h3
+	{
+	font-size: 1.3em;
+	margin: 0.2em 0 1em;
+	font-weight: normal;
+	line-height: 1.2em;
+	color: #229;
+	text-shadow: 0.05em 0.05em 0.08em #44A;
+	}
+
+/* *****  H4 H5 H6  **************** */
+
+
+h4 {
+	font-size: 1em;
+	margin: 0.1em auto 0.5em;
+	font-style: oblique;
+	font-weight: normal;
+	color: #33A;
+	}
+
+.essay h4, .essay .h4, .creditsList h4  {
+	margin: 0.1em auto 0.5em;
+	font-style: oblique;
+	font-weight: bold;
+	color: #229;
+	}
+
+.insetBlue h4, .insetYellow h4  {
+	margin: 0.8em auto -0.5em;
+	font-style: oblique;
+	font-weight: bold;
+	color: #319;
+	}
+
+
+h5 {
+	text-align: right;
+	font-size: 0.7em;
+	margin: 0em auto 0.2em;
+	font-style: oblique;
+	font-weight: normal;
+	color: #33A;
+	}
+
+
+.essayList h5 {
+	text-align: right;
+	padding-right: 1.2em;
+	font-size: 0.5em;
+	margin: -1em auto -0.5em;
+	font-style: oblique;
+	font-weight: normal;
+	color: #66C;	}
+
+
+
+/* ************************************************************* */
+/* *****  ActionCMS          *********************************** */
+/* ************************************************************* */
+
+
+article .faq p { margin-left: 1.5em;}
+
+
+article .faq h3
+	{
+	font-size: 1.3em;
+	text-align: left;
+	letter-spacing: 0.02em;
+	margin-left: 0.5em;
+	font-style: oblique;
+	font-weight: normal;
+	}
+
+article .essayList h3,
+article .essayList h3 a,
+article .essayList h3 a:link,
+article .essayList h3 a:visited
+	{
+	text-align: left;
+	padding-left: 1.2em;
+	font-style: oblique;
+	font-weight: normal;
+	}
+
+
+/* ************************************************************* */
+/* """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""" */
+/* ************************************************************* */
+/* *****    BLOCKQUOTES   ************************************** */
+/* ************************************************************* */
+/* """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""" */
+/* ************************************************************* */
+
+
+/* Blockquote BIG  ***/
+
+blockquote.big {
+	font-family:  "BaskervilleMTPro", "Baskerville", "Didot", "Bodini", "Garamond", Times, Serif;
+	font-size: 2em;
+	line-height: 1.5em;
+	margin: 1em 3em;
+	font-weight: normal;
+	font-style: oblique;
+	color: #448;
+	}
+
+blockquote.big .mainQuote {
+	font-weight: bold;
+	font-style: normal;
+	text-shadow:
+				-0.04em -0.04em 0.05em #daf,
+				0.03em -0.03em 0.05em #309,
+				-0.03em 0.03em 0.04em #309,
+				0.02em 0.02em 0.03em #003,
+				0.06em 0.06em 0.12em rgba(20, 0, 40, 0.7);
+	}
+blockquote.big .mainQuote::before {
+	font-size: 1.8em;
+	content: '“';
+	}
+
+blockquote.big .mainQuote::after {
+	font-size: 1.8em;
+	line-height: 0.4em;
+	content: '”';
+	}
+
+
+/* Blockquote standard ***/
+
+blockquote {
+	font-family:    "BaskervilleMTPro", "Baskerville", "Didot", "Bodini", "Garamond", Times, Serif;
+	font-size: 1.2em;
+	line-height: 1.3em;
+	margin: 1em 2em;
+	font-weight: normal;
+	font-style: oblique;
+	color: #229;
+	}
+
+blockquote .mainQuote, blockquote.mainQuote {
+	font-weight: normal;
+	font-style: normal;
+	text-shadow:
+				-0.04em -0.04em 0.05em #DAF,
+				0.03em -0.03em 0.05em #309,
+				-0.03em 0.03em 0.04em #309,
+				0.02em 0.02em 0.03em #003,
+				0.06em 0.06em 0.12em rgba(20, 0, 40, 0.7);
+	}
+blockquote .mainQuote::before, blockquote.mainQuote::before {
+	font-size: 1.8em;
+	vertical-align: -0.1em;
+	content: '“';
+	}
+
+blockquote .mainQuote::after, blockquote.mainQuote::after {
+	font-size: 1.8em;
+	vertical-align: -0.2em;
+	content: '”';
+	}
+
+
+
+
+
+/* ************************************************************* */
+/* *****  ORDERED LISTS   ************************************** */
+/* ************************************************************* */
+
+
+
+
+ul, ol {
+	font-size: 1.3em;
+	line-height: 1.1em;
+	margin: 0.8em 1.5em 2.2em 1em;
+	font-weight: 500;
+	font-style: oblique;
+	color: #309;
+	text-shadow:
+				-0.01em -0.01em 0.015em #AAF,
+				0.01em 0.01em 0.013em #008,
+				0.05em 0.05em 0.08em #77Ca;
+	}
+
+ul li, ol li {
+	margin: 0.8em auto;
+	}
+
+ul li::before {
+	margin-left: -1.4em;
+	font-weight: bold;
+	content: '•   ' }
+
+
+
+.faq ul li {
+	font-size: 0.9em;
+	font-weight: bold;
+	line-height: 1em;
+	margin: 1em 1.1em 1em 0em;
+	text-shadow: 0.05em 0.05em 0.08em #69Ba;
+	}
+
+.faq ul li::before {
+	margin-left: -1em;
+	font-weight: bold;
+	content: '•   ' }
+
+.faq ul li span {
+	font-style: normal;
+	font-weight: 500;
+
+	color: #44A;
+	line-height: 1em;
+	margin: 1em 1.1em 1em 0em;
+	text-shadow: 0.01em 0.01em 0.03em #248a;
+	}
+
+
+/* ************************************************************* */
+/* *******   ESSAY  ******************************************** */
+/* ************************************************************* */
+
+
+
+.essay ol {
+	list-style: none;
+	counter-reset: li;
+	font-size: 1.3em;
+	line-height: 1.4em;
+	margin: 0.6em 2em 2em 1em;
+	font-weight: 500;
+	font-style: oblique;
+	color: #229;
+	text-shadow: 0.05em 0.05em 0.08em #77Ba;
+	}
+
+.essay ol li	{
+	font-weight: 500;
+	margin: 0.6em 0.6em 1em 0em;
+	counter-increment: li;
+	}
+
+.essay ol li::before {
+	content: counter(li) ") ";
+	margin-left: -1.6em;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 1.3em;
+	line-height: 0em;
+
+	}
+
+.requirements ul, .requirements.ul, .requirements ol {
+	font-size: 1em;
+	line-height: 1.2em;
+	margin: 0.6em 1.5em 0.5em;
+	font-weight: 300;
+	font-style: oblique;
+	color: #204;
+	}
+
+.requirements ul li::before {
+	margin-left: -1.4em;
+	content: '•   ' }
+
+.requirements ul li, .requirements ol li {
+	margin: 0.4em auto;
+	text-shadow: 0.05em 0.05em 0.08em #88Ba;
+
+	}
+
+
+
+
+/* ************************************************************* */
+
+/* ************************************************************* */
+
+/* ************************************************************* */
+/* *******  SET MISC CLASSES  ********************************** */
+/* ************************************************************* */
+
+/* ************************************************************* */
+
+/* ************************************************************* */
+
+
+
+/* ************************************************************* */
+/* *****    ADS    ********************************************* */
+/* ************************************************************* */
+
+
+
+.ads {
+	position: relative;
+	border-top: 0.2em solid #58B;
+	}
+
+.ads::before {
+	margin: -10px auto;
+	width: 160px;
+	text-align: center;
+	font-size: 0.5em;
+	vertical-align: 100%;
+	content: 'Google AdSense Advertisement';
+	}
+
+
+
+/* ************************************************************* */
+/* ************************************************************* */
+/* *****    IMAGES INCLUDING COUNTER   ************************* */
+/* ************************************************************* */
+/* ************************************************************* */
+
+
+.intro {
+	margin: 0 1.3em;
+	}
+
+.image img, .imageB img {
+	height: auto;
+	width: 100%;
+	max-width: 1200px;
+	}
+
+img.imageC {
+	height: auto;
+	width: 120%;
+	max-width: 1200px;
+	}
+
+.image, .imageB, .imageC, .imageCanvas, .imageHalf {
+	margin: 1em -3%;
+	height: auto;
+	width: 100%;
+	padding: 1.5em;
+	max-width: calc(800px + 3em);
+	background-color: #FFFFF6;
+	box-shadow: 0.5em 0.5em 1.2em rgba(0,0,0,0.9);
+	}
+
+.imageB, .imageC {
+	margin: auto;
+	padding: 0.5em;
+	max-width: 100%;
+	background-color: #BBB;
+	}
+
+.imageCanvas, .imageHalf {
+	margin: 0.125em;
+	padding: 0.33em;
+	background-color: #777;
+	}
+
+.imageHalf {
+	margin: 0.5em 2em;
+	width: 50%;
+	padding: 0.33em;
+	}
+	
+img.imageC {
+	position: relative;
+	left: -75px;
+	height: auto;
+	width: 120%;
+	max-width: 1200px;
+	}
+
+
+
+.counter {
+	width: 50%;
+	font-size: 0.7em;
+	margin: 0 auto;
+	background-color: #F00;
+	}
+
+.counter img {
+	max-height: 3em;
+	}
+
+
+
+
+
+/* ************************************************************* */
+/* ************************************************************* */
+/* *****    LEFT AND RIGHT COLUMN CLASSES    ******************* */
+/* ************************************************************* */
+/* ************************************************************* */
+
+
+
+.widgets {
+	width: 100%;
+	}
+
+.DANtitle {
+	font-family: "AvenirLT", "HelveticaNeueLT", Avenir, Helvetica, Roboto, Arial, Verdana, "sans-serif";
+	margin: auto;
+	text-align: center;
+	font-size: 0.96em;
+	color: #002887;
+	font-weight: bold;
+	text-decoration: none; }
+
+.DANform {
+	font-family: "AvenirLT", "HelveticaNeueLT", Avenir, Helvetica, Roboto, Arial, Verdana, "sans-serif";
+	text-align: center;
+	font-size: 0.94em;
+	color: #229;
+	font-weight: bold;
+	text-decoration: none;
+	}
+
+
+/***  .leftNav {margin: 3% -4% 1%;}  ***/
+
+div.rightCol .DANform {
+	width: 160px;
+	margin: 0;
+	border: 0;
+	background-color: #248;
+}
+
+div.rightCol .cell {
+	background-color: #CDE;
+}
+
+div.rightCol .cell .subCell{
+	background-color: #FFF;
+}
+.spacer {
+	width: 160px;
+	height: 60px;
+}
+
+.spacerCenter {
+	width: 460px;
+	height: 5px;
+	background-color: #229;
+
+}
+
+.masthead3 {
+	background-color: #248;
+	background-image: url("/web/20230109171922im_/http://myndex.com/images/masthead3.gif");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: 95%;
+	width: 160px;
+	height: 50px;
+	margin: 0px;
+	border: 10px solid #248;
+}
+
+
+/* ************************************************************* */
+/* ************************************************************* */
+/* *****    MYNDEX original Domain List classes    ************* */
+/* ************************************************************* */
+/* ************************************************************* */
+
+
+/* ************************************************************* */
+/* *****    DomainList  Collection    ****** ******************* */
+/* ************************************************************* */
+
+
+.domainList {
+	padding: 1em;
+	background-color: #EEE090;
+	}
+
+.domainList, .domainList a  {
+	width: 100%;
+	max-width: 800px;
+	font-family: "AvenirLT", "HelveticaNeueLT", Avenir, Helvetica, Roboto, Arial, Verdana,"sans-serif";
+	font-size: 1.15em;
+	font-weight: 400;
+	/* text-shadow: 2px 2px 4px #127; */
+	line-height: 1.5em;
+	letter-spacing: 0.2em;
+	}
+
+.domainList a:hover {
+	color: rgba(33, 0, 220, 1);
+	text-decoration: underline;
+	font-weight: 600;
+	letter-spacing: -0.03em;
+	text-shadow:
+				-0.03em -0.03em 0.04em #CCE,
+				0 0 0.12em rgba(80, 100, 220, 0.5),
+				0.15em 0.15em 0.22em #248;
+	}
+
+.domainList a:visited {
+	color: #992;
+	text-decoration: none;
+	font-weight: 500;
+	text-shadow: none;
+	}
+
+.domainList a:visited:hover  {
+	color: #960;
+	text-decoration: none;
+	font-weight: 500;
+	text-shadow: 0.15em 0.15em 0.25em  #BD9;
+	}
+
+ .domainList .left {
+	position: relative;
+	left: 8%;
+	}
+
+ .domainList .flr  {
+	height: calc(100% + 2em);
+ 	width: 40vw;
+ 	max-width: 320px;
+	margin-left:auto;
+	margin-right:0;
+	margin-top: .3em;
+	}
+
+ .domainList .fll  {
+  	width: 45vw;
+ 	max-width: 380px;
+	margin-left:0;
+	margin-right:auto;
+	margin-top: -18em;
+	}
+
+
+/* ************************************************************* */
+/* ************************************************************* */
+/* ************************************************************* */
+
+
+#WebLinks	a:link
+	{COLOR: #30a; text-decoration: underline; font-weight: 500;}
+#WebLinks	a:visited
+	{COLOR: #AAF; text-decoration: none; font-weight: 500;}
+#WebLinks	a:hover
+	{COLOR: #42B; text-decoration: underline; text-shadow: 4px 4px 5px #69F;}
+#WebLinks	a:visited:hover
+	{COLOR: #42B; text-decoration: underline; text-shadow: 4px 4px 5px #962;}
+
+#WebLinks {
+	padding: 2em;
+	}
+
+#WebLinks a {
+	margin-left: 3em;
+	}
+
+
+
+/* ************************************************************* */
+/* *****    FLOATS and CENTERS    ****************************** */
+/* *****    NOTE: See the floats section under TRIMS   ********* */
+/* ************************************************************* */
+
+
+.flr a {
+	text-align: right;
+	float: right;
+	margin-left: -10px;
+	}
+
+.flrx {background-color: rgba(255,11,11,0.3);}
+
+.fll a {
+	margin-right: -20px;
+	margin-left: -2vw;
+	}
+
+.fllx {background-color: rgba(11,255,11,0.3);}
+
+
+
+/* ************************************************************* */
+/* *****    For Very Generalized Selectors       *************** */
+/* ************************************************************* */
+
+
+
+.general div {margin: auto 0.66em 0.66em;}
+
+.general div {
+	font-family: "AvenirLT", "HelveticaNeueLT", Avenir, Helvetica, Roboto, Arial, Verdana,"sans-serif";
+	}
+
+
+/* ************************************************************* */
+/* *****    ANDY SOMERS EXTENSION    *************************** */
+/* ************************************************************* */
+
+/* ************************************************************* */
+/* *****    CREDITS LIST SET     ******************************* */
+/* ************************************************************* */
+
+
+/* *****   as used on various myndex pages   ********* */
+
+/*  .domainList, */
+
+.creditsList, .insetBlue, .insetYellow,
+.insetOrange, .insetGreen, .referenceList,
+.portfolio  {
+	padding: 1em;
+	text-align: left;
+	border-radius: 1.5em;
+	color: #229;
+	}
+
+.referenceList, .portfolio  {
+	margin: 2em auto;
+	}
+
+.creditsList p, .insetBlue p, .insetYellow p,
+.insetOrange p, .insetGreen p, .referenceList p {
+	padding-left: 1.5em;
+	}
+
+/*
+.domainList {
+	background-color: #EEE099;
+	box-shadow: inset 0.2em 0.2em 0.5em  #369;
+	}
+*/
+
+.creditsList, .insetBlue, .referenceList, .portfolio {
+	background-color: #D8E0FF;
+	box-shadow: inset 0.2em 0.2em 0.5em  #369;
+	}
+
+.insetYellow  {
+	background-color: #FEC;
+	box-shadow: inset 0.2em 0.2em 0.5em  #963;
+	}
+.insetOrange  {
+	background-color: #EED080;
+	box-shadow: inset 0.2em 0.2em 0.5em  #762;
+	}
+.insetGreen  {
+	background-color: #DE9;
+	box-shadow: inset 0.2em 0.2em 0.5em  #783;
+	}
+.creditsList.tech, .creditsList .tech  {
+	position: relative;
+	margin: -2.2em 0 0 1.5em;
+	padding-left: 0.5em;
+	border-left: 2px solid #248;
+	}
+
+/* .domainList h2 { margin-bottom: 1em;}
+
+.domainList, .domainList a,
+*/
+
+.creditsList, .insetBlue, .insetYellow, .referenceList, .portfolio   {
+	width: 100%;
+	max-width: 800px;
+	font-family: "AvenirLT", "HelveticaNeueLT", Avenir, Helvetica, Roboto, Arial, Verdana,"sans-serif";
+	font-size: 1.15em;
+	font-weight: 400;
+	line-height: 1.3;
+	/* text-shadow: 0.1em 0.1em 0.2em #99B; */
+	}
+
+.referenceList, .portfolio   {
+	width: 95%;
+	max-width: 800px;
+	}
+
+.creditsList, .insetBlue, .insetYellow, .referenceList, .portfolio   {
+	letter-spacing: 0.05em;
+	}
+
+.creditsList .title, .referenceList .reference, .portfolio .title   {
+	font-size: 0.9em;
+	font-weight: 300;
+	line-height: 2em;
+	}
+
+.referenceList .reference {
+	font-size: 0.9em;
+	font-weight: 300;
+	line-height: 1.2;
+	}
+
+
+.creditsList .title .role, .creditsList .title .job,
+.referenceList .reference .journal  {
+	font-size: 0.75em;
+	}
+
+.creditsList .title .job::before  {
+	content: '(';
+	}
+.creditsList .title .job::after  {
+	content: ')';
+	}
+
+.rotate90 {
+   width: 25px;
+   transform: rotate(90deg);
+}
+
+.creditsList .rotate270, .rotate270  {
+	Position: relative;
+	width: 500px;
+	transform: rotate(270deg);
+	left: -240px;
+	top: 210px;
+	/* text-shadow: -0.1em 0.1em 0.14em #44A; */
+}
+
+/* *** flex box for each credit  *** */
+
+.credit {
+	margin: 0.3em 0 0;
+
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	align-items: baseline;
+	align-content: flex-start;
+ 	}
+
+.award {
+	margin: 0 0 0.5em 1.5em;
+	border-radius: 1.2em;
+	padding: 0.1em;
+
+	display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+	display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+	display: -ms-flexbox;      /* TWEENER - IE 10 */
+	display: -webkit-flex;     /* NEW - Chrome */
+	display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+	justify-content: space-around;
+	flex-wrap: nowrap;
+	align-items: center;
+	align-content: center;
+
+	flex: 0 0 85%;
+	min-height: 2.2em;
+
+	background-color: #246;
+	box-shadow: inset 0.2em 0.2em 0.4em  #369;
+ 	}
+
+
+.creditsList .credit .title  {
+	font-size: 0.9em;
+	font-weight: 300;
+	color: #200;
+	}
+
+.creditsList .credit .title.won {
+	font-size: 1.1em;
+	font-weight: 400;
+	color: #128;
+	text-shadow:
+				0 0 0.12em #93F,
+				0.05em 0.05em 0.08em #66Aa;
+	}
+
+
+.referenceList .reference .title {
+	font-size: 1.1em;
+	font-weight: 500;
+	color: #128;
+	text-shadow: 0.05em 0.05em 0.08em #559a;
+	}
+
+.creditsList .credit .subtitle  {
+	font-size: 0.55em;
+	font-weight: 300;
+	font-style: oblique;
+	color: #200;
+	}
+
+.creditsList .credit .role, .creditsList .credit .job  {
+	font-size: 0.65em;
+	text-align: right;
+	margin: -0.3em 0 0;
+	flex-grow: 1;
+	}
+
+.creditsList .credit .award .awarded
+	{
+	font-size: 0.85em;
+	font-weight: normal;
+	font-style: oblique;
+	text-align: center;
+	flex: 1 0 70%;
+	color: #FB0;
+	text-shadow:
+				0 0 0.2em #025,
+				0.15em 0.15em 0.3em #337;
+	}
+
+.creditsList .credit .award .awarded a,
+.creditsList .credit .award .awarded a:link {
+	font-size: 1.1em;
+	font-weight: bold;
+	color: #FB0;
+	text-shadow:
+				0 0 0.2em #A82,
+				0.15em 0.15em 0.3em #337;
+	}
+
+.creditsList .credit .award .awarded a:hover,
+.creditsList .credit .award .awarded a:active {
+	font-size: 1.1em;
+	color: #FE5;
+	text-shadow:
+				0 0 0.2em #CC5,
+				0.15em 0.15em 0.3em #66A;
+	}
+
+.creditsList .credit .award .awardPad  {
+	color: #FB0;
+	font-size: 1.4em;
+	font-weight: bold;
+	text-align: center;
+	flex: 1 0 15%;
+	text-shadow:
+				0 0 0.2em #025,
+				0.15em 0.15em 0.3em #337;
+	}
+
+
+.creditsList .credit .job::before,
+.creditsList .credit .role::before,
+.creditsList .credit .subtitle::before
+	{
+	content: '\00a0  (';
+	}
+
+.creditsList .credit .job::after,
+.creditsList .credit .role::after,
+.creditsList .credit .subtitle::after
+	{
+	content: ')';
+	}
+
+
+.portfolio {width: 33em;}
+
+.portfolio hr {margin: 0.5em;}
+
+.portfolio img {max-width: 100%;}
+
+
+
+/* ************************************************************* */
+/* ************************************************************* */
+
+.DoNotUseHolder {
+	align-self: flex-start;
+
+/*
+
+
+
+Put Unused, broken, or testing code snippets in here
+
+
+.creditsList .credit .title::after   {
+	content: "";
+	}
+
+.award:hover {
+	background-color: #BA6;
+	box-shadow:  0.2em 0.2em 0.4em  #369;
+ 	}
+
+
+
+*/
+}
+/* ************************************************************* */
+/* ************************************************************* */
+
+
+
+
+/* ************************************************************* */
+/* ************************************************************* */
+/* *****   FOR SPECIFIC MYNDEX PAGES   ************************* */
+/* ************************************************************* */
+/* ************************************************************* */
+
+
+
+.leftNav {
+	margin: 3% -4% 1%;
+	}
+
+.leftNav img {
+  -webkit-filter: drop-shadow(0.5em 0.5em 0.8em rgb( 136, 102, 187 ));
+  filter: drop-shadow(0.5em 0.5em 0.8em rgb( 136, 102, 187 ));
+	}
+	
+
+
+/* ************************************************************* */
+/* *****   FOR ANDY SOMERS and DWD PAGES   *************** */
+/* ************************************************************* */
+
+
+/* ************************************************************* */
+/* *****  LEFT NAV SPRITE from AMS  **************************** */
+/* ************************************************************* */
+
+
+.leftNav {
+	max-width: 100%;
+	background-size: 400%;
+	background-image: url('/web/20230109171922im_/http://myndex.com/images/sprites/leftNavSprite.png');
+	}
+
+.leftNav-Acting			{ background-position: 0 0%;}
+.leftNav-Art			{ background-position: 0 5.761317%; }
+.leftNav-Blog			{ background-position: 0 10.504634%; }
+.leftNav-Business		{ background-position: 0 15.504683%; }
+.leftNav-DemoReels		{ background-position: 0 21.25903%; }
+.leftNav-Design			{ background-position: 0 26.315789%; }
+.leftNav-Filmmaking		{ background-position: 0 31.340206%; }
+.leftNav-Headshots		{ background-position: 0 36.514523%; }
+.leftNav-Humor			{ background-position: 0 41.769547%; }
+.leftNav-Invention		{ background-position: 0 46.549949%; }
+.leftNav-Music			{ background-position: 0 51.337449%; }
+.leftNav-Personal		{ background-position: 0 56.711759%; }
+.leftNav-Photography	{ background-position: 0 62.839248%; }
+.leftNav-Photos			{ background-position: 0 68.247423%; }
+.leftNav-Politics		{ background-position: 0 73.347107%; }
+.leftNav-Retro			{ background-position: 0 78.269825%; }
+.leftNav-Spirituality	{ background-position: 0 83.367769%; }
+.leftNav-Technology		{ background-position: 0 88.350515%; }
+.leftNav-Voiceover		{ background-position: 0 94.270833%; }
+.leftNav-Writing		{ background-position: 0 100%; }
+
+.leftNav			{ background-position-x: 0%;}
+.leftNav:hover		{ background-position-x: 33.2%; }
+.leftNav:active 	{ background-position-x: 66.4%;}
+.leftNav:target		{ background-position-x: 100%;}
+
+.leftNav {margin-bottom: -1em;}
+
+
+
+
+/* ************************************************************* */
+/* *****   FOR DAN PAGES   ************************************* */
+/* ************************************************************* */
+
+
+
+
+
+
+/* ************************************************************* */
+/* *****   FOR GT PAGES   ************************************** */
+/* ************************************************************* */
+
+
+
+
+
+
+/* ************************************************************* */
+/* ************************************************************* */
+/* *****   UTILITY  ******************************************** */
+/* ************************************************************* */
+/* ************************************************************* */
+
+
+/* ************************************************************* */
+/* *****   Alignments and clear fix etc.   ********************* */
+/* ************************************************************* */
+
+.centered {
+	position: relative;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	background-position: center;
+	background-size: contain;
+	background-repeat: no-repeat;
+	}
+
+article h1, article h2,  article h3,
+article h1 a, article h2 a,  article h3 a
+	{
+	text-align: center;
+	}
+
+.left, .leftCol {
+	text-align: left;
+	float: left;
+	background-position: left;
+	background-size: contain;
+	background-repeat: no-repeat;
+	}
+
+.right, .rightCol {
+	text-align: left;
+	float: right;
+	background-position: right;
+	background-size: contain;
+	background-repeat: no-repeat;
+	}
+
+.leftCol, .rightCol {
+	Position: Relative;
+	height: 100%;
+	}
+
+.leftText {	text-align: left; }
+
+.rightText{ text-align: right; }
+
+/* ************************************************************* */
+/* ************************************************************* */
+/**
+ * CLEARFIX for modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    contenteditable attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that are clearfixed.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+/* ************************************************************* */
+/* ************************************************************* */
+
+
+.clrf:before, .clear:before, .clearfix:before,
+.clrf:after, .clear:after, .clearfix:after
+	{
+    content: " "; /* 1 */
+    display: table; /* 2 */
+	}
+
+.clrf:after, .clear:after, .clearfix:after { clear: both; }
+
+/****	For IE 6/7 only
+		Include this rule to trigger hasLayout and contain floats.
+****/
+.clrf, .clear, .clearfix {*zoom: 1;}
+
+
+
+/* ************************************************************* */
+/* ************************************************************* */
+/* *****    PURE CSS BUTTONS AND CONTROLS   ******************** */
+/* ************************************************************* */
+/* ************************************************************* */
+
+
+/* ************************************************************* */
+/* *****  GLOSSY BLUE GLOW BUTTON  ***************************** */
+/* ************************************************************* */
+
+
+.myndexButton, button.myndexButton, nav .myndexButton, .myndexButton.a:link {
+	display:inline-block;
+	cursor:pointer;
+	color: #FFF;
+	font-family: "AvenirLT", "HelveticaNeueLT", Avenir, Helvetica, Roboto, Arial, Verdana,"sans-serif";
+	font-size: 1.5em;
+	font-weight: 300;
+	padding: 0.66em 1.5em;
+	text-decoration: none;
+	text-shadow: 0.06em  0.06em  0.1em #40F;
+
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #5970B3), color-stop(1, #193BB3));
+	background:-moz-linear-gradient(top, #5970B3 5%, #193BB3 100%);
+	background:-webkit-linear-gradient(top, #5970B3 5%, #193BB3 100%);
+	background:-o-linear-gradient(top, #5970B3 5%, #193BB3 100%);
+	background:-ms-linear-gradient(top, #5970B3 5%, #193BB3 100%);
+	background:linear-gradient(to bottom, #5970B3 5%, #193BB3 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#5970B3', endColorstr='#193BB3',GradientType=0);
+
+	-moz-box-shadow: 0.3em 0.4em 0.6em -0.3em #0612BD;
+	-webkit-box-shadow: 0.3em 0.4em 0.6em -0.3em #0612BD;
+	box-shadow: 0.3em 0.4em 0.6em -0.3em #0612BD;
+
+	background-color:#5970B3;
+
+	-moz-border-radius:0.66em;
+	-webkit-border-radius:0.66em;
+	border-radius:0.66em;
+	border: 0.17em solid #0619C4;
+}
+
+.myndexButton:hover, button.myndexButton:hover, nav .myndexButton:hover, .myndexButton.a:hover {
+	color: #DEF;
+
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #193BB3), color-stop(1, #F9F0FF));
+	background:-moz-linear-gradient(top, #193BB3 25%, #59F0FF 100%);
+	background:-webkit-linear-gradient(top, #193BB3 25%, #59F0FF 100%);
+	background:-o-linear-gradient(top, #193BB3 25%, #59F0FF 100%);
+	background:-ms-linear-gradient(top, #193BB3 25%, #59F0FF 100%);
+	background:linear-gradient(to bottom, #193BB3 25%, #4433FF 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#193bb3', endColorstr='#59F0FF',GradientType=0);
+
+	-moz-box-shadow: 0.3em 0.4em 0.6em -0.3em #11F;
+	-webkit-box-shadow: 0.3em 0.4em 0.6em -0.3em #11F;
+	box-shadow: 0.3em 0.4em 0.6em -0.3em #11F;
+
+	background-color:#193BB3;
+	border: 0.17em solid #2222FF;
+}
+
+.myndexButton:active, button.myndexButton:active, nav .myndexButton:active, .myndexButton.a:active {
+	position:relative;
+	top: 0.17em;
+	font-family: "AvenirLT", "HelveticaNeueLT", Avenir, Helvetica, Roboto, Arial, Verdana,"sans-serif";
+	font-size:  1.5em;
+	font-weight: 300;
+	color: #FFF;
+}
+
+/* ************************************************************* */
+/* *****  GLOSSY BLUE GLOW BUTTON - RESPONSIVE QUERIES   ******* */
+/* ************************************************************* */
+
+
+@media (max-width: 799.99px) {
+.buttonLeft, .buttonRight {
+	position: relative;
+	margin: 1em 1em;
+	text-align: center;
+	}
+}
+
+@media (min-width: 800px) {
+
+.buttonLeft {
+	float: left;
+	}
+
+.buttonRight {
+	float: right;
+	}
+
+.floatingButtons {
+	margin: auto auto 5em;
+	}
+}
+
+
+
+
+/* ************************************************************* */
+/* *****  GLOSSY RED GLOW BUTTON   ***************************** */
+/* ************************************************************* */
+
+
+.myndexButtonRed, nav .myndexButtonRed, .myndexButtonRed.a:link {
+	display:inline-block;
+	cursor:pointer;
+	color: #FEE;
+	font-family: "AvenirLT", "HelveticaNeueLT", Avenir, Helvetica, Roboto, Arial, Verdana,"sans-serif";
+	font-size: 1em;
+	font-weight: 300;
+	padding: 0.45em 1em;
+	text-decoration: none;
+	text-shadow: 0.06em  0.06em  0.1em #F48;
+
+	background:linear-gradient(to bottom, #B37059 5%, #B33B19 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#B37059', endColorstr='#B33B19',GradientType=0);
+
+	box-shadow: 0.3em 0.4em 0.6em -0.3em #BD1206;
+
+	background-color:#5970B3;
+
+	border-radius:0.66em;
+	border: 0.17em solid #C41906;
+}
+
+.myndexButtonRed:hover, nav .myndexButtonRed:hover, .myndexButtonRed.a:hover {
+	color: #FED;
+
+	background:linear-gradient(to bottom, #B33B19 25%, #F34 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#B33B19', endColorstr='#FFF059',GradientType=0);
+
+	box-shadow: 0.3em 0.4em 0.6em -0.3em #F44;
+
+	background-color:#B33B19;
+	border: 0.17em solid #F22;
+}
+
+.myndexButtonRed:active, nav .myndexButtonRed:active, .myndexButtonRed.a:active {
+	position:relative;
+	top: 0.17em;
+	font-family: "AvenirLT", "HelveticaNeueLT", Avenir, Helvetica, Roboto, Arial, Verdana,"sans-serif";
+	font-size:  1.5em;
+	font-weight: 300;
+	color: #FFF;
+}
+
+/* ************************************************************* */
+/* *****  GLOSSY PURPLE GLOW BUTTON   ***************************** */
+/* ************************************************************* */
+
+
+.myndexButtonPurple, nav .myndexButtonPurple, .myndexButtonPurple.a:link {
+	display:inline-block;
+	cursor:pointer;
+	color: #FEF;
+	font-family: "AvenirLT", "HelveticaNeueLT", Avenir, Helvetica, Roboto, Arial, Verdana,"sans-serif";
+	font-size: 1.5em;
+	font-weight: 300;
+	padding: 0.66em 1.5em;
+	text-decoration: none;
+	text-shadow: 0.06em  0.06em  0.1em #90F;
+
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #7030B3), color-stop(1, #4010B3));
+	background:-moz-linear-gradient(top, #7030B3 5%, #4010B3 100%);
+	background:-webkit-linear-gradient(top, #7030B3 5%, #4010B3 100%);
+	background:-o-linear-gradient(top, #7030B3 5%, #4010B3 100%);
+	background:-ms-linear-gradient(top, #7030B3 5%, #4010B3 100%);
+	background:linear-gradient(to bottom, #7030B3 5%, #4010B3 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7030B3', endColorstr='#4010B3',GradientType=0);
+
+	-moz-box-shadow: 0.3em 0.4em 0.6em -0.3em #90B;
+	-webkit-box-shadow: 0.3em 0.4em 0.6em -0.3em #90B;
+	box-shadow: 0.3em 0.4em 0.6em -0.3em #90B;
+
+	background-color:#7030B3;
+
+	-moz-border-radius:0.66em;
+	-webkit-border-radius:0.66em;
+	border-radius:0.66em;
+	border: 0.17em solid #809;
+}
+
+.myndexButtonPurple:hover, nav .myndexButtonPurple:hover, .myndexButtonPurple.a:hover {
+	color: #FDF;
+
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.25, #627), color-stop(1, #CAD));
+	background:-moz-linear-gradient(top, #627 25%, #84D 100%);
+	background:-webkit-linear-gradient(top, #627 25%, #84D 100%);
+	background:-o-linear-gradient(top, #627 25%, #84D 100%);
+	background:-ms-linear-gradient(top, #627 25%, #84D 100%);
+	background:linear-gradient(to bottom, #627 25%, #84D 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#7030B3', endColorstr='#84D',GradientType=0);
+
+	-moz-box-shadow: 0.3em 0.4em 0.6em -0.3em #A0D;
+	-webkit-box-shadow: 0.3em 0.4em 0.6em -0.3em #A0D;
+	box-shadow: 0.3em 0.4em 0.6em -0.3em #A0D;
+
+	background-color:#627;
+	border: 0.17em solid #A2E;
+}
+
+.myndexButtonPurple:active, nav .myndexButtonPurple:active, .myndexButtonPurple.a:active {
+	position:relative;
+	top: 0.17em;
+	font-family: "AvenirLT", "HelveticaNeueLT", Avenir, Helvetica, Roboto, Arial, Verdana,"sans-serif";
+	font-size:  1.5em;
+	font-weight: 300;
+	color: #FFF;
+}
+
+/* ************************************************************* */
+/* *****  SMALLER GLOSSY MULTI-COLOR (MC) GLOW BUTTONS  ******** */
+/* *****  Included here are the accordion styles for  ********** */
+/* *****  use with collapsing menu javascript functions  ******* */
+/* ************************************************************* */
+
+/* ***** Button Container ***** */
+
+.MCcontainer {
+	position: relative;
+	z-index: 33;
+	width: 12em;
+	margin: 1.5em auto;
+	padding: 0.5em 0.33em;
+	color: #FFB;
+	border-radius: 1em;
+	background-color: #567;
+	box-shadow: inset 0.2em 0.2em 0.3em  #333;
+	}
+
+
+/* *****  Neutral Grey Buttons  ***** */
+
+/* ***** size ***** */
+
+.myndexButtonMC, nav .myndexButtonMC, .myndexButtonMC.a:link {
+	display:inline-block;
+	cursor:pointer;
+
+	height: 2em;
+	width: calc(12em - 1.66em);
+	margin: 0.5em;
+	padding: 0.35em 0.65em;
+
+	font-size: 1em;
+}
+
+/* ***** Smaller for Submenus ***** */
+
+.myndexButtonMCsub, nav .myndexButtonMCsub, .myndexButtonMCsub.a:link {
+	display:inline-block;
+	cursor:pointer;
+
+	height: 1.8em;
+	width: calc(10em - 1.66em);
+	margin: 0.35em 0.85em 0.35em 1.85em;
+	padding: 0.25em 0.45em;
+
+	font-size: 0.9em;
+}
+
+
+/* ***** shape and grey defaults ***** */
+
+.myndexButtonMC, nav .myndexButtonMC, .myndexButtonMC.a:link,
+.myndexButtonMCsub, nav .myndexButtonMCsub, .myndexButtonMCsub.a:link {
+
+	font-family: "AvenirLT", "HelveticaNeueLT", Avenir, Helvetica, Roboto, Arial, Verdana,"sans-serif";
+	font-weight: 400;
+	color: #DDD;
+	text-decoration: none;
+	text-shadow: 0.05em  0.05em  0.1em #9999;
+
+	border-radius:0.5em;
+	border: 0.12em solid #666;
+
+	background:linear-gradient(to bottom, #9998 5%, #2228 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#9998', endColorstr='#2228',GradientType=0);
+
+	background-color:#666;
+	box-shadow: 0.3em 0.4em 0.6em -0.3em #9999;
+}
+
+.myndexButtonMC:hover, nav .myndexButtonMC:hover, .myndexButtonMC.a:hover,
+.myndexButtonMCsub:hover, nav .myndexButtonMCsub:hover, .myndexButtonMCsub.a:hover {
+	color: #AAA;
+
+	border: 0.17em solid #999;
+
+	background:linear-gradient(to bottom, #2228 25%, #DDD8 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#2228', endColorstr='#DDD8',GradientType=0);
+
+	box-shadow: 0.3em 0.4em 0.6em -0.3em #AAA9;
+}
+
+.myndexButtonMC:active, nav .myndexButtonMC:active, .myndexButtonMC.a:active,
+.myndexButtonMCsub:active, nav .myndexButtonMCsub:active, .myndexButtonMCsub.a:active {
+	position:relative;
+	top: 0.17em;
+	font-weight: 300;
+	color: #FFF;
+	background:linear-gradient(to bottom, #2224 25%, #DDD4 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#2224', endColorstr='#DDD4',GradientType=0);
+	background-color:#BBB;
+	box-shadow: 0.2em 0.2em 0.3em -0.1em #6669;
+}
+
+
+/* ***** Accordion styles ***** */
+
+.accordionButton {
+  cursor: pointer;
+  transition: 0.33s;
+}
+
+.accordionMenu {
+  display: none;
+  overflow: hidden;
+}
+
+.accordionMenu.active {
+  padding: 0 0em 0 0em;
+  display: block;
+  overflow: hidden;
+}
+
+.accMenuIcon {
+	height: 1.8em;
+	float: left;
+	margin: 0.25em -1.25em auto 0.75em;
+	max-width: 100%;
+	max-height: 26px;
+	}
+
+
+
+/* ***** Button Color Overlays ***** */
+
+.MCred {
+	color: #FEE;
+	background-color:#922;
+	border: 0.17em solid #C22;
+	box-shadow: 0.3em 0.4em 0.6em -0.3em #C11;
+	}
+.MCred:hover  {
+	color: #ECC;
+	background-color:#C44;
+	border: 0.17em solid #F22;
+	box-shadow: 0.3em 0.4em 0.6em -0.3em #F44;
+	}
+.MCred:active  {
+	color: #FEE;
+	background-color: #F00;
+	border: 0.17em solid #F88;
+	box-shadow: 0.2em 0.2em 0.3em -0.1em #911;
+	}
+
+
+.MCgreen {
+	color: #EFE;
+	background-color:#292;
+	border: 0.17em solid #2C2;
+	box-shadow: 0.3em 0.4em 0.6em -0.3em #1C1;
+	}
+.MCgreen:hover  {
+	color: #BDB;
+	background-color:#4A4;
+	border: 0.17em solid #2B2;
+	box-shadow: 0.3em 0.4em 0.6em -0.3em #4D4;
+	}
+.MCgreen:active  {
+	color: #EFE;
+	background-color: #0A0;
+	border: 0.17em solid #7C7;
+	box-shadow: 0.2em 0.2em 0.3em -0.1em #191;
+	}
+
+
+.MCblue {
+	color: #EEF;
+	background-color:#229;
+	border: 0.17em solid #22C;
+	box-shadow: 0.3em 0.4em 0.6em -0.3em #11C;
+	}
+.MCblue:hover  {
+	color: #CCF;
+	background-color:#44C;
+	border: 0.17em solid #22F;
+	box-shadow: 0.3em 0.4em 0.6em -0.3em #44F;
+	}
+.MCblue:active  {
+	color: #EEF;
+	background-color: #00F;
+	border: 0.17em solid #88F;
+	box-shadow: 0.2em 0.2em 0.3em -0.1em #119;
+	}
+
+
+.MCyellow {
+	color: #EFA;
+	background-color:#992;
+	border: 0.17em solid #BB2;
+	box-shadow: 0.3em 0.4em 0.6em -0.3em #CC1;
+	}
+.MCyellow:hover  {
+	color: #EDA;
+	background-color:#BB3;
+	border: 0.17em solid #FD3;
+	box-shadow: 0.3em 0.4em 0.6em -0.3em #FD4;
+	}
+.MCyellow:active  {
+	color: #FF9;
+	background-color: #FA0;
+	border: 0.17em solid #FD0;
+	box-shadow: 0.2em 0.2em 0.3em -0.1em #772;
+	}
+
+
+.MCorange {
+	color: #FDC;
+	background-color:#A62;
+	border: 0.17em solid #C82;
+	box-shadow: 0.3em 0.4em 0.6em -0.3em #C51;
+	}
+.MCorange:hover  {
+	color: #ECA;
+	background-color:#C83;
+	border: 0.17em solid #F94;
+	box-shadow: 0.3em 0.4em 0.6em -0.3em #F84;
+	}
+.MCorange:active  {
+	color: #FDC;
+	background-color: #F50;
+	border: 0.17em solid #F70;
+	box-shadow: 0.2em 0.2em 0.3em -0.1em #920;
+	}
+
+
+.MCpurple, .MCpurple.a  {
+	color: #EDF;
+	background-color:#90A;
+	border: 0.17em solid #90C;
+	box-shadow: 0.3em 0.4em 0.6em -0.3em #70C;
+	}
+.MCpurple:hover  {
+	color: #DAF;
+	background-color:#90C;
+	border: 0.17em solid #A2F;
+	box-shadow: 0.3em 0.4em 0.6em -0.3em #A3F;
+	}
+.MCpurple:active  {
+	color: #EDF;
+	background-color: #80F;
+	border: 0.17em solid #90F;
+	box-shadow: 0.2em 0.2em 0.3em -0.1em #309;
+	}
+
+
+.MCmagenta {
+	color: #FCF;
+	background-color:#A07;
+	border: 0.17em solid #F4C;
+	box-shadow: 0.3em 0.4em 0.6em -0.3em #C07;
+	}
+.MCmagenta:hover  {
+	color: #F9B;
+	background-color:#C09;
+	border: 0.17em solid #F4C;
+	box-shadow: 0.3em 0.4em 0.6em -0.3em #F3A;
+	}
+.MCmagenta:active  {
+	color: #FCF;
+	background-color: #F08;
+	border: 0.17em solid #F4C;
+	box-shadow: 0.2em 0.2em 0.3em -0.1em #903;
+	}
+
+
+.MCcyan {
+	color: #CFF;
+	background-color:#07A;
+	border: 0.17em solid #09C;
+	box-shadow: 0.3em 0.4em 0.6em -0.3em #07C;
+	}
+.MCcyan:hover  {
+	color: #ACF;
+	background-color:#09C;
+	border: 0.17em solid #2AF;
+	box-shadow: 0.3em 0.4em 0.6em -0.3em #3AF;
+	}
+.MCcyan:active  {
+	color: #CFF;
+	background-color: #08F;
+	border: 0.17em solid #09F;
+	box-shadow: 0.2em 0.2em 0.3em -0.1em #039;
+	}
+
+
+
+/* ************************************************************* */
+/* ************************************************************* */
+/* *****   FORMS AND CHECKBOXES ETC     ************************ */
+/* ************************************************************* */
+/* ************************************************************* */
+
+
+/* *****  RED/GREEN GRACEFUL ANIMATED CHECKBOX  ***** */
+
+.checkboxRight input[type=checkbox],
+.checkboxLeft input[type=checkbox],
+.checkboxSmall input[type=checkbox]
+	{display: none;}
+
+.checkboxRight label,
+.checkboxLeft label,
+.checkboxSmall label
+	{
+	display: inline-block;
+	padding: 0.5em 0.15em;
+	cursor: pointer;
+
+	font-size: 1em;
+	color: #940;
+	text-shadow: 0.12em 0.12em 0.18em #FBB;
+	}
+
+
+.checkboxLeft {
+	padding: 0 3.75em 0 3.25em;
+	text-align: left;
+	font-size: 1.1em;
+ 	}
+
+.checkboxSmall {
+	padding: 0 1.75em 0 1.25em;
+	text-align: left;
+	font-size: 0.75em;
+ 	}
+
+.checkboxGroup hr {
+	margin: 0.25em 6em 0.5em 4em;
+	border: 0.15em solid #DDF;
+	}
+
+.checkboxRight label:before {
+	content: '';
+	display: inline-block;
+	box-sizing: border-box;
+	position: relative;
+	float: right;
+
+	margin: auto 2em auto -3.3em;
+
+	top: -0.5em;
+	right: -3em;
+	height: 2em;
+	width: 2em;
+	}
+
+.checkboxLeft label:before {
+	content: '';
+	display: inline-block;
+	box-sizing: border-box;
+	position: relative;
+	float: left;
+
+	margin: 0.25em 0em 0em 0em  ;
+
+	top: -0.25em;
+	left: -0.75em;
+	height: 2em;
+	width: 2em;
+	}
+
+.checkboxSmall label:before {
+	content: '';
+	display: inline-block;
+	box-sizing: border-box;
+	position: relative;
+	float: left;
+
+	margin: 0.25em 0em 0em 0em  ;
+
+	top: -0.25em;
+	left: -0.75em;
+	height: 2em;
+	width: 2em;
+	}
+
+.checkboxRight label:before,
+.checkboxLeft label:before,
+.checkboxSmall label:before  {
+
+	background: #36B;
+
+	border: 1em solid #FCC;
+	border-radius: 25%;
+
+	box-shadow: 0 0 0 0.25em #F00,
+				0.16em 0.16em 0.26em 0 #9418;
+
+	transition: box-shadow 0.4s, border 0.6s;
+}
+
+.checkboxSmall label:before  {
+	box-shadow: 0 0 0 0.25em #A84,
+				0.16em 0.16em 0.26em 0 #9418;
+	}
+
+.checkboxRight input:checked + label:before,
+.checkboxLeft input:checked + label:before,
+.checkboxSmall input:checked + label:before {
+	border-color: #0A6;
+	border-width: 0.25em;
+
+	box-shadow:
+				0 0 0 0.25em #0F9,
+				0.16em 0.16em 0.26em 0.2em #2968;
+
+	transition: box-shadow 0.4s, border 0.6s;
+}
+
+.checkboxRight input + label,
+.checkboxLeft input + label,
+.checkboxSmall input + label {
+	transition: color 0.4s, text-shadow 0.6s;
+}
+
+.checkboxRight input:checked + label,
+.checkboxLeft input:checked + label,
+.checkboxSmall input:checked + label {
+	color: #88B;
+	text-shadow: 0.14em 0.14em 0.25em #4CA;
+
+	transition: color 0.4s, text-shadow 0.6s;
+}
+
+
+/* *****  NEW USER SIGNUP FORM ELEMENTS  ***** */
+/* Style inputs, select elements and textareas */
+
+input[type=text], select, textarea, input[type=email], input[type=password] {
+	width: 95%;
+	height: 2em;
+	margin: 0.25em auto 0.66em;
+	padding: 0.25em;
+	border: 0.1em dotted #309;
+	border-radius: 0.5em;
+	box-sizing: border-box;
+	resize: vertical;
+
+	font-size: 1.2em;
+	font-weight: bold;
+
+	background: #F0F0D0;
+
+	box-shadow: inset 0.16em 0.16em 0.26em #BBF;
+	}
+
+input[type=password] {
+	width: 42%;
+	font-size: 1em;
+	}
+
+input:focus, textarea:focus, keygen:focus, select:focus {
+	outline-style: none;
+	border: 0.05em solid #76F;
+	box-shadow: inset 0.16em 0.16em 0.26em #BBF, 0 0 0 0.2em #76F;
+	}
+
+
+.formAuxLabel, .formLabel {
+	font-size: 1.3em;
+	margin: 0.25em auto 0;
+	font-style: oblique;
+	font-weight: bold;
+	color: #33A;
+	}
+
+.formAuxLabel {
+	font-size: 0.7em;
+	font-weight: 500;
+	}
+
+
+
+/* Floating column for labels: 25% width */
+.col-33 {
+	float: left;
+	width: 33%;
+	margin-top: 0.5em;
+	padding-right: 0.5em;
+	text-align: right;
+	}
+
+/* Floating column for inputs: 75% width */
+.col-66 {
+	float: left;
+	width: 66%;
+	margin-top: 0.5em;
+	text-align: left;
+	}
+
+/* Clear floats after the columns */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+	}
+
+
+/* Responsive layout - when the screen is less than 730px wide, make the two columns stack on top of each other instead of next to each other */
+
+.responsiveForm { font-size: 1em; }
+
+@media (max-width: 599.99px) {
+
+	.col-33, .col-66 {
+	width: 100%;
+	margin-top: 0.15em;
+	text-align: left;
+	}
+
+	.col-33 { padding-top: 0.5em;}
+
+	.col-66 { padding-left: 1.5em;}
+
+	input[type=text], select, textarea,
+	input[type=email], input[type=password] { font-size: 1.3em; }
+
+	.formLabel { font-size: 1.6em; }
+
+	.formAuxLabel { font-size: 1.1em; }
+
+	.responsiveForm {font-size: 1.2em; }
+}
+
+@media (min-width: 600px) and (max-width: 730px) {
+
+	.col-33, .col-66 {
+	width: 100%;
+	margin-top: 0.15em;
+	text-align: left;
+	}
+
+	.col-33 { padding-top: 0.5em;}
+
+	.col-66 { padding-left: 1.5em;}
+
+	input[type=text], select, textarea,
+	input[type=email], input[type=password] { font-size: 1.2em; }
+
+	.formLabel { font-size: 1.2em; }
+
+	.formAuxLabel { font-size: 1em; }
+
+	.responsiveForm {font-size: 1.2em; }
+}
+
+
+
+/* 	********************************************************************
+	********************************************************************
+		Myndex™ Pie Chart CSS Style Sheet, a part of ActionCMS™
+
+		AUTHOR: Andrew Somers (CSS, HTML, PHP, and JAVA components)
+		QC: Mike Anderson (browser testing, responsive checks)
+
+	****	RESPONSIVE CHECK: These charts ARE responsive		********
+
+	****	NOTE: This CSS requires the use of CSS variables.	********
+	****	GRACEFUL DEGRADE NOT IMPLEMENTED.	************************
+
+		Copyright © 2019 by Myndex™ Technologies. All Rights Reserved.
+
+		THIS STYLE SHEET MAY NOT BE COPIED, NOR LINKED TO, NOR USED
+		WITHOUT THE EXPRESS WRITTEN PERMISSION OF MYNDEX TECHNOLOGIES.
+
+		This CSS Sheet rev History:
+		March 20, 2019: Created.
+		March 25, 2019: Cleanup, Base version Goes Live.
+		October 25 2019: Moved the Pie to the Myndex Responsive CSS.
+	*********************************************************************
+	****************************************************************** */
+
+/*********************  CHART STYLES  **********************************/
+
+.chart {
+	position: relative;
+	margin: 1em, auto;
+	padding: 2em;
+	max-width: 90vw;
+	font-size: 1em;
+	}
+
+/* ********************  	  	PIE CHART   	 ******************** */
+
+/* *****   USAGE:  	****************************************************
+
+	1) Open a div with class pie
+	2) Use these CSS variables for setup:
+		--size: Pie diameter. A length (default is 80vmin)
+		--rim: Thickness of the RIM, default is 0.1em
+	3) Create a series of divs with class piePiece
+	4) Use these variables as styles in each div:
+		--offset: starting position of the piece in degrees
+		--sliceSize: size of the piece in degrees
+		--bg: Color of the piece as a color value (hex, HSL etc etc)
+	5) piece borders use the same class (piePiece) and set the
+		value to 1 or less.
+	6) For the optional tiny pies in the center, use class pieTiny
+		--sizeTiny for the size, the rest are the same
+	7) Before closing the pie class div, add a div with class pieTin
+		to add the full shaded border to the pie
+	8) class outsetA or outsetB can add a shadow border to pieces.
+		But don't put these classes directly in the piece divs,
+		instead add divs for the border (one border div for each
+		piece div) and use the piePiece and outsetA classes in the
+		border divs.
+
+********************************************************************** */
+
+
+.pie {
+	position: relative;
+		--size: 80vmin;
+		--rim: .1em;
+	width: var(--size, 80vmin);
+	height: var(--size, 80vmin);
+	overflow: hidden;
+	border-radius: 50%;
+
+	border: var(--rim, 0.5vmin) solid #89A;
+
+	box-shadow:
+				0 0 .2em 0.1em #9ACB,
+				0 0 .1em  #ABC,
+
+				-0.2em -0.2em 0.2em 0.1em #CDFC,
+				-0.27em -0.27em 0.1em 0.2em #1246,
+				0.25em -0.25em 0.28em 0.22em #345C,
+				0.3em 0.3em 0.35em 0.24em #123C,
+				-0.25em 0.25em 0.28em 0.22em #345C,
+
+				0 0 0 0.48em  #89A,
+
+				1.2em 1.2em 1.6em 0.3em #012;
+	}
+
+.pieTin {
+	position: absolute;
+	z-index: 50;
+	left: calc(var(--rim, 0.5vmin) * -0.5);
+	top: calc(var(--rim, 0.5vmin) * -0.5);
+	width: var(--size, 80vmin);
+	height: var(--size, 80vmin);
+	border-radius: 50%;
+
+	border: 0em solid #AAA;
+
+	box-shadow:
+				inset	0 0 .1em  #5679,
+				inset	0 0 .22em  #9AB,
+
+				inset	0.2em 0.2em 0.3em 0.2em #234C,
+				inset	-0.2em 0.2em 0.3em 0.2em #456C,
+				inset	-0.2em -0.2em 0.3em 0.2em #CDFC,
+				inset	0.2em -0.2em 0.3em 0.2em #456C,
+
+				inset	0 0 0 0.42em #89A,
+
+				inset	0.3em 0.3em 0.7em 0.35em #002C,
+				inset	-0.3em 0.3em 0.7em 0.25em #930C,
+				inset	-0.3em -0.3em 0.5em 0.35em #6A2C,
+				inset	0.3em -0.3em 0.7em 0.25em #039C;
+	}
+
+.piePiece {
+	position: absolute;
+		--degrees: var(--offset, 5);
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	-webkit-transform: translate(0, -50%) rotate(90deg) rotate(calc(var(--degrees) * 1deg));
+			transform: translate(0, -50%) rotate(90deg) rotate(calc(var(--degrees) * 1deg));
+	-webkit-transform-origin: 50% 100%;
+			transform-origin: 50% 100%;
+	z-index: -2;
+	}
+
+.piePiece::before {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background: var(--bg, #888);
+	font-size: 1em;
+	line-height: 1em;
+	text-indent: 2.3vmin;
+	content: attr(data-color-value);
+
+		--degrees: var(--sliceSize, 5);
+
+	-webkit-transform: translate(0, 100%) rotate(calc(var(--degrees) * 1deg));
+			transform: translate(0, 100%) rotate(calc(var(--degrees) * 1deg));
+	-webkit-transform-origin: 50% 0%;
+			transform-origin: 50% 0%;
+	}
+
+
+.pieTiny {
+	position: absolute;
+	z-index: 20;
+	left: calc(50% - var(--sizeTiny, 10%) * 0.5);
+	top: calc(50% - var(--sizeTiny, 10%) * 0.5);
+	width:  var(--sizeTiny, 10%);
+	height: var(--sizeTiny, 10%);
+	overflow: hidden;
+
+	border-radius: 50%;
+	border: 0.1em solid #333A;
+
+	box-shadow:
+				-0.1em -0.1em 0.03em 0.1em  #ACE9,
+				0.1em 0.1em 0.03em 0.1em #1239;
+	}
+
+
+.pieTinyPieceBorder {
+	border: 0.9em solid #369A;
+	font-size: 0.1em;
+	}
+
+.pieTinyPieceBorder::before {
+	box-shadow:
+				inset -0.3em -0.3em 0.3em 0.4em #ACF8,
+				inset 0.3em 0.3em 0.8em 0.6em #123A,
+				-0.3em -0.3em 0.3em #DEF9,
+				0.2em -0.2em 0.2em #3096,
+				-0.2em 0.2em 0.2em #3096,
+				0.2em 0.2em 0.2em #0034,
+				0.9em 0.9em .9em #1238;
+	}
+
+
+/* *** These classes are for adding border shadows to pieces ******** */
+
+/* styles outside CW BORDER pie piece -- OVERWRITES inset::BEFORE */
+
+.outsetA::before {
+	box-shadow:
+				-18em  -1em 2em -1em #000A;
+/* x -10 removes ccw side of shad, +10 removes CW side
+	y -1 makes edges thicker +1 is thinner */
+	}
+
+.outsetA { /* -10 removes CW side of shad, */
+	box-shadow:
+				-12em 0em 2em 0em #FFFA;
+	}
+
+/* styles outside CW BORDER pie piece -- OVERWRITES inset::BEFORE */
+.outsetB::before {
+	box-shadow:
+				-18em  -0.4em 1.2em  #BBB4;
+/* x -10 removes ccw side of shad, +10 removes CW side
+	y -1 makes edges thicker +1 is thinner */
+	}
+
+/* -10 removes CW side of shad, */
+.outsetB {
+	box-shadow:
+				-18em 0.22em 0.4em #000A;
+	}
+
+/* **********  END OF PIE SHEET MARCH 26 2019 	********************** */
+
+
+/* ************************************************************* */
+/* *****   UNSET UTILITY   ************************************* */
+/* ************************************************************* */
+
+/* *********   UNSET    **************************************** */
+
+
+.unsetAll a,  .unsetAll a:link, .unsetAll a:visited, .unsetAll a:hover,
+.unsetAll h1, .unsetAll .h1, h1.unsetAll,
+.unsetAll h2, .unsetAll .h2, h2.unsetAll,
+.unsetAll h3, .unsetAll .h3, h3.unsetAll,
+.unsetAll h4, .unsetAll .h4, h4.unsetAll,
+.unsetAll hr,
+.unsetAll div, 	div.unsetAll,
+.unsetAll p,	p.unsetAll,
+.unsetAll ul,  .unsetAll ol, .unsetAll ul li,  .unsetAll ol li,
+.unsetAll
+	{
+	font-family: Helvetica, Roboto, Arial, Verdana,"sans-serif";
+	font-size: 1rem;
+	font-weight: 500;
+	color: #000;
+	text-align: center;
+	}
+
+.unsetAll a,  .unsetAll a:link, .unsetAll a:visited, .unsetAll a:hover
+	{
+	color: blue;
+	text-decoration: underline;
+	}
+.unsetAll a:visited, .unsetAll a:hover
+	{
+	color: purple;
+	text-decoration: underline;
+	}
+.unsetAll ul,  .unsetAll ol, .unsetAll ul li,  .unsetAll ol li
+	{
+	text-align: left;
+	}
+
+
+
+
+/* ************************************************************* */
+/* ------------------------------------------------------------- */
+/* ************************************************************* */
+/* ************************************************************* */
+/* ------------------------------------------------------------- */
+/* ************************************************************* */
+/* ************************************************************* */
+/* **********                                     ************** */
+/* **********         T I N Y    T R I M          ************** */
+/* **********                                     ************** */
+/* ************************************************************* */
+/* **********                                     ************** */
+/* **********  TRIM CLASSES  —  Myndex TinyTrim™  ************** */
+/* **********       Version 0.8.0  Oct 2019       ************** */
+/* **********          By Andrew Somers           ************** */
+/* **********  Copyright © 2019 By Myndex.com     ************** */
+/* **********         All Rights Reserved         ************** */
+/* **********                                     ************** */
+/* ************************************************************* */
+/* ************************************************************* */
+/* ------------------------------------------------------------- */
+/* ************************************************************* */
+/* ************************************************************* */
+/* ------------------------------------------------------------- */
+/* ************************************************************* */
+
+
+	/* ********************************* */
+	/********	REFERENCE GUIDE	  ********/
+	/* ********************************* */
+
+/*
+	FIRST LETTER:
+
+.a or .un	all:
+.al		align, alias for text-align (ta)
+.d or .ds 	display: (see display section)
+
+.fl		float
+.c or .cl	clear
+
+.w	0	width
+.h	0	height
+
+.m	0	margin
+.ma	0	margin set vertical numeric and auto for horizontal
+	.mt .mr .mb .ml  top right bottom left
+.p	0	padding (also position settings)
+	.pt .pr .pb .pl  top right bottom left
+
+.p or .po position settings (abs, rel etc)
+.po	0	position adjust
+.z	0	z-index
+
+.b	0	border
+	/// .bt .br .bb .bl  top right bottom left ///
+.br	0	border radius
+.f		font
+.ff		font-family
+.fs	0	font-size (.fs no numeric is font style)
+.fw	0	font-weight
+.ft	or .fs	font-style
+.fd or .td	text-decoration (font decoration is an alias) aka underline
+
+.bs		box-shadow
+.bsi	inset box-shadow
+.ts		text-shadow
+
+.tt		text-transform
+.t or .ta	text-align
+.tl		text-align-last
+.ti		text-indent
+
+.v		visibility or vertical align
+.va		vertical align for initial, inherit, others as alias
+.ws		white-space
+
+.o		overflow
+.to		text overflow
+
+
+2ND/3RD LETTER:
+
+	i	initial
+	h	inherit
+
+	a	auto, absolute
+	o	oblique
+	it	italic
+NoLetter	normal
+	b	both, bold
+	br bolder
+	lr	lighter
+	l	left, light, lowercase, length
+	r	right, relative
+	j	justify (.tj, .taj, .tlj)
+	c	center, capitalize, clip
+
+	s	scroll, string, start
+	e	end
+	t	top
+	xt	text-top
+	m	middle
+	b	bottom
+	xb	text-bottom
+
+	p	pre
+	pl	pre-line
+	pw	pre-wrap
+
+	bl	baseline
+	n	none, hidden, nowrap
+	h	hidden, also hid and hi
+	v	visible also vis
+	u	unset or uppercase
+
+	NO 2ND/3RD LETTER: 	NORMAL
+
+	LAST LETTER (AFTER NUMBERS)
+
+	p	px
+	r	rem
+
+nothing	em or unitless
+
+****************************** */
+
+/* *****   CONFLICT ISSUES
+.p - padding and position
+.br - border right and border radius
+.clr -was used as clear fix, scan all docs
+
+*/
+
+
+/* **** 	TO DO   ****
+
+max-width: none|length|initial|inherit;
+min-width: length|initial|inherit;
+
+max-height: none|length|initial|inherit;
+min-height: length|initial|inherit;
+
+cursor: value;
+
+
+COMPLETE:
+
+** width: auto|value|initial|inherit;
+** height: auto|length|initial|inherit;
+ ---   add more units
+
+** vertical-align: baseline|length|sub|super|top|text-top|middle|bottom|text-bottom|initial|inherit;
+** visibility: visible|hidden|collapse|initial|inherit;
+** z-index: auto|number|initial|inherit;
+** overflow: visible|hidden|scroll|auto|initial|inherit;
+** white-space: normal|nowrap|pre|pre-line|pre-wrap|initial|inherit;
+** text-overflow: clip|ellipsis|string|initial|inherit;
+** text-transform: none|capitalize|uppercase|lowercase|initial|inherit;
+** text-align: left|right|center|justify|initial|inherit;
+** text-align-last: auto|left|right|center|justify|start|end|initial|inherit;
+** text-indent: length|initial|inherit;
+
+*/
+
+
+/****   UNSETS   ****/
+
+.ai, .uni {all: initial;}
+.ah, .unh {all: inherit;}
+.au, .uns {all: unset;}
+
+
+/****  DISPLAY  ****************
+
+	.d or .ds display
+	b block
+	c content, cell (tc), or container (ruby)
+	f flow
+	fr flow-root
+	fx flex
+	g grid or group
+	i inline
+	ib inline-block
+	ih inherit
+	it initial
+	l list-item
+	m column
+	n, no  = none
+	p caption
+	r ruby or row or run-in
+	rb ruby base
+	rt ruby text
+	ry ruby
+
+********************************/
+
+/**************************************************/
+/***************      SPECIALS      ***************/
+/**************************************************/
+
+.aa {
+	-webkit-font-smoothing: auto;
+	-moz-osx-font-smoothing: auto;
+	font-smooth: auto;
+	}
+
+.aaa {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-smooth: always;
+	}
+
+/**************************************************/
+/**********    DISPLAY and VISIBILITY    **********/
+/**************************************************/
+
+/**** ds global values  ****/
+.dsi	{ display: initial; }
+.dsh	{ display: inherit; }
+.dsu	{ display: unset; }
+
+/**** d  display-box  values  ****/
+.dc 	{ display: contents; }
+.dn  	{ display: none; }
+
+/**** d display-outside values  ****/
+.db		{ display: block; }
+.di		{ display: inline; }
+.dr		{ display: run-in; }
+
+/**** d  display-legacy  values  ****/
+.dib	{ display: inline-block; }
+.dif	{ display: inline-flex; }
+.dig	{ display: inline-grid; }
+.dit	{ display: inline-table; }
+
+/**** d  display-inside  values  ****/
+.df		{ display: flow; }
+.dfr	{ display: flow-root; }
+.dt		{ display: table; }
+.dfx	{ display: flex; }
+.dg		{ display: grid; }
+.dry	{ display: ruby; }
+
+/**** ds  display-outside  plus  display-inside  values  ****/
+.dsbf	{ display: block flow; }
+.dsit	{ display: inline table; }
+.dfxr	{ display: flex run-in; }
+
+/**** dl  display-list-item  values  ****/
+.dl		{ display: list-item; }
+.dlb	{ display: list-item block; }
+.dli	{ display: list-item inline; }
+.dlf	{ display: list-item flow; }
+.dlfr	{ display: list-item flow-root; }
+.dlbf	{ display: list-item block flow; }
+.dlbfr	{ display: list-item block flow-root; }
+
+.dflb	{ display: flow list-item block; }
+
+/**** dt  display-internal  values  ****/
+.dtrg	{ display: table-row-group; }
+.dthg	{ display: table-header-group; }
+.dtfg	{ display: table-footer-group; }
+.dtr	{ display: table-row; }
+.dtc	{ display: table-cell; }
+.dtmg	{ display: table-column-group; }
+.dtm	{ display: table-column; }
+.dtp	{ display: table-caption; }
+
+.drb	{ display: ruby-base; }
+.drt	{ display: ruby-text; }
+.drbc	{ display: ruby-base-container; }
+.drtc	{ display: ruby-text-container; }
+
+
+
+/****   VISIBILITY    ****/
+
+.vi {visibility: initial;}
+.vh {visibility: inherit;}
+.vv, .vis, .vvis {visibility: visible;}
+.vn, .vhi, .vhid {visibility: hidden;}
+.vc {visibility: collapse;}
+
+
+/****   overflow and wrap   ****/
+
+.oi {overflow: initial;}
+.oh {overflow: inherit;}
+.oa {overflow: auto;}
+.ou {overflow: unset;}
+.ov, .ovis {overflow: visible;}
+.on, .ohi, .ohid {overflow: hidden;}
+.oc {overflow: clip;}
+.os {overflow: scroll;}
+
+.toi {text-overflow: initial;}
+.toh {text-overflow: inherit;}
+.toc {text-overflow: clip;}
+.toe {text-overflow: ellipsis;}
+
+.wsi 	{white-space: initial;}
+.wsh 	{white-space: inherit;}
+.ws 	{white-space: normal;}
+.wsn	{white-space: nowrap;}
+.wsp 	{white-space: pre;}
+.wspl	{white-space: pre-line;}
+.wspw 	{white-space: pre-wrap;}
+
+
+/******************************************/
+/**********    ELEMENT SIZE    ************/
+/******************************************/
+
+/********* TO DO: Responsive Sizing *********/
+
+/****   sizes   ****/
+
+/**** w  width   ****/
+
+.wi {width: initial;}
+.wh {width: inherit;}
+.wa {width: auto;}
+.wu {width: unset;}
+
+/**** w_p  width in px   ****/
+
+.w1p  {width: 10px;}
+.w2p  {width: 20px;}
+.w3p  {width: 30px;}
+.w4p  {width: 40px;}
+.w5p  {width: 50px;}
+.w6p  {width: 60px;}
+.w7p  {width: 70px;}
+.w8p  {width: 80px;}
+.w9p  {width: 90px;}
+.w10p {width: 100px;}
+.w11p {width: 110px;}
+.w12p {width: 120px;}
+.w13p {width: 130px;}
+.w14p {width: 140px;}
+.w15p {width: 150px;}
+.w16p {width: 160px;}
+.w17p {width: 170px;}
+.w18p {width: 180px;}
+.w19p {width: 190px;}
+.w20p {width: 200px;}
+.w21p {width: 210px;}
+.w22p {width: 220px;}
+.w23p {width: 230px;}
+.w24p {width: 240px;}
+.w25p {width: 250px;}
+.w30p {width: 300px;}
+.w35p {width: 350px;}
+.w40p {width: 400px;}
+.w45p {width: 450px;}
+.w50p {width: 500px;}
+.w55p {width: 550px;}
+.w60p {width: 600px;}
+.w65p {width: 650px;}
+.w70p {width: 700px;}
+
+/**** w  width as percentage  ****/
+
+.w05 {width: 5%;}
+.w10 {width: 10%;}
+.w15 {width: 15%;}
+.w20 {width: 20%;}
+.w25 {width: 25%;}
+.w30 {width: 30%;}
+.w35 {width: 35%;}
+.w40 {width: 40%;}
+.w45 {width: 45%;}
+.w50 {width: 50%;}
+.w55 {width: 55%;}
+.w60 {width: 60%;}
+.w65 {width: 65%;}
+.w70 {width: 70%;}
+.w75 {width: 75%;}
+.w80 {width: 80%;}
+.w85 {width: 85%;}
+.w90 {width: 90%;}
+.w95 {width: 95%;}
+.w100 {width: 100%;}
+.w105 {width: 105%;}
+.w110 {width: 110%;}
+.w115 {width: 115%;}
+.w120 {width: 120%;}
+
+
+/**** h  height  ****/
+
+.hi {height: initial;}
+.hh {height: inherit;}
+.ha {height: auto;}
+.hu {height: unset;}
+
+/**** h_p  height as px  ****/
+
+.h1p  {height: 10px;}
+.h2p  {height: 20px;}
+.h3p  {height: 30px;}
+.h4p  {height: 40px;}
+.h5p  {height: 50px;}
+.h6p  {height: 60px;}
+.h7p  {height: 70px;}
+.h8p  {height: 80px;}
+.h9p  {height: 90px;}
+.h10p {height: 100px;}
+.h11p {height: 110px;}
+.h12p {height: 120px;}
+.h13p {height: 130px;}
+.h14p {height: 140px;}
+.h15p {height: 150px;}
+.h16p {height: 160px;}
+.h17p {height: 170px;}
+.h18p {height: 180px;}
+.h19p {height: 190px;}
+.h20p {height: 200px;}
+.h21p {height: 210px;}
+.h22p {height: 220px;}
+.h23p {height: 230px;}
+.h24p {height: 240px;}
+.h25p {height: 250px;}
+.h30p {height: 300px;}
+.h35p {height: 350px;}
+.h40p {height: 400px;}
+.h45p {height: 450px;}
+.h50p {height: 500px;}
+.h55p {height: 550px;}
+.h60p {height: 600px;}
+.h65p {height: 650px;}
+.h70p {height: 700px;}
+
+/**** h  height as percentage  ****/
+
+.h05 {height: 5%;}
+.h10 {height: 10%;}
+.h15 {height: 15%;}
+.h20 {height: 20%;}
+.h25 {height: 25%;}
+.h30 {height: 30%;}
+.h35 {height: 35%;}
+.h40 {height: 40%;}
+.h45 {height: 45%;}
+.h50 {height: 50%;}
+.h55 {height: 55%;}
+.h60 {height: 60%;}
+.h65 {height: 65%;}
+.h70 {height: 70%;}
+.h75 {height: 75%;}
+.h80 {height: 80%;}
+.h85 {height: 85%;}
+.h90 {height: 90%;}
+.h95 {height: 95%;}
+.h100 {height: 100%;}
+.h105 {height: 105%;}
+.h110 {height: 110%;}
+.h115 {height: 115%;}
+.h120 {height: 120%;}
+
+
+/******************************************/
+/**********      POSITION      ************/
+/******************************************/
+
+/****   positions  ( .pa, .pr, conflict with padding) ****/
+
+.pi, .poi	{ position: initial; }
+.ph, .poh	{ position: inherit; }
+
+.pst,.post	{ position: static; }
+.por	{ position: relative; }
+.poa	{ position: absolute; }
+.ps, .pos	{ position: -webkit-sticky; position: sticky; }
+.pf, .pof	{ position: fixed; }
+
+
+/**** fl  floats   ****/
+
+.fli {float: initial;}
+.flh {float: inherit;}
+
+.fln {float: none;}
+.fll {float: left;}
+.flr {float: right;}
+
+
+/**** c  clears    ****/
+
+.cli {clear: initial;}
+.clh {clear: inherit;}
+
+.cln {clear: none;}
+.cll {clear: left;}
+.clr {clear: right;}
+.clb {clear: both;}
+
+/* clf - clear fix, setup earlier */
+
+/******************************************/
+/**********    POSITION ADJUST    *********/
+/******************************************/
+
+/****  pot  position top in px ****/
+
+.pot-9p {top: -09px;}
+.pot-8p {top: -08px;}
+.pot-7p {top: -07px;}
+.pot-6p {top: -06px;}
+.pot-5p {top: -05px;}
+.pot-4p {top: -04px;}
+.pot-3p {top: -03px;}
+.pot-2p {top: -02px;}
+.pot-1p {top: -01px;}
+.pot0p, .pot00p {top: 0;}
+.pot1p, .pot01p {top: 01px;}
+.pot2p, .pot02p {top: 02px;}
+.pot3p, .pot03p {top: 03px;}
+.pot4p, .pot04p {top: 04px;}
+.pot5p, .pot05p {top: 05px;}
+.pot6p, .pot06p {top: 06px;}
+.pot7p, .pot07p {top: 07px;}
+.pot8p, .pot08p {top: 08px;}
+.pot9p, .pot09p {top: 09px;}
+.pot10p {top: 10px;}
+.pot11p {top: 11px;}
+.pot12p {top: 12px;}
+.pot13p {top: 13px;}
+.pot14p {top: 14px;}
+.pot15p {top: 15px;}
+.pot16p {top: 16px;}
+.pot17p {top: 17px;}
+.pot18p {top: 18px;}
+.pot19p {top: 19px;}
+.pot20p {top: 20px;}
+.pot21p {top: 21px;}
+.pot22p {top: 22px;}
+.pot23p {top: 23px;}
+.pot24p {top: 24px;}
+.pot25p {top: 25px;}
+
+/****  por  position right in px ****/
+
+.por-9p {right: -09px;}
+.por-8p {right: -08px;}
+.por-7p {right: -07px;}
+.por-6p {right: -06px;}
+.por-5p {right: -05px;}
+.por-4p {right: -04px;}
+.por-3p {right: -03px;}
+.por-2p {right: -02px;}
+.por-1p {right: -01px;}
+.por0p, .por00p {right: 0;}
+.por1p, .por01p {right: 01px;}
+.por2p, .por02p {right: 02px;}
+.por3p, .por03p {right: 03px;}
+.por4p, .por04p {right: 04px;}
+.por5p, .por05p {right: 05px;}
+.por6p, .por06p {right: 06px;}
+.por7p, .por07p {right: 07px;}
+.por8p, .por08p {right: 08px;}
+.por9p, .por09p {right: 09px;}
+.por10p {right: 10px;}
+.por11p {right: 11px;}
+.por12p {right: 12px;}
+.por13p {right: 13px;}
+.por14p {right: 14px;}
+.por15p {right: 15px;}
+.por16p {right: 16px;}
+.por17p {right: 17px;}
+.por18p {right: 18px;}
+.por19p {right: 19px;}
+.por20p {right: 20px;}
+.por21p {right: 21px;}
+.por22p {right: 22px;}
+.por23p {right: 23px;}
+.por24p {right: 24px;}
+.por25p {right: 25px;}
+
+/**** pob  position bottom in px ****/
+
+.pob-9p {bottom: -09px;}
+.pob-8p {bottom: -08px;}
+.pob-7p {bottom: -07px;}
+.pob-6p {bottom: -06px;}
+.pob-5p {bottom: -05px;}
+.pob-4p {bottom: -04px;}
+.pob-3p {bottom: -03px;}
+.pob-2p {bottom: -02px;}
+.pob-1p {bottom: -01px;}
+.pob0p, .pob00p {bottom: 0;}
+.pob1p, .pob01p {bottom: 01px;}
+.pob2p, .pob02p {bottom: 02px;}
+.pob3p, .pob03p {bottom: 03px;}
+.pob4p, .pob04p {bottom: 04px;}
+.pob5p, .pob05p {bottom: 05px;}
+.pob6p, .pob06p {bottom: 06px;}
+.pob7p, .pob07p {bottom: 07px;}
+.pob8p, .pob08p {bottom: 08px;}
+.pob9p, .pob09p {bottom: 09px;}
+.pob10p {bottom: 10px;}
+.pob11p {bottom: 11px;}
+.pob12p {bottom: 12px;}
+.pob13p {bottom: 13px;}
+.pob14p {bottom: 14px;}
+.pob15p {bottom: 15px;}
+.pob16p {bottom: 16px;}
+.pob17p {bottom: 17px;}
+.pob18p {bottom: 18px;}
+.pob19p {bottom: 19px;}
+.pob20p {bottom: 20px;}
+.pob21p {bottom: 21px;}
+.pob22p {bottom: 22px;}
+.pob23p {bottom: 23px;}
+.pob24p {bottom: 24px;}
+.pob25p {bottom: 25px;}
+
+/**** pol  position left in px ****/
+
+.pol-9p {left: -09px;}
+.pol-8p {left: -08px;}
+.pol-7p {left: -07px;}
+.pol-6p {left: -06px;}
+.pol-5p {left: -05px;}
+.pol-4p {left: -04px;}
+.pol-3p {left: -03px;}
+.pol-2p {left: -02px;}
+.pol-1p {left: -01px;}
+.pol0p, .pol00p {left: 0;}
+.pol1p, .pol01p {left: 01px;}
+.pol2p, .pol02p {left: 02px;}
+.pol3p, .pol03p {left: 03px;}
+.pol4p, .pol04p {left: 04px;}
+.pol5p, .pol05p {left: 05px;}
+.pol6p, .pol06p {left: 06px;}
+.pol7p, .pol07p {left: 07px;}
+.pol8p, .pol08p {left: 08px;}
+.pol9p, .pol09p {left: 09px;}
+.pol10p {left: 10px;}
+.pol11p {left: 11px;}
+.pol12p {left: 12px;}
+.pol13p {left: 13px;}
+.pol14p {left: 14px;}
+.pol15p {left: 15px;}
+.pol16p {left: 16px;}
+.pol17p {left: 17px;}
+.pol18p {left: 18px;}
+.pol19p {left: 19px;}
+.pol20p {left: 20px;}
+.pol21p {left: 21px;}
+.pol22p {left: 22px;}
+.pol23p {left: 23px;}
+.pol24p {left: 24px;}
+.pol25p {left: 25px;}
+
+
+/****  pot  position top ****/
+
+.pot-9 {top: -0.9em;}
+.pot-8 {top: -0.8em;}
+.pot-7 {top: -0.7em;}
+.pot-6 {top: -0.6em;}
+.pot-5 {top: -0.5em;}
+.pot-4 {top: -0.4em;}
+.pot-3 {top: -0.3em;}
+.pot-2 {top: -0.2em;}
+.pot-1 {top: -0.1em;}
+.pot, .pot0, .pot00 {top: 0;}
+.pot1, .pot01 {top: 0.1em;}
+.pot2, .pot02 {top: 0.2em;}
+.pot3, .pot03 {top: 0.3em;}
+.pot4, .pot04 {top: 0.4em;}
+.pot5, .pot05 {top: 0.5em;}
+.pot6, .pot06 {top: 0.6em;}
+.pot7, .pot07 {top: 0.7em;}
+.pot8, .pot08 {top: 0.8em;}
+.pot9, .pot09 {top: 0.9em;}
+.pot10 {top: 1.0em;}
+.pot11 {top: 1.1em;}
+.pot12 {top: 1.2em;}
+.pot13 {top: 1.3em;}
+.pot14 {top: 1.4em;}
+.pot15 {top: 1.5em;}
+.pot16 {top: 1.6em;}
+.pot17 {top: 1.7em;}
+.pot18 {top: 1.8em;}
+.pot19 {top: 1.9em;}
+.pot20 {top: 2.0em;}
+.pot21 {top: 2.1em;}
+.pot22 {top: 2.2em;}
+.pot23 {top: 2.3em;}
+.pot24 {top: 2.4em;}
+.pot25 {top: 2.5em;}
+
+/****  por  position right ****/
+
+.por-9 {right: -0.9em;}
+.por-8 {right: -0.8em;}
+.por-7 {right: -0.7em;}
+.por-6 {right: -0.6em;}
+.por-5 {right: -0.5em;}
+.por-4 {right: -0.4em;}
+.por-3 {right: -0.3em;}
+.por-2 {right: -0.2em;}
+.por-1 {right: -0.1em;}
+.por, .por0, .por00 {right: 0;}
+.por1, .por01 {right: 0.1em;}
+.por2, .por02 {right: 0.2em;}
+.por3, .por03 {right: 0.3em;}
+.por4, .por04 {right: 0.4em;}
+.por5, .por05 {right: 0.5em;}
+.por6, .por06 {right: 0.6em;}
+.por7, .por07 {right: 0.7em;}
+.por8, .por08 {right: 0.8em;}
+.por9, .por09 {right: 0.9em;}
+.por10 {right: 1.0em;}
+.por11 {right: 1.1em;}
+.por12 {right: 1.2em;}
+.por13 {right: 1.3em;}
+.por14 {right: 1.4em;}
+.por15 {right: 1.5em;}
+.por16 {right: 1.6em;}
+.por17 {right: 1.7em;}
+.por18 {right: 1.8em;}
+.por19 {right: 1.9em;}
+.por20 {right: 2.0em;}
+.por21 {right: 2.1em;}
+.por22 {right: 2.2em;}
+.por23 {right: 2.3em;}
+.por24 {right: 2.4em;}
+.por25 {right: 2.5em;}
+
+/**** pob  position bottom ****/
+
+.pob-9 {bottom: -0.9em;}
+.pob-8 {bottom: -0.8em;}
+.pob-7 {bottom: -0.7em;}
+.pob-6 {bottom: -0.6em;}
+.pob-5 {bottom: -0.5em;}
+.pob-4 {bottom: -0.4em;}
+.pob-3 {bottom: -0.3em;}
+.pob-2 {bottom: -0.2em;}
+.pob-1 {bottom: -0.1em;}
+.pob, .pob0, .pob00 {bottom: 0;}
+.pob1, .pob01 {bottom: 0.1em;}
+.pob2, .pob02 {bottom: 0.2em;}
+.pob3, .pob03 {bottom: 0.3em;}
+.pob4, .pob04 {bottom: 0.4em;}
+.pob5, .pob05 {bottom: 0.5em;}
+.pob6, .pob06 {bottom: 0.6em;}
+.pob7, .pob07 {bottom: 0.7em;}
+.pob8, .pob08 {bottom: 0.8em;}
+.pob9, .pob09 {bottom: 0.9em;}
+.pob10 {bottom: 1.0em;}
+.pob11 {bottom: 1.1em;}
+.pob12 {bottom: 1.2em;}
+.pob13 {bottom: 1.3em;}
+.pob14 {bottom: 1.4em;}
+.pob15 {bottom: 1.5em;}
+.pob16 {bottom: 1.6em;}
+.pob17 {bottom: 1.7em;}
+.pob18 {bottom: 1.8em;}
+.pob19 {bottom: 1.9em;}
+.pob20 {bottom: 2.0em;}
+.pob21 {bottom: 2.1em;}
+.pob22 {bottom: 2.2em;}
+.pob23 {bottom: 2.3em;}
+.pob24 {bottom: 2.4em;}
+.pob25 {bottom: 2.5em;}
+
+/**** pol  position left ****/
+
+.pol-9 {left: -0.9em;}
+.pol-8 {left: -0.8em;}
+.pol-7 {left: -0.7em;}
+.pol-6 {left: -0.6em;}
+.pol-5 {left: -0.5em;}
+.pol-4 {left: -0.4em;}
+.pol-3 {left: -0.3em;}
+.pol-2 {left: -0.2em;}
+.pol-1 {left: -0.1em;}
+.pol,  .pol0, .pol00 {left: 0;}
+.pol1, .pol01 {left: 0.1em;}
+.pol2, .pol02 {left: 0.2em;}
+.pol3, .pol03 {left: 0.3em;}
+.pol4, .pol04 {left: 0.4em;}
+.pol5, .pol05 {left: 0.5em;}
+.pol6, .pol06 {left: 0.6em;}
+.pol7, .pol07 {left: 0.7em;}
+.pol8, .pol08 {left: 0.8em;}
+.pol9, .pol09 {left: 0.9em;}
+.pol10 {left: 1.0em;}
+.pol11 {left: 1.1em;}
+.pol12 {left: 1.2em;}
+.pol13 {left: 1.3em;}
+.pol14 {left: 1.4em;}
+.pol15 {left: 1.5em;}
+.pol16 {left: 1.6em;}
+.pol17 {left: 1.7em;}
+.pol18 {left: 1.8em;}
+.pol19 {left: 1.9em;}
+.pol20 {left: 2.0em;}
+.pol21 {left: 2.1em;}
+.pol22 {left: 2.2em;}
+.pol23 {left: 2.3em;}
+.pol24 {left: 2.4em;}
+.pol25 {left: 2.5em;}
+
+
+
+/**** z  Z-INDEX    ****/
+
+.zi {z-index: initial;}
+.zh {z-index: inherit;}
+.zu {z-index: unset;}
+.za {z-index: auto;}
+
+.z-9, .z09 {z-index: -9;}
+.z-8, .z08 {z-index: -8;}
+.z-7, .z07 {z-index: -7;}
+.z-6, .z06 {z-index: -6;}
+.z-5, .z05 {z-index: -5;}
+.z-4, .z04 {z-index: -4;}
+.z-3, .z03 {z-index: -3;}
+.z-2, .z02 {z-index: -2;}
+.z-1, .z01 {z-index: -1;}
+.z, .z0, .z00 {z-index: 0;}
+.z1 {z-index: 1;}
+.z2 {z-index: 2;}
+.z3 {z-index: 3;}
+.z4 {z-index: 4;}
+.z5 {z-index: 5;}
+.z6 {z-index: 6;}
+.z7 {z-index: 7;}
+.z8 {z-index: 8;}
+.z9 {z-index: 9;}
+.z10 {z-index: 10;}
+.z20 {z-index: 20;}
+.z30 {z-index: 30;}
+.z40 {z-index: 40;}
+.z50 {z-index: 50;}
+.z60 {z-index: 60;}
+.z70 {z-index: 70;}
+.z80 {z-index: 80;}
+.z90 {z-index: 90;}
+.z100 {z-index: 100;}
+.z200 {z-index: 200;}
+.z300 {z-index: 300;}
+.z400 {z-index: 400;}
+.z500 {z-index: 500;}
+.z600 {z-index: 600;}
+.z700 {z-index: 700;}
+.z800 {z-index: 800;}
+.z900 {z-index: 900;}
+
+
+
+
+/******************************************/
+/**********  MARGINS and PADDING **********/
+/******************************************/
+
+/****  m  margins  ****/
+
+.mi {margin: initial;}
+.mh {margin: inherit;}
+.ma {margin: auto;}
+
+.m, .m0, .m00 {margin: 0;}
+.m1, .m01 {margin: 0.1em;}
+.m2, .m02 {margin: 0.2em;}
+.m3, .m03 {margin: 0.3em;}
+.m4, .m04 {margin: 0.4em;}
+.m5, .m05 {margin: 0.5em;}
+.m6, .m06 {margin: 0.6em;}
+.m7, .m07 {margin: 0.7em;}
+.m8, .m08 {margin: 0.8em;}
+.m9, .m09 {margin: 0.9em;}
+.m10 {margin: 1.0em;}
+.m11 {margin: 1.1em;}
+.m12 {margin: 1.2em;}
+.m13 {margin: 1.3em;}
+.m14 {margin: 1.4em;}
+.m15 {margin: 1.5em;}
+.m16 {margin: 1.6em;}
+.m17 {margin: 1.7em;}
+.m18 {margin: 1.8em;}
+.m19 {margin: 1.9em;}
+.m20 {margin: 2.0em;}
+.m21 {margin: 2.1em;}
+.m22 {margin: 2.2em;}
+.m23 {margin: 2.3em;}
+.m24 {margin: 2.4em;}
+.m25 {margin: 2.5em;}
+
+
+/**** ma  define v margin, h margin auto  ****/
+
+.ma0, .ma00 {margin: 0 auto;}
+.ma1, .ma01 {margin: 0.1em auto;}
+.ma2, .ma02 {margin: 0.2em auto;}
+.ma3, .ma03 {margin: 0.3em auto;}
+.ma4, .ma04 {margin: 0.4em auto;}
+.ma5, .ma05 {margin: 0.5em auto;}
+.ma6, .ma06 {margin: 0.6em auto;}
+.ma7, .ma07 {margin: 0.7em auto;}
+.ma8, .ma08 {margin: 0.8em auto;}
+.ma9, .ma09 {margin: 0.9em auto;}
+.ma10 {margin: 1.0em auto;}
+.ma11 {margin: 1.1em auto;}
+.ma12 {margin: 1.2em auto;}
+.ma13 {margin: 1.3em auto;}
+.ma14 {margin: 1.4em auto;}
+.ma15 {margin: 1.5em auto;}
+.ma16 {margin: 1.6em auto;}
+.ma17 {margin: 1.7em auto;}
+.ma18 {margin: 1.8em auto;}
+.ma19 {margin: 1.9em auto;}
+.ma20 {margin: 2.0em auto;}
+.ma21 {margin: 2.1em auto;}
+.ma22 {margin: 2.2em auto;}
+.ma23 {margin: 2.3em auto;}
+.ma24 {margin: 2.4em auto;}
+.ma25 {margin: 2.5em auto;}
+
+/**** mt  margin top ****/
+
+.mt, .mt0, .mt00 {margin-top: 0;}
+.mt1, .mt01 {margin-top: 0.1em;}
+.mt2, .mt02 {margin-top: 0.2em;}
+.mt3, .mt03 {margin-top: 0.3em;}
+.mt4, .mt04 {margin-top: 0.4em;}
+.mt5, .mt05 {margin-top: 0.5em;}
+.mt6, .mt06 {margin-top: 0.6em;}
+.mt7, .mt07 {margin-top: 0.7em;}
+.mt8, .mt08 {margin-top: 0.8em;}
+.mt9, .mt09 {margin-top: 0.9em;}
+.mt10 {margin-top: 1.0em;}
+.mt11 {margin-top: 1.1em;}
+.mt12 {margin-top: 1.2em;}
+.mt13 {margin-top: 1.3em;}
+.mt14 {margin-top: 1.4em;}
+.mt15 {margin-top: 1.5em;}
+.mt16 {margin-top: 1.6em;}
+.mt17 {margin-top: 1.7em;}
+.mt18 {margin-top: 1.8em;}
+.mt19 {margin-top: 1.9em;}
+.mt20 {margin-top: 2.0em;}
+.mt21 {margin-top: 2.1em;}
+.mt22 {margin-top: 2.2em;}
+.mt23 {margin-top: 2.3em;}
+.mt24 {margin-top: 2.4em;}
+.mt25 {margin-top: 2.5em;}
+
+/****  mr  margin right ****/
+
+.mr, .mr0, .mr00 {margin-right: 0;}
+.mr1, .mr01 {margin-right: 0.1em;}
+.mr2, .mr02 {margin-right: 0.2em;}
+.mr3, .mr03 {margin-right: 0.3em;}
+.mr4, .mr04 {margin-right: 0.4em;}
+.mr5, .mr05 {margin-right: 0.5em;}
+.mr6, .mr06 {margin-right: 0.6em;}
+.mr7, .mr07 {margin-right: 0.7em;}
+.mr8, .mr08 {margin-right: 0.8em;}
+.mr9, .mr09 {margin-right: 0.9em;}
+.mr10 {margin-right: 1.0em;}
+.mr11 {margin-right: 1.1em;}
+.mr12 {margin-right: 1.2em;}
+.mr13 {margin-right: 1.3em;}
+.mr14 {margin-right: 1.4em;}
+.mr15 {margin-right: 1.5em;}
+.mr16 {margin-right: 1.6em;}
+.mr17 {margin-right: 1.7em;}
+.mr18 {margin-right: 1.8em;}
+.mr19 {margin-right: 1.9em;}
+.mr20 {margin-right: 2.0em;}
+.mr21 {margin-right: 2.1em;}
+.mr22 {margin-right: 2.2em;}
+.mr23 {margin-right: 2.3em;}
+.mr24 {margin-right: 2.4em;}
+.mr25 {margin-right: 2.5em;}
+
+/**** mb  margin bottom ****/
+
+.mb, .mb0, .mb00 {margin-bottom: 0;}
+.mb1, .mb01 {margin-bottom: 0.1em;}
+.mb2, .mb02 {margin-bottom: 0.2em;}
+.mb3, .mb03 {margin-bottom: 0.3em;}
+.mb4, .mb04 {margin-bottom: 0.4em;}
+.mb5, .mb05 {margin-bottom: 0.5em;}
+.mb6, .mb06 {margin-bottom: 0.6em;}
+.mb7, .mb07 {margin-bottom: 0.7em;}
+.mb8, .mb08 {margin-bottom: 0.8em;}
+.mb9, .mb09 {margin-bottom: 0.9em;}
+.mb10 {margin-bottom: 1.0em;}
+.mb11 {margin-bottom: 1.1em;}
+.mb12 {margin-bottom: 1.2em;}
+.mb13 {margin-bottom: 1.3em;}
+.mb14 {margin-bottom: 1.4em;}
+.mb15 {margin-bottom: 1.5em;}
+.mb16 {margin-bottom: 1.6em;}
+.mb17 {margin-bottom: 1.7em;}
+.mb18 {margin-bottom: 1.8em;}
+.mb19 {margin-bottom: 1.9em;}
+.mb20 {margin-bottom: 2.0em;}
+.mb21 {margin-bottom: 2.1em;}
+.mb22 {margin-bottom: 2.2em;}
+.mb23 {margin-bottom: 2.3em;}
+.mb24 {margin-bottom: 2.4em;}
+.mb25 {margin-bottom: 2.5em;}
+
+/**** ml  margin left ****/
+
+.ml, .ml0, .ml00 {margin-left: 0;}
+.ml1, .ml01 {margin-left: 0.1em;}
+.ml2, .ml02 {margin-left: 0.2em;}
+.ml3, .ml03 {margin-left: 0.3em;}
+.ml4, .ml04 {margin-left: 0.4em;}
+.ml5, .ml05 {margin-left: 0.5em;}
+.ml6, .ml06 {margin-left: 0.6em;}
+.ml7, .ml07 {margin-left: 0.7em;}
+.ml8, .ml08 {margin-left: 0.8em;}
+.ml9, .ml09 {margin-left: 0.9em;}
+.ml10 {margin-left: 1.0em;}
+.ml11 {margin-left: 1.1em;}
+.ml12 {margin-left: 1.2em;}
+.ml13 {margin-left: 1.3em;}
+.ml14 {margin-left: 1.4em;}
+.ml15 {margin-left: 1.5em;}
+.ml16 {margin-left: 1.6em;}
+.ml17 {margin-left: 1.7em;}
+.ml18 {margin-left: 1.8em;}
+.ml19 {margin-left: 1.9em;}
+.ml20 {margin-left: 2.0em;}
+.ml21 {margin-left: 2.1em;}
+.ml22 {margin-left: 2.2em;}
+.ml23 {margin-left: 2.3em;}
+.ml24 {margin-left: 2.4em;}
+.ml25 {margin-left: 2.5em;}
+
+
+
+
+/******************************************/
+/**********       PADDING        **********/
+/******************************************/
+
+/**** p  padding  ****/
+
+.pi {padding: initial;}
+.ph {padding: inherit;}
+
+.p, .pa, .p0, .pa0, .p00, .pa00 {padding: 0;}
+.p1, .pa1, .p01, .pa01 {padding: 0.1em;}
+.p2, .pa2, .p02, .pa02 {padding: 0.2em;}
+.p3, .pa3, .p03, .pa03 {padding: 0.3em;}
+.p4, .pa4, .p04, .pa04 {padding: 0.4em;}
+.p5, .pa5, .p05, .pa05 {padding: 0.5em;}
+.p6, .pa6, .p06, .pa06 {padding: 0.6em;}
+.p7, .pa7, .p07, .pa07 {padding: 0.7em;}
+.p8, .pa8, .p08, .pa08 {padding: 0.8em;}
+.p9, .pa9, .p09, .pa09 {padding: 0.9em;}
+.p10, .pa10 {padding: 1.0em;}
+.p11, .pa11 {padding: 1.1em;}
+.p12, .pa12 {padding: 1.2em;}
+.p13, .pa13 {padding: 1.3em;}
+.p14, .pa14 {padding: 1.4em;}
+.p15, .pa15 {padding: 1.5em;}
+.p16, .pa16 {padding: 1.6em;}
+.p17, .pa17 {padding: 1.7em;}
+.p18, .pa18 {padding: 1.8em;}
+.p19, .pa19 {padding: 1.9em;}
+.p20, .pa20 {padding: 2.0em;}
+.p21, .pa21 {padding: 2.1em;}
+.p22, .pa22 {padding: 2.2em;}
+.p23, .pa23 {padding: 2.3em;}
+.p24, .pa24 {padding: 2.4em;}
+.p25, .pa25 {padding: 2.5em;}
+
+/**** pt  padding top ****/
+
+.pt, .pt0, .pt00 {padding-top: 0;}
+.pt1, .pt01 {padding-top: 0.1em;}
+.pt2, .pt02 {padding-top: 0.2em;}
+.pt3, .pt03 {padding-top: 0.3em;}
+.pt4, .pt04 {padding-top: 0.4em;}
+.pt5, .pt05 {padding-top: 0.5em;}
+.pt6, .pt06 {padding-top: 0.6em;}
+.pt7, .pt07 {padding-top: 0.7em;}
+.pt8, .pt08 {padding-top: 0.8em;}
+.pt9, .pt09 {padding-top: 0.9em;}
+.pt10 {padding-top: 1.0em;}
+.pt11 {padding-top: 1.1em;}
+.pt12 {padding-top: 1.2em;}
+.pt13 {padding-top: 1.3em;}
+.pt14 {padding-top: 1.4em;}
+.pt15 {padding-top: 1.5em;}
+.pt16 {padding-top: 1.6em;}
+.pt17 {padding-top: 1.7em;}
+.pt18 {padding-top: 1.8em;}
+.pt19 {padding-top: 1.9em;}
+.pt20 {padding-top: 2.0em;}
+.pt21 {padding-top: 2.1em;}
+.pt22 {padding-top: 2.2em;}
+.pt23 {padding-top: 2.3em;}
+.pt24 {padding-top: 2.4em;}
+.pt25 {padding-top: 2.5em;}
+
+/****  pr  padding right ****/
+
+.pr, .pr0, .pr00 {padding-right: 0;}
+.pr1, .pr01 {padding-right: 0.1em;}
+.pr2, .pr02 {padding-right: 0.2em;}
+.pr3, .pr03 {padding-right: 0.3em;}
+.pr4, .pr04 {padding-right: 0.4em;}
+.pr5, .pr05 {padding-right: 0.5em;}
+.pr6, .pr06 {padding-right: 0.6em;}
+.pr7, .pr07 {padding-right: 0.7em;}
+.pr8, .pr08 {padding-right: 0.8em;}
+.pr9, .pr09 {padding-right: 0.9em;}
+.pr10 {padding-right: 1.0em;}
+.pr11 {padding-right: 1.1em;}
+.pr12 {padding-right: 1.2em;}
+.pr13 {padding-right: 1.3em;}
+.pr14 {padding-right: 1.4em;}
+.pr15 {padding-right: 1.5em;}
+.pr16 {padding-right: 1.6em;}
+.pr17 {padding-right: 1.7em;}
+.pr18 {padding-right: 1.8em;}
+.pr19 {padding-right: 1.9em;}
+.pr20 {padding-right: 2.0em;}
+.pr21 {padding-right: 2.1em;}
+.pr22 {padding-right: 2.2em;}
+.pr23 {padding-right: 2.3em;}
+.pr24 {padding-right: 2.4em;}
+.pr25 {padding-right: 2.5em;}
+
+/**** pb  padding bottom ****/
+
+.pb, .pb0, .pb00 {padding-bottom: 0;}
+.pb1, .pb01 {padding-bottom: 0.1em;}
+.pb2, .pb02 {padding-bottom: 0.2em;}
+.pb3, .pb03 {padding-bottom: 0.3em;}
+.pb4, .pb04 {padding-bottom: 0.4em;}
+.pb5, .pb05 {padding-bottom: 0.5em;}
+.pb6, .pb06 {padding-bottom: 0.6em;}
+.pb7, .pb07 {padding-bottom: 0.7em;}
+.pb8, .pb08 {padding-bottom: 0.8em;}
+.pb9, .pb09 {padding-bottom: 0.9em;}
+.pb10 {padding-bottom: 1.0em;}
+.pb11 {padding-bottom: 1.1em;}
+.pb12 {padding-bottom: 1.2em;}
+.pb13 {padding-bottom: 1.3em;}
+.pb14 {padding-bottom: 1.4em;}
+.pb15 {padding-bottom: 1.5em;}
+.pb16 {padding-bottom: 1.6em;}
+.pb17 {padding-bottom: 1.7em;}
+.pb18 {padding-bottom: 1.8em;}
+.pb19 {padding-bottom: 1.9em;}
+.pb20 {padding-bottom: 2.0em;}
+.pb21 {padding-bottom: 2.1em;}
+.pb22 {padding-bottom: 2.2em;}
+.pb23 {padding-bottom: 2.3em;}
+.pb24 {padding-bottom: 2.4em;}
+.pb25 {padding-bottom: 2.5em;}
+
+/**** pl  padding left ****/
+
+.pl, .pl0, .pl00 {padding-left: 0;}
+.pl1, .pl01 {padding-left: 0.1em;}
+.pl2, .pl02 {padding-left: 0.2em;}
+.pl3, .pl03 {padding-left: 0.3em;}
+.pl4, .pl04 {padding-left: 0.4em;}
+.pl5, .pl05 {padding-left: 0.5em;}
+.pl6, .pl06 {padding-left: 0.6em;}
+.pl7, .pl07 {padding-left: 0.7em;}
+.pl8, .pl08 {padding-left: 0.8em;}
+.pl9, .pl09 {padding-left: 0.9em;}
+.pl10 {padding-left: 1.0em;}
+.pl11 {padding-left: 1.1em;}
+.pl12 {padding-left: 1.2em;}
+.pl13 {padding-left: 1.3em;}
+.pl14 {padding-left: 1.4em;}
+.pl15 {padding-left: 1.5em;}
+.pl16 {padding-left: 1.6em;}
+.pl17 {padding-left: 1.7em;}
+.pl18 {padding-left: 1.8em;}
+.pl19 {padding-left: 1.9em;}
+.pl20 {padding-left: 2.0em;}
+.pl21 {padding-left: 2.1em;}
+.pl22 {padding-left: 2.2em;}
+.pl23 {padding-left: 2.3em;}
+.pl24 {padding-left: 2.4em;}
+.pl25 {padding-left: 2.5em;}
+
+
+
+/******************************************/
+/**********        BORDERS       **********/
+/******************************************/
+
+.bi {border: initial;}
+.bh {border: inherit;}
+.b, .bn {border: none;}
+
+.bri {border-radius: initial;}
+.brh {border-radius: inherit;}
+.br, .brn {border-radius: 0;}
+
+/****  b__p  border in px ****/
+
+.b1p, .b01p {border:  1px solid #000;}
+.b2p, .b02p {border:  2px solid #000;}
+.b3p, .b03p {border:  3px solid #000;}
+.b4p, .b04p {border:  4px solid #000;}
+.b5p, .b05p {border:  5px solid #000;}
+.b6p, .b06p {border:  6px solid #000;}
+.b7p, .b07p {border:  7px solid #000;}
+.b8p, .b08p {border:  8px solid #000;}
+.b9p, .b09p {border:  9px solid #000;}
+.b10p {border: 10px solid #000;}
+.b11p {border: 11px solid #000;}
+.b12p {border: 12px solid #000;}
+.b13p {border: 13px solid #000;}
+.b14p {border: 14px solid #000;}
+.b15p {border: 15px solid #000;}
+.b16p {border: 16px solid #000;}
+.b17p {border: 17px solid #000;}
+.b18p {border: 18px solid #000;}
+.b19p {border: 19px solid #000;}
+.b20p {border: 20px solid #000;}
+.b21p {border: 21px solid #000;}
+.b22p {border: 22px solid #000;}
+.b23p {border: 23px solid #000;}
+.b24p {border: 24px solid #000;}
+.b25p {border: 25px solid #000;}
+
+/****  br__p  border radius in px ****/
+
+.br1p, .br01p {border-radius:  1px;}
+.br2p, .br02p {border-radius:  2px;}
+.br3p, .br03p {border-radius:  3px;}
+.br4p, .br04p {border-radius:  4px;}
+.br5p, .br05p {border-radius:  5px;}
+.br6p, .br06p {border-radius:  6px;}
+.br7p, .br07p {border-radius:  7px;}
+.br8p, .br08p {border-radius:  8px;}
+.br9p, .br09p {border-radius:  9px;}
+.br10p {border-radius: 10px;}
+.br11p {border-radius: 11px;}
+.br12p {border-radius: 12px;}
+.br13p {border-radius: 13px;}
+.br14p {border-radius: 14px;}
+.br15p {border-radius: 15px;}
+.br16p {border-radius: 16px;}
+.br17p {border-radius: 17px;}
+.br18p {border-radius: 18px;}
+.br19p {border-radius: 19px;}
+.br20p {border-radius: 20px;}
+.br21p {border-radius: 21px;}
+.br22p {border-radius: 22px;}
+.br23p {border-radius: 23px;}
+.br24p {border-radius: 24px;}
+.br25p {border-radius: 25px;}
+
+/****  b  border in em ****/
+
+.b0, .b00 {border: none;}
+.b1, .b01 {border: 0.1em solid #000;}
+.b2, .b02 {border: 0.2em solid #000;}
+.b3, .b03 {border: 0.3em solid #000;}
+.b4, .b04 {border: 0.4em solid #000;}
+.b5, .b05 {border: 0.5em solid #000;}
+.b6, .b06 {border: 0.6em solid #000;}
+.b7, .b07 {border: 0.7em solid #000;}
+.b8, .b08 {border: 0.8em solid #000;}
+.b9, .b09 {border: 0.9em solid #000;}
+.b10 {border: 1.0em solid #000;}
+.b11 {border: 1.1em solid #000;}
+.b12 {border: 1.2em solid #000;}
+.b13 {border: 1.3em solid #000;}
+.b14 {border: 1.4em solid #000;}
+.b15 {border: 1.5em solid #000;}
+.b16 {border: 1.6em solid #000;}
+.b17 {border: 1.7em solid #000;}
+.b18 {border: 1.8em solid #000;}
+.b19 {border: 1.9em solid #000;}
+.b20 {border: 2.0em solid #000;}
+.b21 {border: 2.1em solid #000;}
+.b22 {border: 2.2em solid #000;}
+.b23 {border: 2.3em solid #000;}
+.b24 {border: 2.4em solid #000;}
+.b25 {border: 2.5em solid #000;}
+
+/****  br  border radius in em ****/
+
+.br0, .br00 {border-radius: 0;}
+.br1, .br01 {border-radius: 0.1em;}
+.br2, .br02 {border-radius: 0.2em;}
+.br3, .br03 {border-radius: 0.3em;}
+.br4, .br04 {border-radius: 0.4em;}
+.br5, .br05 {border-radius: 0.5em;}
+.br6, .br06 {border-radius: 0.6em;}
+.br7, .br07 {border-radius: 0.7em;}
+.br8, .br08 {border-radius: 0.8em;}
+.br9, .br09 {border-radius: 0.9em;}
+.br10 {border-radius: 1.0em;}
+.br11 {border-radius: 1.1em;}
+.br12 {border-radius: 1.2em;}
+.br13 {border-radius: 1.3em;}
+.br14 {border-radius: 1.4em;}
+.br15 {border-radius: 1.5em;}
+.br16 {border-radius: 1.6em;}
+.br17 {border-radius: 1.7em;}
+.br18 {border-radius: 1.8em;}
+.br19 {border-radius: 1.9em;}
+.br20 {border-radius: 2.0em;}
+.br21 {border-radius: 2.1em;}
+.br22 {border-radius: 2.2em;}
+.br23 {border-radius: 2.3em;}
+.br24 {border-radius: 2.4em;}
+.br25 {border-radius: 2.5em;}
+
+/************************************************************************/
+
+/************************************************************************/
+
+/************************************************************************/
+/************************************************************************/
+/********************    FONT METRICS and STYLES     ********************/
+/************************************************************************/
+/************************************************************************/
+
+/************************************************************************/
+
+/************************************************************************/
+
+/****  f  font  ****/
+
+.fi	{ font: initial; }
+.fh	{ font: inherit; }
+
+
+/********************************************************************/
+/***********************  ff  FONT FAMILY  **************************/
+/********************************************************************/
+/*****   KeyWords: FonFam  FFM  FnF  fonts  myfon  mynfon   *********/
+/********************************************************************/
+
+
+/******** ff SANS-SERIF  ********/
+
+.ffh { font-family: HelveticaNeueLT, Helvetica, Arial, sans-serif; }
+.ffo { font-family: Optima, Calibri, Candara, sans-serif; }
+.ffa { font-family: Avenir, Candara, HelveticaNeueLT, Helvetica, Arial, sans-serif; }
+.fft { font-family: "Trebuchet MS", Tahoma, Futura, Geneva, sans-serif; }
+.ffv { font-family: Verdana, Tahoma, Geneva, sans-serif; }
+
+/******** ff SANS-SERIF Condensed or Extended  ********/
+
+.ffc { font-family: Oswald, HelveticaNeueLTcond, "Avenir Neue Condensed"; }
+.ffe { font-family: Michroma, Syncopate, HelveticaNeueLText; }
+
+/******** ffd DISPLAY  (fonts where the 'normal' is Heavy) ********/
+
+.ffdr { font-family: Rockwell, "Arial Black", Impact, sans-serif; }
+.ffda { font-family: "Arial Black", Rockwell, Impact, sans-serif; }
+.ffdi { font-family: Impact, "Arial Black", sans-serif; }
+
+/******** ffs SERIF  ********/
+
+.ffst { font-family: TimesLTStd, "Times New Roman", Times, serif; }
+.ffsb { font-family: BaskervilleMTPro, Baskerville, Palatino, "Palatino Linotype", serif; }
+.ffsg { font-family: Garamond, BaskervilleMTPro, Baskerville, Palatino, "Palatino Linotype", serif; }
+.ffsp { font-family: "Palatino Linotype", Palatino, Garamond, BaskervilleMTPro, serif; }
+.ffsd { font-family: Didot, Georgia, BaskervilleMTPro, Baskerville, serif; }
+
+/******** ffm MONO  ********/
+
+.ffma { font-family: Monaco, "Fira Code", Menlo, "Andale Mono", Consolas, monospace; }
+.ffmc { font-family: "Courier New", Courier, monospace; }
+.ffmm { font-family: Menlo, "Lucida Console", Monaco, monospace; }
+.ffma { font-family: "Andale Mono", Consolas, monospace; }
+
+/******** ffc CURSIVE  ********/
+
+.ffca { font-family: 'Apple Chancery', cursive; }
+.ffcc { font-family: Chalkduster, 'Bradley Hand', cursive; }
+.ffcb { font-family: 'Bradley Hand', Chalkduster, cursive; }
+
+/******** fff FASTASY  ********/
+
+.fffp { font-family: papyrus, fantasy; }
+.fffc { font-family: herculanum, fantasy; }
+.fffh { font-family: 'Henny Penny', fantasy; }
+.fffl { font-family: Luminari, fantasy; }
+.ffft { font-family: Trattatello, fantasy; }
+
+
+/**********************************************/
+/************  fs  FONT SIZING  ***************/
+/**********************************************/
+
+
+/****  FONT SIZE  ****/
+
+.fsi	{ font-size: initial; }
+.fsh	{ font-size: inherit; }
+
+/****  fs__r Font size in rem  ****/
+
+.fs5r, .fs05r {font-size: 0.5rem;}
+.fs6r, .fs06r {font-size: 0.6rem;}
+.fs7r, .fs07r {font-size: 0.7rem;}
+.fs8r, .fs08r {font-size: 0.8rem;}
+.fs9r, .fs09r {font-size: 0.9rem;}
+.fs10r {font-size: 1.0rem;}
+.fs11r {font-size: 1.1rem;}
+.fs12r {font-size: 1.2rem;}
+.fs13r {font-size: 1.3rem;}
+.fs14r {font-size: 1.4rem;}
+.fs15r {font-size: 1.5rem;}
+.fs16r {font-size: 1.6rem;}
+.fs17r {font-size: 1.7rem;}
+.fs18r {font-size: 1.8rem;}
+.fs19r {font-size: 1.9rem;}
+.fs20r {font-size: 2.0rem;}
+.fs21r {font-size: 2.1rem;}
+.fs22r {font-size: 2.2rem;}
+.fs23r {font-size: 2.3rem;}
+.fs24r {font-size: 2.4rem;}
+.fs25r {font-size: 2.5rem;}
+
+
+/**** fs__p  Font size in px  ****/
+
+.fs8p, .fs08p {font-size:  8px;}
+.fs9p, .fs09p {font-size:  9px;}
+.fs10p {font-size: 10px;}
+.fs11p {font-size: 11px;}
+.fs12p {font-size: 12px;}
+.fs13p {font-size: 13px;}
+.fs14p {font-size: 14px;}
+.fs15p {font-size: 15px;}
+.fs16p {font-size: 16px;}
+.fs17p {font-size: 17px;}
+.fs18p {font-size: 18px;}
+.fs19p {font-size: 19px;}
+.fs20p {font-size: 20px;}
+.fs21p {font-size: 21px;}
+.fs22p {font-size: 22px;}
+.fs23p {font-size: 23px;}
+.fs24p {font-size: 24px;}
+.fs25p {font-size: 25px;}
+.fs26p {font-size: 26px;}
+.fs27p {font-size: 27px;}
+.fs28p {font-size: 28px;}
+.fs29p {font-size: 29px;}
+.fs30p {font-size: 30px;}
+.fs31p {font-size: 31px;}
+.fs32p {font-size: 32px;}
+.fs33p {font-size: 33px;}
+.fs34p {font-size: 34px;}
+.fs35p {font-size: 35px;}
+.fs36p {font-size: 36px;}
+.fs37p {font-size: 37px;}
+.fs38p {font-size: 38px;}
+.fs39p {font-size: 39px;}
+.fs40p {font-size: 40px;}
+
+
+/**** fs  Font size in em  ****/
+
+.fs3, .fs03 {font-size: 0.3em;}
+.fs4, .fs04 {font-size: 0.4em;}
+.fs5, .fs05 {font-size: 0.5em;}
+.fs6, .fs06 {font-size: 0.6em;}
+.fs7, .fs07 {font-size: 0.7em;}
+.fs8, .fs08 {font-size: 0.8em;}
+.fs9, .fs09 {font-size: 0.9em;}
+.fs10 {font-size: 1.0em;}
+.fs11 {font-size: 1.1em;}
+.fs12 {font-size: 1.2em;}
+.fs13 {font-size: 1.3em;}
+.fs14 {font-size: 1.4em;}
+.fs15 {font-size: 1.5em;}
+.fs16 {font-size: 1.6em;}
+.fs17 {font-size: 1.7em;}
+.fs18 {font-size: 1.8em;}
+.fs19 {font-size: 1.9em;}
+.fs20 {font-size: 2.0em;}
+.fs21 {font-size: 2.1em;}
+.fs22 {font-size: 2.2em;}
+.fs23 {font-size: 2.3em;}
+.fs24 {font-size: 2.4em;}
+.fs25 {font-size: 2.5em;}
+
+
+/*****************************************************/
+/*******  FONT WEIGHT STYLE and DECORATION  **********/
+/*****************************************************/
+
+/**** fw  Font weight   ****/
+
+.fwi {font-style: initial;}
+.fwh {font-style: inherit;}
+
+.fw1 {font-weight: 100;}
+.fw2, .fwl, .light {
+	  font-weight: 200;}
+.fw3 {font-weight: 300;}
+.fw4, .fw, .normal {
+	  font-weight: 400;}
+.fw5 {font-weight: 500;}
+.fw6 {font-weight: 600;}
+.fw7, .fwb,  .bold {
+	  font-weight: 700;}
+.fw8 {font-weight: 800;}
+.fw9 {font-weight: 900;}
+
+.fwlr, .lighter {font-weight: lighter;}
+.fwbr, .bolder  {font-weight: bolder;}
+
+
+/****  ft  font sTyles  alt is fs  ****/
+
+.fti, .fsi {font-style: initial;}
+.fth, .fsh {font-style: inherit;}
+.ftu, .fsu {font-style: unset;}
+
+.fto, .fso		  {font-style: oblique;}
+.ftit,.fsit	 	  {font-style: italic;}
+.ft, .fs, .normal {font-style: normal;}
+
+
+/****  fdx or tdx text-line decorations  ****/
+
+.fdi, .tdi 	{text-decoration: initial;}
+.fdh, .tdh 	{text-decoration: inherit;}
+
+.fdo, .tdo 	{text-decoration: overline;}
+.fdu, .tdu 	{text-decoration: underline;}
+
+.fdt, .tdt,
+.fst, .tst	{text-decoration: line-through;}
+
+.fdn, .tdn, .normal {text-decoration: none;}
+
+
+
+/*****************************************************/
+/**********     LINE AND LETER SPACING      **********/
+/*****************************************************/
+
+/****  ls  letterspacing   ****/
+
+.lsi 		{letter-spacing: initial;}
+.lsi:hover  {letter-spacing: initial;}
+.lsi:active {letter-spacing: initial;}
+
+.lsh 		{letter-spacing: inherit;}
+.lsh:hover  {letter-spacing: inherit;}
+.lsh:active {letter-spacing: inherit;}
+
+.ls00, .ls0, .ls, .normal, .ls00 a, .ls0 a, .ls a, .normal a, a.ls00, a.ls0, a.ls, a.normal
+	{letter-spacing: normal;}
+.ls00 a:hover, .ls0 a:hover, .ls a:hover, .normal a:hover, a.ls00:hover, a.ls0:hover, a.ls:hover, a.normal:hover
+	{letter-spacing: normal;}
+.ls00 a:active, .ls0 a:active, .ls a:active, .normal a:active, a.ls00:active, a.ls0:active, a.ls:active, a.normal:active
+	{letter-spacing: normal;}
+
+.ls1,  .ls01, a.ls1,  a.ls01,.ls1 a,  		.ls01 a 		{letter-spacing: 0.01em}
+a.ls1:hover,  a.ls01:hover,  .ls1 a:hover,  .ls01 a:hover 	{letter-spacing: 0.01em}
+a.ls1:active, a.ls01:active, .ls1 a:active, .ls01 a:active	{letter-spacing: 0.01em}
+
+.ls2,  .ls02, a.ls2,  a.ls02,.ls2 a,  		.ls02 a			{letter-spacing: 0.02em}
+a.ls2:hover,  a.ls02:hover,  .ls2 a:hover,  .ls02 a:hover 	{letter-spacing: 0.02em}
+a.ls2:active, a.ls02:active, .ls2 a:active, .ls02 a:active	{letter-spacing: 0.02em}
+
+.ls3,  .ls03, a.ls3,  a.ls03,.ls3 a, 		.ls03 a 		{letter-spacing: 0.03em}
+a.ls3:hover,  a.ls03:hover,  .ls3 a:hover,  .ls03 a:hover 	{letter-spacing: 0.03em}
+a.ls3:active, a.ls03:active, .ls3 a:active, .ls03 a:active	{letter-spacing: 0.03em}
+
+.ls4,  .ls04, a.ls4,  a.ls04,.ls4 a,  		.ls04 a 		{letter-spacing: 0.04em}
+a.ls4:hover,  a.ls04:hover,  .ls4 a:hover,  .ls04 a:hover 	{letter-spacing: 0.04em}
+a.ls4:active, a.ls04:active, .ls4 a:active, .ls04 a:active	{letter-spacing: 0.04em}
+
+.ls5,  .ls05, a.ls5,  a.ls05,.ls5 a,  		.ls05 a 		{letter-spacing: 0.05em}
+a.ls5:hover,  a.ls05:hover,  .ls5 a:hover,  .ls05 a:hover 	{letter-spacing: 0.05em}
+a.ls5:active, a.ls05:active, .ls5 a:active, .ls05 a:active	{letter-spacing: 0.05em}
+
+.ls10, a.ls10, .ls10 a			{letter-spacing: 0.10em}
+a.ls10:hover,  .ls10 a:hover	{letter-spacing: 0.10em}
+a.ls10:active, .ls10 a:active	{letter-spacing: 0.10em}
+
+.ls15, a.ls15, .ls15 a			{letter-spacing: 0.15em}
+a.ls15:hover,  .ls15 a:hover	{letter-spacing: 0.15em}
+a.ls15:active, .ls15 a:active	{letter-spacing: 0.15em}
+
+.ls20, a.ls20, .ls20 a			{letter-spacing: 0.20em}
+a.ls20:hover,  .ls20 a:hover	{letter-spacing: 0.20em}
+a.ls20:active, .ls20 a:active	{letter-spacing: 0.20em}
+
+.ls25, a.ls25, .ls25 a			{letter-spacing: 0.25em}
+a.ls25:hover,  .ls25 a:hover	{letter-spacing: 0.25em}
+a.ls25:active, .ls25 a:active	{letter-spacing: 0.25em}
+
+
+/****  lh  line height   ****/
+.lhi {line-height: initial;}
+.lhh {line-height: inherit;}
+.lh  {line-height: normal;}
+
+/****  lh  unitless line height   ****/
+
+.lh1, .lh01 {line-height: 0.1;}
+.lh2, .lh02 {line-height: 0.2;}
+.lh3, .lh03 {line-height: 0.3;}
+.lh4, .lh04 {line-height: 0.4;}
+.lh5, .lh05 {line-height: 0.5;}
+.lh6, .lh06 {line-height: 0.6;}
+.lh7, .lh07 {line-height: 0.7;}
+.lh8, .lh08 {line-height: 0.8;}
+.lh9, .lh09 {line-height: 0.9;}
+.lh10 {line-height: 1.0;}
+.lh11 {line-height: 1.1;}
+.lh12 {line-height: 1.2;}
+.lh13 {line-height: 1.3;}
+.lh14 {line-height: 1.4;}
+.lh15 {line-height: 1.5;}
+.lh16 {line-height: 1.6;}
+.lh17 {line-height: 1.7;}
+.lh18 {line-height: 1.8;}
+.lh19 {line-height: 1.9;}
+.lh20 {line-height: 2.0;}
+.lh21 {line-height: 2.1;}
+.lh22 {line-height: 2.2;}
+.lh23 {line-height: 2.3;}
+.lh24 {line-height: 2.4;}
+.lh25 {line-height: 2.5;}
+
+/****  lh__p  line height in px  ****/
+
+.lh1p, .lh01p {line-height: 1px;}
+.lh2p, .lh02p {line-height: 2px;}
+.lh3p, .lh03p {line-height: 3px;}
+.lh4p, .lh04p {line-height: 4px;}
+.lh5p, .lh05p {line-height: 5px;}
+.lh6p, .lh06p {line-height: 6px;}
+.lh7p, .lh07p {line-height: 7px;}
+.lh8p, .lh08p {line-height: 8px;}
+.lh9p, .lh09p {line-height: 9px;}
+.lh10p {line-height: 10px;}
+.lh11p {line-height: 11px;}
+.lh12p {line-height: 12px;}
+.lh13p {line-height: 13px;}
+.lh14p {line-height: 14px;}
+.lh15p {line-height: 15px;}
+.lh16p {line-height: 16px;}
+.lh17p {line-height: 17px;}
+.lh18p {line-height: 18px;}
+.lh19p {line-height: 19px;}
+.lh20p {line-height: 20px;}
+.lh21p {line-height: 21px;}
+.lh22p {line-height: 22px;}
+.lh23p {line-height: 23px;}
+.lh24p {line-height: 24px;}
+.lh25p {line-height: 25px;}
+
+
+/*****************************************************/
+/**********  TEXT XFORM, ALIGN, and INDENT  **********/
+/*****************************************************/
+
+/**** tt Text xforms  ****/
+
+.tti {text-transform: initial;}
+.tth {text-transform: inherit;}
+.ttn {text-transform: none;}
+.ttc {text-transform: capitalize;}
+.ttu {text-transform: uppercase;}
+.ttl {text-transform: lowercase;}
+
+/**** t or al Text Aligns  ****/
+
+.ti, .tai {text-align: initial;}
+.th, .tah {text-align: inherit;}
+.tl, .tal, .all {text-align: left;}
+.tr, .tar, .alr {text-align: right;}
+.tc, .tac, .alc {text-align: center;}
+.tj, .taj {text-align: justify;}
+
+.tli {text-align-last: initial;}
+.tlh {text-align-last: inherit;}
+.tla {text-align-last: auto;}
+.tll {text-align-last: left;}
+.tlr {text-align-last: right;}
+.tlc {text-align-last: center;}
+.tlj {text-align-last: justify;}
+.tls {text-align-last: start;}
+.tle {text-align-last: end;}
+
+/**** v  vertical-align  ****/
+
+.vai {vertical-align: initial;}
+.vah {vertical-align: inherit;}
+.vabl, .vbl{vertical-align: baseline;}
+.val,  .vl {vertical-align: length;}
+.vasb, .vsb{vertical-align: sub;}
+.vasp, .vsp{vertical-align: super;}
+.vat,  .vt {vertical-align: top;}
+.vaxt, .vxt{vertical-align: text-top;}
+.vam,  .vm {vertical-align: middle;}
+.vab,  .vb {vertical-align: bottom;}
+.vaxb, .vxb{vertical-align: text-bottom;}
+
+
+/**** ti  Text indents  ****/
+
+.tii {text-indent: initial;}
+.tih {text-indent: inherit;}
+
+.ti-9 {text-indent: -0.9em;}
+.ti-8 {text-indent: -0.8em;}
+.ti-7 {text-indent: -0.7em;}
+.ti-6 {text-indent: -0.6em;}
+.ti-5 {text-indent: -0.5em;}
+.ti-4 {text-indent: -0.4em;}
+.ti-3 {text-indent: -0.3em;}
+.ti-2 {text-indent: -0.2em;}
+.ti-1 {text-indent: -0.1em;}
+
+.ti0  {text-indent: 0;}
+
+.ti1  {text-indent: 0.1em;}
+.ti2  {text-indent: 0.2em;}
+.ti3  {text-indent: 0.3em;}
+.ti4  {text-indent: 0.4em;}
+.ti5  {text-indent: 0.5em;}
+.ti6  {text-indent: 0.6em;}
+.ti7  {text-indent: 0.7em;}
+.ti8  {text-indent: 0.8em;}
+.ti9  {text-indent: 0.9em;}
+.ti10 {text-indent: 1.0em;}
+.ti11 {text-indent: 1.1em;}
+.ti12 {text-indent: 1.2em;}
+.ti13 {text-indent: 1.3em;}
+.ti14 {text-indent: 1.4em;}
+.ti15 {text-indent: 1.5em;}
+.ti16 {text-indent: 1.6em;}
+.ti17 {text-indent: 1.7em;}
+.ti18 {text-indent: 1.8em;}
+.ti19 {text-indent: 1.9em;}
+.ti20 {text-indent: 2.0em;}
+.ti21 {text-indent: 2.1em;}
+.ti22 {text-indent: 2.2em;}
+.ti23 {text-indent: 2.3em;}
+.ti24 {text-indent: 2.4em;}
+.ti25 {text-indent: 2.5em;}
+
+
+
+/****************************************************/
+/**********      TEXT and BOX SHADOWS      **********/
+/****************************************************/
+
+/****  ts  text shadow  ****/
+.tsi {text-shadow: initial;}
+.tsh {text-shadow: inherit;}
+.tsn {text-shadow: none;}
+.ts0, .ts00 {text-shadow: 0 0 0 #FFF;}
+.ts1, .ts01 {text-shadow: 0.01em 0.01em 0.02em #0009;}
+.ts2, .ts02 {text-shadow: 0.02em 0.02em 0.03em #0009;}
+.ts3, .ts03 {text-shadow: 0.03em 0.03em 0.05em #0009;}
+.ts4, .ts04 {text-shadow: 0.04em 0.04em 0.07em #0009;}
+.ts5, .ts05 {text-shadow: 0.05em 0.05em 0.09em #0009;}
+.ts6, .ts06 {text-shadow: 0.06em 0.06em 0.11em #0009;}
+.ts7, .ts07 {text-shadow: 0.07em 0.07em 0.115em #0009;}
+.ts8, .ts08 {text-shadow: 0.08em 0.08em 0.12em #0009;}
+.ts9, .ts09 {text-shadow: 0.09em 0.09em 0.125em #0009;}
+.ts10 {text-shadow: 0.10em 0.10em 0.13em #0008;}
+.ts11 {text-shadow: 0.11em 0.11em 0.135em #0008;}
+.ts12 {text-shadow: 0.12em 0.12em 0.14em #0008;}
+.ts13 {text-shadow: 0.13em 0.13em 0.145em #0007;}
+.ts14 {text-shadow: 0.14em 0.14em 0.15em #0007;}
+.ts15 {text-shadow: 0.15em 0.15em 0.155em #0007;}
+.ts16 {text-shadow: 0.16em 0.16em 0.16em #0008;}
+.ts17 {text-shadow: 0.17em 0.17em 0.17em #0008;}
+.ts18 {text-shadow: 0.18em 0.18em 0.18em #0008;}
+.ts19 {text-shadow: 0.19em 0.19em 0.19em #0009;}
+.ts20 {text-shadow: 0.20em 0.20em 0.1925em #0009;}
+.ts21 {text-shadow: 0.21em 0.21em 0.195em #000A;}
+.ts22 {text-shadow: 0.22em 0.22em 0.1975em #000A;}
+.ts23 {text-shadow: 0.23em 0.23em 0.20em #000A;}
+.ts24 {text-shadow: 0.24em 0.24em 0.2025em #000B;}
+.ts25 {text-shadow: 0.25em 0.25em 0.205em #000B;}
+
+/****  bs   box shadow  ****/
+.bsi {box-shadow: initial;}
+.bsh {box-shadow: inherit;}
+.bs0, .bs00, .bsn, .bsi0, .bsi00, .bsin {box-shadow: none;}
+.bs1, .bs01 {box-shadow: 0.01em 0.01em 0.02em #0009;}
+.bs2, .bs02 {box-shadow: 0.02em 0.02em 0.04em #0009;}
+.bs3, .bs03 {box-shadow: 0.03em 0.03em 0.06em #0009;}
+.bs4, .bs04 {box-shadow: 0.04em 0.04em 0.08em #0009;}
+.bs5, .bs05 {box-shadow: 0.05em 0.05em 0.10em #0009;}
+.bs6, .bs06 {box-shadow: 0.06em 0.06em 0.12em #0009;}
+.bs7, .bs07 {box-shadow: 0.07em 0.07em 0.14em #0009;}
+.bs8, .bs08 {box-shadow: 0.08em 0.08em 0.16em #0009;}
+.bs9, .bs09 {box-shadow: 0.09em 0.09em 0.18em #0009;}
+.bs10 {box-shadow: 0.10em 0.10em 0.20em #0009;}
+.bs11 {box-shadow: 0.11em 0.11em 0.22em #0009;}
+.bs12 {box-shadow: 0.12em 0.12em 0.24em #0009;}
+.bs13 {box-shadow: 0.13em 0.13em 0.26em #0009;}
+.bs14 {box-shadow: 0.14em 0.14em 0.28em #0009;}
+.bs15 {box-shadow: 0.15em 0.15em 0.30em #0009;}
+.bs16 {box-shadow: 0.16em 0.16em 0.32em #0009;}
+.bs17 {box-shadow: 0.17em 0.17em 0.34em #0009;}
+.bs18 {box-shadow: 0.18em 0.18em 0.36em #0009;}
+.bs19 {box-shadow: 0.19em 0.19em 0.38em #0009;}
+.bs20 {box-shadow: 0.20em 0.20em 0.40em #0009;}
+.bs21 {box-shadow: 0.21em 0.21em 0.42em #0009;}
+.bs22 {box-shadow: 0.22em 0.22em 0.44em #0009;}
+.bs23 {box-shadow: 0.23em 0.23em 0.46em #0009;}
+.bs24 {box-shadow: 0.24em 0.24em 0.48em #0009;}
+.bs25 {box-shadow: 0.25em 0.25em 0.50em #0009;}
+
+/**** bsi  box shadow inset ****/
+
+.bsi1, .bsi01 {box-shadow: inset 0.01em 0.01em 0.02em #0009;}
+.bsi2, .bsi02 {box-shadow: inset 0.02em 0.02em 0.04em #0009;}
+.bsi3, .bsi03 {box-shadow: inset 0.03em 0.03em 0.06em #0009;}
+.bsi4, .bsi04 {box-shadow: inset 0.04em 0.04em 0.08em #0009;}
+.bsi5, .bsi05 {box-shadow: inset 0.05em 0.05em 0.10em #0009;}
+.bsi6, .bsi06 {box-shadow: inset 0.06em 0.06em 0.12em #0009;}
+.bsi7, .bsi07 {box-shadow: inset 0.07em 0.07em 0.14em #0009;}
+.bsi8, .bsi08 {box-shadow: inset 0.08em 0.08em 0.16em #0009;}
+.bsi9, .bsi09 {box-shadow: inset 0.09em 0.09em 0.18em #0009;}
+.bsi10 {box-shadow: inset 0.10em 0.10em 0.20em #0009;}
+.bsi11 {box-shadow: inset 0.11em 0.11em 0.22em #0009;}
+.bsi12 {box-shadow: inset 0.12em 0.12em 0.24em #0009;}
+.bsi13 {box-shadow: inset 0.13em 0.13em 0.26em #0009;}
+.bsi14 {box-shadow: inset 0.14em 0.14em 0.28em #0009;}
+.bsi15 {box-shadow: inset 0.15em 0.15em 0.30em #0009;}
+.bsi16 {box-shadow: inset 0.16em 0.16em 0.32em #0009;}
+.bsi17 {box-shadow: inset 0.17em 0.17em 0.34em #0009;}
+.bsi18 {box-shadow: inset 0.18em 0.18em 0.36em #0009;}
+.bsi19 {box-shadow: inset 0.19em 0.19em 0.38em #0009;}
+.bsi20 {box-shadow: inset 0.20em 0.20em 0.40em #0009;}
+.bsi21 {box-shadow: inset 0.21em 0.21em 0.42em #0009;}
+.bsi22 {box-shadow: inset 0.22em 0.22em 0.44em #0009;}
+.bsi23 {box-shadow: inset 0.23em 0.23em 0.46em #0009;}
+.bsi24 {box-shadow: inset 0.24em 0.24em 0.48em #0009;}
+.bsi25 {box-shadow: inset 0.25em 0.25em 0.50em #0009;}
+
+
+
+
+
+/* Fast Colors */
+
+
+.ci {color: initial;}
+.ch {color: inherit;}
+.bgi {background-color: initial;}
+.bgh {background-color: inherit;}
+.bci {border-color: initial;}
+.bch {border-color: inherit;}
+
+.cBlk, .cBk, .cBlack		{ color: Black;}
+.bgBlk, .bgBk, .bgBlack		{ background-color: Black;}
+.bcBlk, .bcBk, .bcBlack		{ border-color: Black;}
+
+.cBrn, .cBn, .cBrown		{ color: #840;}
+.bgBrn, .bgBn, .bgBrown		{ background-color: #840;}
+.bcBrn, .bcBn, .bcBrown		{ border-color: #840;}
+
+.cNvy, .cN, .cNavy		{ color: Navy;}
+.bgNvy, .bgN, .bgNavy		{ background-color: Navy;}
+.bcNvy, .bcN, .bcNavy		{ border-color: Navy;}
+
+.cBlu, .cB, .cBlue		{ color: Blue;}
+.bgBlu, .bgB, .bgBlue		{ background-color: Blue;}
+.bcBlu, .bcB, .bcBlue		{ border-color: Blue;}
+
+
+.cYlw, .cY, .cYellow		{ color: Yellow;}
+.bgYlw, .bgY, .bgYellow		{ background-color: Yellow;}
+.bcYlw, .bcY, .bcYellow		{ border-color: Yellow;}
+
+.cRed, .cR, .cRR		{ color: Red;}
+.bgRed, .bgR, .bgRR		{ background-color: Red;}
+.bcRed, .bcR, .bcRR		{ border-color: Red;}
+
+.cOrg, .cO, .cOrange		{ color: #FA0;}
+.bgOrg, .bgO, .bgOrange		{ background-color: #FA0;}
+.bcOrg, .bcO, .bcOrange		{ border-color: #FA0;}
+
+.cTan, .cTn, .cTt		{ color: #B80;}
+.bgTan, .bgTn, .bgTt		{ background-color: #B80;}
+.bcTan, .bcTn, .bcTt		{ border-color: #B80;}
+
+
+.cMrn, .cMn, .cMaroon		{ color: Maroon;}
+.bgMrn, .bgMn, .bgMaroon		{ background-color: Maroon;}
+.bcMrn, .bcMn, .bcMaroon		{ border-color: Maroon;}
+
+.cPur, .cP, .cPurple		{ color: Purple;}
+.bgPur, .bgP, .bgPurple		{ background-color: Purple;}
+.bcPur, .bcP, .bcPurple		{ border-color: Purple;}
+
+.cMag, .cMagenta, .cM, .cFsh, .cF, .cFuchsia		{ color: Fuchsia;}
+.bgMag, .bgMagenta, .bgM, .bgFsh, .bgF, .bgFuchsia		{ background-color: Fuchsia;}
+.bcMag, .bcMagenta, .bcM, .bcFsh, .bcF, .bcFuchsia		{ border-color: Fuchsia;}
+
+
+.cOlv, .cOv, .cOlive		{ color: Olive;}
+.bgOlv, .bgOv, .bgOlive		{ background-color: Olive;}
+.bcOlv, .bcOv, .bcOlive		{ border-color: Olive;}
+
+.cGrn, .cG, .cGreen		{ color: Green;}
+.bgGrn, .bgG, .bgGreen		{ background-color: Green;}
+.bcGrn, .bcG, .bcGreen		{ border-color: Green;}
+
+.cTea, .cT, .cTeal		{ color: Teal;}
+.bgTea, .bgT, .bgTeal		{ background-color: Teal;}
+.bcTea, .bcT, .bcTeal		{ border-color: Teal;}
+
+.cLim, .cL, .cLime		{ color: Lime;}
+.bgLim, .bgL, .bgLime		{ background-color: Lime;}
+.bcLim, .bcL, .bcLime		{ border-color: Lime;}
+
+.cAqu, .cA, .cAqua		{ color: Aqua;}
+.bgAqu, .bgA, .bgAqua		{ background-color: Aqua;}
+.bcAqu, .bcA, .bcAqua		{ border-color: Aqua;}
+
+
+.cGry, .cGy, .cGray		{ color: Gray;}
+.bgGry, .bgGy, .bgGray		{ background-color: Gray;}
+.bcGry, .bcGy, .bcGray		{ border-color: Gray;}
+
+.cSlv, .cS, .cSilver		{ color: Silver;}
+.bgSlv, .bgS, .bgSilver		{ background-color: Silver;}
+.bcSlv, .bcS, .bcSilver		{ border-color: Silver;}
+
+.cWht, .cW, .cWhite		{ color: White;}
+.bgWht, .bgW, .bgWhite		{ background-color: White;}
+.bcWht, .bcW, .bcWhite		{ border-color: White;}
+
+
+.cMb, .cMx, .cMyndex		{ color: #30A;}
+.bgMb, .bgMx, .bgMyndex		{ background-color: #30A;}
+.bcMb, .bcMx, .bcMyndex		{ border-color: #30A;}
+
+.cMye, .cMxy, .cMyellow		{ color: #DB5;}
+.bgMye, .bgMxy, .bgMyellow		{ background-color: #DB5;}
+.bcMye, .bcMxy, .bcMyellow		{ border-color: #DB5;}
+
+
+/*** Light BGs ***/
+/***
+
+P: Pastel (very light)
+L: Light
+M: Medium light
+***/
+.bgPb { background-color: #DEE;}
+.bgLb { background-color: #ACE;}
+.bgMb { background-color: #79B;}
+
+
+
+/* ************************************************************* */
+/* *****   END OF TinyTrim™   ********************************** */
+/* ************************************************************* */
+
+/* ************************************************************* */
+/* *****   END OF SHEET   ************************************** */
+/* ************************************************************* */
+
+
+
+
+/*
+     FILE ARCHIVED ON 17:19:22 Jan 09, 2023 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:39:17 May 03, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  capture_cache.get: 2.418
+  load_resource: 5840.86
+  PetaboxLoader3.resolve: 5681.932
+  PetaboxLoader3.datanode: 87.79
+*/

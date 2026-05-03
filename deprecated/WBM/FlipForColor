@@ -19,35 +19,35 @@ WITHOUT THE THE EXPRESS WRITTEN CONSENT OF MYNDEX AND IT'S SUBSIDIARIES-->
 
 	<meta name="title" content="Myndex&trade; FlipForColor">
 
-  <TITLE>Myndex&trade; Flip For Color</TITLE>
+  <title>Myndex&trade; Flip For Color</title>
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="preconnect" href="https://fonts.googleapis.com"> 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@500&display=swap" rel="stylesheet">
 
-<!--
 <link rel="stylesheet" type="text/css" href="/FONTS/AvenirLT/AvenirLT.css">
 <link rel="stylesheet" type="text/css" href="/FONTS/HelveticaNeueLT/HelveticaNeueLT.css">
--->
-
 <link rel="stylesheet" type="text/css" href="/CSS/MyndexBasicResponsive2019C.css">
-<link rel="stylesheet" type="text/css" href="/CSS/webtest.css">
+<link rel="stylesheet" type="text/css" href="webtest.css">
 
-<link rel="canonical" href="https://myndex.github.io/FlipForColor" />
 
-<META NAME="Description" CONTENT="Fancy Font Flipping Experiment — Myndex&trade; Technologies Web Design And Development Help Files, providing  R&D, Engineering, Design, and IT services to business and industrial customers nationwide.">
-<META NAME="Keywords" CONTENT="Myndex, Research and Development, RnD, R&D, Engineer, Engineering, Systems Engineer, Industrial Design, Solidworks, FEA, CADCAM, drafting, 3D modeling, prototyping, software development, database development, IT">
+<link rel="canonical" href="https://www.myndex.com/WEB/FlipForColor" />
 
-<meta property="fb:app_id" content="227594707878157" />
+<meta name="Description" content="Fancy Font Flipping Experiment — Myndex™ Technologies Web Design And Development Help Files, providing  R&amp;D, Engineering, Design, and IT services to business and industrial customers nationwide.">
+<meta name="Keywords" content="Myndex, Research and Development, RnD, R&amp;D, Engineer, Engineering, Systems Engineer, Industrial Design, Solidworks, FEA, CADCAM, drafting, 3D modeling, prototyping, software development, database development, IT">
 
-<meta property="og:title" content="Fancy Font Flipping Experiment — Myndex&trade; Technologies Web Design Help Files" />
-<meta property="og:description" content="Myndex&trade; Technologies Web Design And Development Help Files, providing  R&D, Engineering, Design, and IT services to business and industrial customers" />
+<meta property="fb:app_id" content="227594707878157"/>
+
+<meta property="og:title" content="Fancy Font Flipping Experiment — Myndex™ Technologies Web Design Help Files"/>
+<meta property="og:description" content="Myndex™ Technologies Web Design And Development Help Files, providing  R&amp;D, Engineering, Design, and IT services to business and industrial customers"/>
 
 <meta property="og:type" content="Article" />
-<meta property="og:url" content="FlipForColor" />
+<meta property="og:url" content="/FlipForColor" />
 <meta property="og:site_name" content="Myndex Technologies Perception Research" />
+
+
 
 <style>
 
@@ -76,7 +76,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: barlow,arial, sans-serif;  
+  font-family: arial, sans-serif;  
   background-color: #F9F2DD;   
 }
 
@@ -795,7 +795,7 @@ p {
 	Margin: 4.5em -18em;
 	padding: 0 0;
 	width: calc(820px + 36em);
-	font-family:  barlow,'HelveticaNeueLT', AvenirLT, Verdana, sans-serif;
+	font-family:  'HelveticaNeueLT', AvenirLT, Verdana, sans-serif;
 	font-size: 1rem;
 	font-weight: 400;
 	border-radius: 8em;
@@ -1274,7 +1274,7 @@ function getTextAttributes (Rs,Gs,Bs,pExp = darkExp, pOff = percOffset) { // Do 
   			<h1 class="centered cR" style="font-size: 1.8em;">Experimental Site Notice</h1>
 		<p style="position: relative; margin: 0 auto 12px; max-width: 640px; text-align: left;">This is not a production site. Some pages may have unusual formatting or colors as part of a series of live experiments in visual perception of self illuminated displays. If you have any problems reading any pages, or if you find any are particularly easy to read, we'd love to hear about it. Please discuss at the <a href="https://github.com/Myndex/SAPC-APCA/discussions">SAPC GitHub discussions tab</a></p>
 	</div>
-<div class="contrastChart  pie" >
+<div class="contrastChart  pie">
 	<section class="description" style="height:120%;">
 
 	<h2>Automatic Font Color based on Background Lightness</h2>
@@ -1303,7 +1303,7 @@ function getTextAttributes (Rs,Gs,Bs,pExp = darkExp, pOff = percOffset) { // Do 
 <br><br>
 	<h3 class="">
 	
-	<div class="checksInMail checksInMailContainer" >
+	<div class="checksInMail checksInMailContainer">
 			  <span class="glassPatch glass patch">
 			  <input id="glassPatch" class="" type="checkbox" onclick="setGlass();" checked/>
 			  <label class=" checksInMailLabel" for="glassPatch">Draw Trendy<br>Glass Shapes</label>
@@ -1465,7 +1465,7 @@ function getTextAttributes (Rs,Gs,Bs,pExp = darkExp, pOff = percOffset) { // Do 
 
 
 
-<div class="centered" style="position: relative; padding: 1em; font-size: 1rem; font-weight: normal; font-family: barlow,'Helvetica Neue LT Pro';  color: #000; background:#FFF;   border: 2px solid #666; border-radius: 8px;">Zz end PAD</div>
+<div class="centered" style="position: relative; padding: 1em; font-size: 1rem; font-weight: normal; font-family: 'Helvetica Neue LT Pro';  color: #000; background:#FFF;   border: 2px solid #666; border-radius: 8px;">Zz end PAD</div>
 
 
 	<footer>
@@ -1477,11 +1477,10 @@ function getTextAttributes (Rs,Gs,Bs,pExp = darkExp, pOff = percOffset) { // Do 
 				<i>"Myndex" and the Myndex Eye Logo are trademarks of Myndex Technologies.</i><br>
 
 
-
 			</div>
 		</div>
 
-		<a href="http://www.myndex.com">
+		<a href="http://www.myndex.com/">
 		<div id="footImg"></div></a>
 
 	</footer>

@@ -1,0 +1,674 @@
+/* ************************************************************* */
+/* ************************************************************* */
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+/* Myndex Web Test (PerceptEx) CSS Styles
+
+Nov  xx 2019: Initial build to streamline test pages
+
+Copyright © 2019 by Myndex Technologies. All Rights Reserved. */
+
+/* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+/* ************************************************************* */
+/* ************************************************************* */
+
+/* ************************************************************* */
+/* *****         FONT FAMILIES            ********************** */
+/* *****  FontFace now in separate sheet(s)  ******************* */
+/* ************************************************************* */
+
+/* ************************************************************* */
+/* ************************************************************* */
+
+/*
+GOOGLE:
+
+https://fonts.googleapis.com/css?family=Syncopate:400,700|Michroma|Oswald:200,300,400,500,600,700|Henny+Penny&display=swap
+
+			Syncopate
+			Michroma
+			Oswald
+
+			'Henny Penny'
+*/
+/* ************************************************************* */
+
+/* ************************************************************* */
+/* ************************************************************* */
+
+
+
+
+/* ************************************************************* */
+/* *****     BEGIN CSS STYLE SHEET       *********************** */
+/* ************************************************************* */
+/* *****     BEGIN CSS STYLE SHEET       *********************** */
+/* ************************************************************* */
+/* *****     BEGIN CSS STYLE SHEET       *********************** */
+/* ************************************************************* */
+/* *****     BEGIN CSS STYLE SHEET       *********************** */
+/* ************************************************************* */
+/* *****     BEGIN CSS STYLE SHEET       *********************** */
+/* ************************************************************* */
+
+
+body {
+	font-size: 1rem;
+	color: #000;
+	background: #BA5;
+	}
+
+@media (max-width: 799.99px) {
+
+	.contrastChart {
+		position: relative;
+		left: -1em;
+
+		xmargin: 1em auto;
+		padding: 2.25vw 2.5vw;
+		display: block;
+		width: 96vw;
+		height: 100%;
+
+		border: 2px solid #000;
+		border-radius: 20px;
+		font-size: 2vw;
+		background: #FFF;
+		min-height: 100vh;
+
+		}
+
+	.colorRow {
+		padding: 3px 8px 0;
+		height: 8vw;
+		border-radius: 0;
+		}
+
+	.greyRow { height: 6.5vw; }
+	.greyRow2 { height: 9vw; }
+	.greyRowHeader {
+		height: 1.5em;
+		padding: 0;
+		font-size: 0.8em;
+		letter-spacing: 0.3em;
+		}
+	}
+
+@media (min-width: 800px) and (max-width: 899.99px) {
+
+	.contrastChart {
+		position: relative;
+		left: 0;
+		padding: 2.25vw 2.5vw;
+		display: block;
+		width: 96vw;
+		height: 100%;
+		border: 2px solid #000;
+		border-radius: 30px;
+		font-size: 1em;
+		background: #FFF;
+		min-height: 1500px;
+		}
+
+	header {
+		margin: auto;
+		width: 100vw;
+		height: 150px;
+		}
+
+	.colorRow {
+		padding: 6px 12px 0;
+		height: 80px;
+		border-radius: 0;
+		}
+
+	.greyRow { height: 6.5vw; }
+	.greyRow2 { height: 9vw; }
+	.greyRowHeader {
+		height: 1.5em;
+		padding: 0;
+		font-size: 0.8em;
+		letter-spacing: 0.3em;
+		}
+	}
+
+@media (min-width: 900px) {
+
+	.contrastChart {
+
+		position: relative;
+		left: 50%;
+		margin-left: -450px;
+		padding: 18px 18px;
+		display: block;
+		width: 900px;
+		height: 100%;
+		border: 2px solid #000;
+		border-radius: 30px;
+		font-size: 1em;
+		background: #FFF;
+
+		}
+	header {
+		margin: auto;
+		width: 900px;
+		height: 150px;
+		}
+
+	.colorRow {
+		padding: 4px 14px 0;
+		height: 80px;
+		border-radius: 0px;
+		}
+
+	.greyRow { height: 65px; }
+	.greyRow2 { height: 90px; }
+	.greyRowHeader {
+		height: 1.5em;
+		padding: 0;
+		font-size: 0.8em;
+		letter-spacing: 0.3em;
+		}
+	}
+
+
+.copyright {font-size: 0.8em;}
+
+.wrapper {
+	max-width: 900px;
+	}
+
+.content {
+	padding: 0.2em 0 0;
+	background-color: #F9F7FF;
+	box-shadow: inset 0.3em 0.3em 1em 0.25em #99C;
+	}	/* Primary content container */
+
+.colorRow:first-of-type {
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	}
+
+.colorRow:last-of-type {
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	}
+
+.colorRowShort {
+	position: relative;
+	margin: 0 auto;
+
+	bottom: -2em;
+	padding: 0.85em 0em 0.65em 1.5em;
+
+	width: 98%;
+	height: 4em;
+	border-radius: 12px;
+
+	font-weight: 600;
+	background: #808080;
+	border: 1px dotted #309;
+	text-shadow: 0 0 0 #123;
+	box-shadow:  0.3em 0.3em 0.7em #632;
+	}
+
+.colorRowLabel {
+	position: relative;
+	display: inline-block;
+	top: 0.7em;
+	left: 3.5em;
+	font-Size: 1.25em;
+	font-weight: 600;
+	}
+
+.greyRowLabel {
+	position: relative;
+	display: inline-block;
+	top: 0.7em;
+	left: 0.35em;
+	font-Size: 0.6em;
+	font-weight: 600;
+	color: inherit;
+	}
+
+.valuesLabel {
+	position: relative;
+	margin: 0 auto;
+	bottom: -0.5em;
+
+	font-size: 3em;
+	text-align: center;
+	color: #33B;
+	text-shadow: 0.08em 0.08em 0.12em #9AEa;
+	}
+
+.colorPatch, .colorPatchGrey, .colorPatchGrey2 {
+	position: relative;
+	margin: 0 0.85%;
+	padding: 0.3em 0.3em;
+	display: inline-block;
+	width: 5.85%;
+	height: 80%;
+	font-Size: 1.2em;
+	border-radius: 5px;
+	}
+
+.colorPatchGrey {
+	font-Size: 0.6em;
+	width: 5.2%;
+	}
+
+.colorPatchGrey2 {
+	height: 30%;
+	width: 4.9%;
+	margin: 3em 1%;
+	font-Size: 0.45em;
+	}
+
+.out {
+	position:relative;
+	top: -3.5em;
+	color: inherit;
+	}
+
+.colorRowShort .colorPatch {
+	position: relative;
+	margin: 0 0.3%;
+	width: 6.5%;
+	text-align: center;
+	font-size: 0.7	em;
+	font-weight:bold;
+	line-height: 2;
+	}
+
+.colorPatchHiCon {
+	position: relative;
+	top: 50%;
+	left: 8%;
+	margin: 0 auto;
+	font-size: 3.6em;
+	line-height: 0;
+	text-shadow: 0.05em 0.05em 0.08em #000a;
+	}
+
+.colorPatchMedHiCon {
+	position: relative;
+	top: 45%;
+	left: 18%;
+	margin: 0 auto;
+	font-size: 2.6em;
+	line-height: 0;
+	text-shadow: 0.05em 0.05em 0.08em #000a;
+	}
+
+.colorPatchMedCon {
+	position: relative;
+	top: 40%;
+	left: 26%;
+	margin: 0 auto;
+	font-size: 2em;
+	line-height: 0;
+	text-shadow: 0.05em 0.05em 0.08em #000a;
+	}
+
+.patchAdjust {
+	position: relative;
+	top: 1px;
+	}
+
+.colorPatchLoCon {
+	position: relative;
+	margin: 0 auto;
+	top: 40%;
+	left: 22%;
+	font-size: 3.6em;
+	line-height: 0;
+	text-shadow: 0.05em 0.05em 0.08em #000a;
+	color: #FFF8;
+	}
+
+.colorPatchOutline {
+	position: relative;
+	left: 0;
+	top: 1px;
+	border: 1px dotted #FFFB;
+	}
+
+
+
+h1, h2, h3, .h1, .h2, .h3 {
+	color: #30A;
+/*	text-shadow: 0.07em 0.07em 0.12em #9AE;
+*/
+	text-shadow:
+				-1px -1px 1px #74D,
+				0.07em 0.07em 0.11em #1236;
+	}
+
+h1 {
+	font-size: 2.2rem;
+	font-weight: normal;
+	text-shadow:
+				-1px -1px 1px #74D,
+				0.1em 0.1em 0.16em #1236;
+
+/*		text-shadow: 0.1em 0.1em 0.15em #78C;
+*/
+	}
+
+
+/*
+h2, .h2 {font-size: 2.2em;}
+
+h3, .h3 {font-size: 1.6em;}
+
+*/
+
+
+.description {
+	position: relative;
+	margin: 0.5em;
+	padding: 0.5em 2em;
+	height: 120%;
+
+	border-radius: 1em;
+	background: #FB6;
+
+	font-size: 1em;
+	/* text-shadow: 0.075em 0.075em 0.14em #753; */
+	box-shadow: inset 0.5em 0.5em 1em #123;
+	}
+
+.description .dropCapSimple::first-letter {
+
+	text-shadow:
+				0.02em -0.02em 0.015em #45A6,
+				-0.02em 0.02em 0.015em #45A6,
+				-0.02em -0.02em 0.02em #DEF,
+				0.02em 0.02em 0.03em #106,
+				0.1em 0.1em 0.09em #742;
+	}
+
+.description h1, .description h2, .description h3, .description h4 {
+	font-weight: 300;
+	color: #006;
+	text-shadow:
+				-1px -1px 1px #74D,
+				0.1em 0.1em 0.16em #963;
+	}
+
+.description h2, .description h3 {
+	font-weight: 400;
+	}
+
+.description h4 {
+	font-weight: 600;
+	letter-spacing: 0.075em;
+	}
+
+.description.taller{height: 135%;}
+
+.description p, .glossary p, .discuss p { /*indent EXCEPT not drop cap sentences */
+	font-size: 1.25em;
+	margin-bottom: 0.7em;
+	}
+
+.description p:not(.dropCapSimple), .discuss p:not(.dropCapSimple)
+	{ /*indent EXCEPT not drop cap sentences */
+	text-indent: 0.75em;
+	}
+
+.description p.glossary, .description .glossary p {	text-indent: -0.75em; margin: 1.5em;	}
+
+ol, ul, li {
+	font-size: 20px;
+	color: #206;
+	}
+
+.description li {
+	/* text-shadow: 0.075em 0.075em 0.14em #876; */
+	}
+
+div {color: inherit;}
+
+footer {	/*  STICKY FOOTER  a wrapper for footer image and content
+				Only HERE it is overridden to be non sticky		*/
+	position: relative; 
+	left: 0;
+	bottom: 0em;  
+	width: 100%;  
+	max-width: 900px;
+	box-shadow: 0em -0.5em 0.8em #30A0;
+	}
+
+#footContent {	 /* one of the very few ID selectors worth doing.  */
+	margin: -2em 4%;
+	padding: 0 2%;
+	overflow: hidden;
+	max-height: 4em;
+	box-shadow: 0em -0.5em 0.8em rgba(0,0,0,0.3);
+	}
+
+#footImg {
+	padding-bottom: 5%;
+	}
+
+a, a:link, a:visited {color: #227; text-shadow: 0.02em 0.02em 0.04em #9AE;}
+a:active, a:hover {color: #104; text-shadow: 0.1em 0.1em 0.18em #56B;}
+
+
+sup {font-size: 0.5em;}
+
+hr {
+	margin: 0.1em 3em 1em;
+	border-color: inherit;
+	border-width: 0.02em;
+	border-radius: 1em;
+	}
+
+.testPatch {
+/* Hideous settings; none should ever show through. Set to most hideous to ensure other selectors work properly. */
+	position: relative;
+	width: 100%;
+	margin: 0;
+	padding: 36px;
+	font-family: 'Henny Penny', HelveticaNeueLT,  BaskervilleMTPro, AvenirLT, sans-serif;
+	font-size: 1rem;
+	font-weight: 200;
+	color: #9B1;
+	background-color: #F61;
+	border-radius: 6.4em;
+	border: 24px solid #AF0;
+	}
+
+.minutea { display: none; }
+
+.testPanel {
+	Margin: 4.5em -8em;
+	padding: 2em 2em;
+	width: calc(820px + 16em);
+	font-family:  'HelveticaNeueLT', AvenirLT, Verdana, sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	border-radius: 8em;
+	background: #FFF;
+	color: #308;
+	border: 1.6em solid #777;
+
+	box-shadow:
+				0.15em 0.15em 0.3em 0.05em #53B,
+				0.3em 0.3em 0.4em 0.0em #ACF,
+				-0.15em -0.15em 0.4em 0.0em #204,
+
+				0 0 0.4em 0.7em #42B,
+				-0.2em -0.2em 0.2em 0.6em #DEF,
+				-0.7em -0.7em 0.3em 0em #9AB,
+
+				0em 0em 0em 1em #208,
+				0.7em 0.7em 1.6em 0.6em #236;
+	}
+
+.testPanel.red {
+	box-shadow:
+				0.15em 0.15em 0.3em 0.05em #B35,
+				0.3em 0.3em 0.4em 0.0em #FCA,
+				-0.15em -0.15em 0.4em 0.0em #402,
+
+				0 0 0.4em 0.7em #B24,
+				-0.2em -0.2em 0.2em 0.6em #FED,
+				-0.7em -0.7em 0.3em 0em #BA9,
+
+				0em 0em 0em 1em #802,
+				0.7em 0.7em 1.6em 0.6em #632;
+	}
+
+.testPanelSeries .testPanelLabel, .testPanelLabel {
+	position: relative;
+	padding-left: 100px;
+	}
+
+h1.testPanelLabel  {
+	font-size: 2.6em;
+	font-weight: 300;
+	margin: 1.6em 0 0;
+	text-shadow:
+				-1px -1px 1px #74D,
+				0.1em 0.1em 0.16em #468;
+	}
+
+.testPanelSeries .testPanelLabel + h2, .testPanelLabel + h2 {
+	font-weight: 300;
+	}
+
+.testPanelSeries .testPanelLabel + h3, .testPanelLabel + h3 {
+	font-weight: 300;
+	}
+
+.testPanelSeries .testPanelLabel + h4, .testPanelLabel + h4 {
+	font-weight: 500;
+	margin: 1em;
+	}
+
+h3.testPanelText, .testPanelText {
+	padding: 0 100px;
+	color: #206;
+	font-weight: 500;
+	}
+
+
+.discuss > h1, .discussFirst > h1 {
+	margin: 0em 1em 0.25em;
+	font-size: 3em;
+	font-weight: 500;
+	}
+
+.discuss h2 { margin: -1em 0 1em 7.5em;}
+
+.discuss p, .discussFirst p {
+	margin: 0.5em 11em 0.35em 7.5em;
+	font-size: 20px;
+	font-weight: 400;
+	}
+
+.discuss > h1::after, .discussFirst > h1::after  {
+	position: relative;
+	z-index: 20;
+	margin: 1em -2.5em 0 -0.25em;
+	content: "\21E9";
+	float: left;
+	opacity: 1;
+	font-size: 1.4em;
+	font-style: normal;
+	font-weight: 100;
+	text-shadow: -1px -1.6px 2px #A7F,
+	0.17em 0.22em 0.12em #9AE;
+	}
+.discuss > h1::before {
+	position: relative;
+	margin-left: calc(100% / 2.8);
+	text-align: center;
+	content: ".  .  .  .\A";
+	white-space: pre-wrap;
+	}
+.discussFirst > h1::before {
+	position: relative;
+	font-size: 1.6em;
+	font-weight: 100;
+	letter-spacing: 0.3em;
+	margin-left: 1.33em;
+	top: 10px;
+	text-align: center;
+	content: "DISCUSSION \A";
+	white-space: pre-wrap;
+	}
+
+
+.mediumCond	 {
+	font-family: 'HelveticaNeueLTCond', Oswald, sans-serif;
+	font-weight: 500;
+	}
+
+.deltaGamma {
+	position: relative;
+	font-family: BaskervilleMTPro, Didot, Georgia, Baskerville, serif;
+	letter-spacing: -0.1em;
+	font-size: 5em;
+	color: #30A;
+	text-shadow: 0 0 0.16em #72D;
+	}
+
+/* These are 12 columns of color data. the main "col##" class has the desired BG color, and
+then a contrasting TEXT color in the same class. The TEXT version of the class has a copy of
+the BG color to use as a text color ONLY (so it doesn't conflict. It's just a text color of one of the 12 colors.
+*/
+
+	.col01 { color: #00007F; background-color: #008DE0; }
+	.col01Text { color: #00007F;	 }
+	.col02 { color: #757776; background-color: #FFF; }
+	.col02Text { color: #757776;	 }
+	.col03 { color: #FFF; background-color: #9F60A1; }
+	.col03Text { color: #FFF;	 }
+	.col04 { color: #6062F0; background-color: #000; }
+	.col04Text { color: #6062F0;	 }
+	.col05 { color: #FFF; background-color: #757776; }
+	.col05Text { color: #FFF;	 }
+	.col06 { color: #0B0000; background-color: #AF53A0; }
+	.col06Text { color: #0B0000;	 }
+	.col07 { color: #000063; background-color: #808080; }
+	.col07Text { color: #000063;	 }
+	.col08 { color: #808080; background-color: #000063; }
+	.col08Text { color: #808080;	 }
+	.col09 { color: #FFF; background-color: #E77B00; }
+	.col09Text { color: #FFF;	 }
+	.col10 { color: #43A6A4; background-color: #FFF; }
+	.col10Text { color: #43A6A4;	 }
+	.col11 { color: #FFF; background-color: #43A6A4; }
+	.col11Text { color: #FFF;	 }
+	.col12 { color: #AA59A2; background-color: #FFF; }
+	.col12Text { color: #AA59A2;	 }
+	.col13 { color: #747476; background-color: #000; }
+	.col13Text { color: #747476;	 }
+	.col14 { color: #AEB7FF; background-color: #00F; }
+	.col14Text { color: #AEB7FF;	 }
+
+
+/* ************************************************************* */
+/* *****   END OF SHEET   ************************************** */
+/* ************************************************************* */
+
+
+/*
+     FILE ARCHIVED ON 17:19:22 Jan 09, 2023 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 18:39:12 May 03, 2026.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+/*
+playback timings (ms):
+  capture_cache.get: 0.477
+  load_resource: 342.45 (2)
+  PetaboxLoader3.resolve: 94.919 (2)
+  PetaboxLoader3.datanode: 41.832 (2)
+*/
