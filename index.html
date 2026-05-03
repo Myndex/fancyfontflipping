@@ -1,56 +1,730 @@
-<!DOCTYPE html><head>
-<meta charset="utf-8" />
-<base lang="en-US" title="Fancy Font Flipping For Fun!">
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
 
-<!-- CSS -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121680439-6"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  gtag('config', 'UA-121680439-6');
+</script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  <!--ALL PAGES ON THIS SITE ARE COPYRIGHT © 1997-2018 by MYNDEX, ALL RIGHTS RESERVED
+NO IMAGES, DOCUMENTS SOUNDS OR OTHER ITEMS NOT OTHERWISE SPECIFIED MAY BE USED FOR ANY PURPOSE
+WITHOUT THE THE EXPRESS WRITTEN CONSENT OF MYNDEX AND IT'S SUBSIDIARIES-->
+<meta charset="utf-8">
+
+	<meta name="title" content="Myndex&trade; FlipForColor">
+
+  <TITLE>Myndex&trade; Flip For Color</TITLE>
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Red+Rose:wght@500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" type="text/css" href="/FONTS/AvenirLT/AvenirLT.css">
+<link rel="stylesheet" type="text/css" href="/FONTS/HelveticaNeueLT/HelveticaNeueLT.css">
+<link rel="stylesheet" type="text/css" href="/CSS/MyndexBasicResponsive2019C.css">
+<link rel="stylesheet" type="text/css" href="webtest.css">
+
+
+<link rel="canonical" href="https://www.myndex.com/WEB/FlipForColor" />
+
+<META NAME="Description" CONTENT="Fancy Font Flipping Experiment — Myndex&trade; Technologies Web Design And Development Help Files, providing  R&D, Engineering, Design, and IT services to business and industrial customers nationwide.">
+<META NAME="Keywords" CONTENT="Myndex, Research and Development, RnD, R&D, Engineer, Engineering, Systems Engineer, Industrial Design, Solidworks, FEA, CADCAM, drafting, 3D modeling, prototyping, software development, database development, IT">
+
+<meta property="fb:app_id" content="227594707878157" />
+
+<meta property="og:title" content="Fancy Font Flipping Experiment — Myndex&trade; Technologies Web Design Help Files" />
+<meta property="og:description" content="Myndex&trade; Technologies Web Design And Development Help Files, providing  R&D, Engineering, Design, and IT services to business and industrial customers" />
+
+<meta property="og:type" content="Article" />
+<meta property="og:url" content="/FlipForColor" />
+<meta property="og:site_name" content="Myndex Technologies Perception Research" />
+
+
 
 <style>
+
+:root {
+  --background: #a0a0a0;
+  --glassShadow: var(--background);
+  }
+.centered {
+	margin: 1em;
+	padding: 1em;
+	}
+
+
+.copyright2 {
+	position: relative;
+	font-size: 12px;
+	text-align: right;
+	margin: -1em 0 0;
+	padding: 0;
+	bottom: -2em;	
+	}
+
+
 body {
   position: relative;  
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Barlow, arial, sans-serif;  
-  background-color: #F9F2DD;
-}
-#mainBlock {
-  padding: 16px 2px;
-  text-align: center;
-  --samplesBG: #bad;
-  --samplesBGhalf: #bad;
-  background-color: #a0a0a0;
-  background-color: var(--samplesBG); 
+  font-family: arial, sans-serif;  
+  background-color: #F9F2DD;   
 }
 
-.patch {
+
+
+/* *****  RED/GREEN GRACEFUL ANIMATED CHECKBOX  ***** */
+
+.checkboxLock input[type=checkbox],
+.checkboxRight input[type=checkbox],
+.checkboxTop input[type=checkbox],
+.checkboxLeft input[type=checkbox],
+.checkboxInline input[type=checkbox],
+.checkboxSmall input[type=checkbox],
+.checksInMail input[type=checkbox],
+.checkboxSpecialA input[type=checkbox],
+.checkboxSpecialB input[type=checkbox],
+input[type=checkbox].checkboxLock,
+input[type=checkbox].checkboxRight,
+input[type=checkbox].checkboxLeft,
+input[type=checkbox].checkboxInline,
+input[type=checkbox].checkboxSmall,
+input[type=checkbox].checksInMail,
+input[type=checkbox].checkboxSpecialA,
+input[type=checkbox].checkboxSpecialB,
+input[type=checkbox].checkboxSize,
+.radioRight input[type=radio],
+.radioTop input[type=radio],
+.radioLeft input[type=radio],
+.radioInline input[type=radio],
+.radioSize input[type=radio],
+.radioSmall input[type=radio],
+input[type=radio].radioRight,
+input[type=radio].radioLeft,
+input[type=radio].radioInline,
+input[type=radio].radioSize,
+input[type=radio].radioSmall
+    {
+  display: none;
+
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border-radius: 20%;
+	width: 0px;
+	height: 0px;
+    }
+
+input[type=checkbox].checkboxLock,
+.checkboxLock input[type=checkbox]
+	{
+	border-radius: 20%;
+	width: 0px;
+	height: 0px;
+    }
+
+.checkboxLock label,
+.checkboxRight label,
+.checkboxTop label,
+.checkboxLeft label,
+.checkboxInline label,
+.checkboxSmall label,
+.checksInMail label,
+.checkboxSpecialA label,
+.checkboxSpecialB label,
+.checkboxSize label,
+.radioRight label,
+.radioTop label,
+.radioLeft label,
+.radioInline label,
+.radioSize label,
+.radioSmall label
+    {
+    display: block;
+    margin: 0;
+    padding: 0 ;
+    cursor: pointer;
+    font-size: 1.3em;
+    font-weight: 500;
+    color: #30a;
+    text-shadow: 0.12em 0.12em 0.18em #72a3;
+    transition: box-shadow 0.6s, border 0.6s, color 0.5s, text-shadow 0.5s;
+    }
+
+.radioTop label {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
+
+.checkboxLock > legend,
+.checkboxRight > legend,
+.checkboxTop > legend,
+.checkboxLeft > legend,
+.checkboxInline > legend,
+.checkboxSmall > legend,
+.checksInMail > legend,
+.checkboxSpecialA > legend,
+.checkboxSpecialB > legend,
+.checkboxSize > legend,
+.radioRight > legend,
+.radioTop > legend,
+.radioLeft > legend,
+.radioInline > legend,
+.radioSize > legend,
+.radioSmall > legend
+    {
+    display: inline-block;
+    margin: 0 0 0.2em 48px;
+    padding: 0.15em 2.5em;
+    text-align: centered;
+    font-size: 1.1em;
+    font-style: italic;
+    text-shadow: 0.12em 0.12em 0.18em #2046;
+    }
+
+.checkboxInline > legend,
+.radioInline > legend {
+
+	float: left;
+    margin: 0 0 0.4em 12px;
+    padding: 0.25em 0;
+	}
+
+.radioTop,
+.checkboxTop {
+    margin:  0;
+    padding: 0;
+    text-align: left;
+    font-size: 1.2em;
+    }
+    
+.radioTop label,
+.checkboxTop label {
+    margin: -20px 20px;
+    padding:0 30px;
+    text-align: center;
+    font-size: 1.2em;
+    }
+
+.radioTop > legend {
+    position: relative;
+    top: -26px;
+    margin: auto;
+    text-align: center;
+    white-space: nowrap;
+    color: #30a;
+    }
+
+#greyScale0,#greyScale1,#greyScaleAll {
+
+  }
+
+
+.checkboxLock label, label.checkboxLock {
+	top: 5px;
+	right: 0px;
+	margin: 0;
+    padding: 0px;
+    text-align: left;
+    font-size: 1.2em;
+    font-weight: 600;
+  }
+    
+.checkboxLockLeft label, label.checkboxLockLeft {
+	top: 5px;
+	left: 0px;
+	margin: 0;
+    padding: 0px;
+    text-align: right;
+    font-size: 1em;
+    font-weight: 600;
+  }
+
+
+
+.radioLeft,
+.checkboxLeft {
+    padding: 0 2.75em 0 2.25em;
+    text-align: left;
+    font-size: 1.2em;
+    }
+
+.radioInline,
+.checkboxInline {
+    padding: 12px 2em 0 2.25em;
+    text-align: left;
+    font-size: 1.2em;
+    }
+
+.radioSmall,
+.checkboxSmall {
+    padding: 0 1.25em 0 1.25em;
+    text-align: left;
+    font-size: 0.8em;
+    }
+
+.checksInMail,
+.checkboxSpecialA,
+.checkboxSpecialB {
+    padding: 1em 2em 0 0;
+    text-align: right;
+    font-size: 0.85em;
+    }
+
+
+
+
+.radioSize,
+.checkboxSize {
+    padding: 0 1.25em 0 0.75em;
+    text-align: left;
+    font-size: 1.1em;
+    }
+
+.radioGroup hr,
+.checkboxGroup hr {
+    margin: 0.25em 6em 0.5em 4em;
+    border: 0.15em solid #fdd;
+    }
+
+.radioRight label::before,
+.checkboxRight label::before {
+    content: '';
+    display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+    float: right;
+
+    margin: auto 2em auto -3.3em;
+
+    top: -0.5em;
+    right: -3em;
+    height: 2em;
+    width: 2em;
+    }
+
+.checkboxLock label::before{
+    content: '';
+    display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+
+    top: 0;
+    right: 0;
+    height: 10px;
+    width: 20px;
+    }
+
+.radioLeft label::before,
+.checkboxLeft label::before {
+    content: '';
+    display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+
+    margin: 0.35em 0em 0em 2.5em ;
+
+    top: -0.25em;
+    left: -0.75em;
+    height: 2em;
+    width: 2em;
+    }
+
+.radioInline label::before,
+.checkboxInline label::before {
+    content: '';
+    display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+
+    margin: 0.35em 0em 0em 2.5em ;
+
+    top: -0.5em;
+    left: -0.75em;
+    height: 2em;
+    width: 2em;
+    }
+
+
+
+.checkboxSize > legend,
+.radioSize > legend
+{ position: relative;  margin: 12px 0 8px 24px;  padding: 0; }
+
+.radioSize label,
+.checkboxSize label {
+}
+
+.radioSize label::before,
+.checkboxSize label::before {
+    content: '';
+    display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+
+	margin: 0 0 16px 16px ;
+
+    top: -6px;
+    right: 24px;
+    height: 0;
+    width: 0;
+    }
+
+
+.radioSmall label::before,
+.checkboxSmall label::before {
+    content: '';
+    display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+
+    margin: 0;
+
+    top: 0;
+    left: -1.2em;
+    height: 1.75em;
+    width: 1.75em;
+    }
+
+.checksInMail label::before,
+.checkboxSpecialA label::before,
+.checkboxSpecialB label::before {
+    content: '';
+    display: inline-block;
+    position: relative;
+    float: right;
+    margin: 0.8em 0 0 0;
+    left: -0.25em;
+    }
+
+.checksInMail label::after,
+.checkboxSpecialA label::after,
+.checkboxSpecialB label::after {
+    content: '';
+    display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+    margin: 0;
+    top: -0.5em;
+    left: 3.5em;
+    height: 0em;
+    width: 0em;
+    }
+
+
+.radioTop label::before,
+.checkboxTop label::before {
+    content: '';
+    position: relative;
+    left: 8px;
+    margin: 0 ;
+    float: none;
+    display: inline-block;
+    }
+
+
+.checkboxLock .hiZ  { z-index: 10;	cursor: pointer;}
+
+.checkboxLock label::before,
+.checkboxRight label::before,
+.checkboxTop label::before,
+.checkboxLeft label::before,
+.checkboxInline label::before,
+.checkboxSmall label::before,
+.checksInMail label::before,
+.checkboxSpecialA label::before,
+.checkboxSpecialB label::before,
+.checkboxSize label::before,
+.radioRight label::before,
+.radioTop label::before,
+.radioLeft label::before,
+.radioInline label::before,
+.radioSmall label::before,
+.radioSize label::before {
+    background: #028;
+    border: 16px solid #26a;
+    border-radius: 5px;
+    box-shadow: 0 0 0 0.25em #40b,
+                0.16em 0.16em 0.26em 0 #1498;
+	cursor: pointer;
+    transition: box-shadow 0.6s, border 0.6s, color 0.5s, text-shadow 0.5s;
+	}
+
+.radioTop label::before,
+.checkboxTop label::before {
+    border: 18px solid #26a;
+    }
+
+
+.radioSmall label::before,
+.checkboxSmall label::before  {
+    box-shadow: 0 0 0 0.25em #94c,
+                0.16em 0.16em 0.26em 0 #9418;
+    }
+    
+.checksInMail label::before,
+.checkboxSpecialA label::before,
+.checkboxSpecialB label::before {
+    box-shadow: 0 0 0 0.25em #94c,
+                0.16em 0.16em 0.26em 0 #9418;
+    transition: box-shadow 0.6s, border 0.6s, color 0.5s, text-shadow 0.5s;
+    }
+
+.checkboxLock input:checked + label::before,
+.checkboxRight input:checked + label::before,
+.checkboxTop input:checked + label::before,
+.checkboxLeft input:checked + label::before,
+.checkboxInline input:checked + label::before,
+.checkboxSmall input:checked + label::before,
+.checksInMail input:checked + label::before,
+.checkboxSpecialA input:checked + label::before,
+.checkboxSpecialB input:checked + label::before,
+.checkboxSize input:checked + label::before,
+.radioRight input:checked + label::before,
+.radioTop input:checked + label::before,
+.radioLeft input:checked + label::before,
+.radioInline input:checked + label::before,
+.radioSize input:checked + label::before,
+.radioSmall input:checked + label::before
+	{
+    border-color: #e80;
+    border-width: 16px;
+    cursor: pointer;
+    box-shadow: 0 0 0 0.25em #55d,
+                0.16em 0.16em 0.26em 0.2em #2968;
+    transition: box-shadow 0.6s, border 0.6s, color 0.5s, text-shadow 0.5s;
+	}
+
+.radioTop  input:checked + label::before,
+.checkboxTop  input:checked + label::before {
+    border: 18px solid #dd2;
+    }
+    
+.glassPatch label::after {
+    content: 'Plain';
+    font-weight: 400;
+}
+.glassPatch input:checked + label::after {
+    content: 'Trendy!';
+    font-weight: bold;
+}
+
+
+.greyScales label::after {
+    content: '0 Shades';
+    white-space: nowrap;
+    font-weight: 400;
+}
+
+.greyScales input:checked + label::after {
+    content: 'Shady';
+    font-weight: bold;
+}
+
+
+.checkboxLock input + label,
+.checkboxRight input + label,
+.checkboxTop input + label,
+.checkboxLeft input + label,
+.checkboxInline input + label,
+.checkboxSmall input + label,
+.checksInMail input + label,
+.checkboxSpecialA input + label,
+.checkboxSpecialB input + label,
+.checkboxSize input + label,
+.radioRight input + label,
+.radioTop input + label,
+.radioLeft input + label,
+.radioInline input + label,
+.radioSize input + label,
+.radioSmall input + label
+	{      transition: box-shadow 0.6s, border 0.6s, color 0.5s, text-shadow 0.5s; }
+
+.checkboxLock input:checked + label,
+.checkboxRight input:checked + label,
+.checkboxTop input:checked + label,
+.checkboxLeft input:checked + label,
+.checkboxInline input:checked + label,
+.checkboxSmall input:checked + label,
+.checksInMail input:checked + label,
+.checkboxSpecialA input:checked + label,
+.checkboxSpecialB input:checked + label,
+.radioRight input:checked + label,
+.radioTop input:checked + label,
+.radioLeft input:checked + label,
+.radioInline input:checked + label,
+.radioSize input:checked + label,
+.radioSmall input:checked + label
+  {
+    color: #206;
+    cursor: pointer;
+    font-weight: 500;
+    text-shadow: 0 0 0.16em #eda, 0.14em 0.14em 0.25em #adf;
+    transition: box-shadow 0.6s, border 0.6s, color 0.5s, text-shadow 0.5s;
+	}
+
+
+
+
+.radioLeft.linSelect label::before,
+.checkboxLeft.linSelect label::before
+	{ background: #60a; border-color: #82b; }
+.radioLeft.linSelect input:checked + label::before,
+.checkboxLeft.linSelect input:checked + label::before
+	{  border-color: #EF0; }
+
+.radioLeft.sampleSelect label::before,
+.checkboxLeft.sampleSelect label::before
+	{ background: #000; border-color: #a09; }
+.radioLeft.sampleSelect input:checked + label::before,
+.checkboxLeft.sampleSelect input:checked + label::before
+	{ border-color: #2f9; }
+
+.radioInline.gridSize label::before,
+.checkboxInline.gridSize label::before
+	{ background: #852; border-color: #480; }
+.radioInline.gridSize input:checked + label::before,
+.checkboxInline.gridSize input:checked + label::before
+	{ border-color: #2ad; }
+
+.radioSize,
+.radioSize input:checked + label::before,
+.radioSize label::before,
+.checkboxSize,
+.checkboxSize input:checked + label::before,
+.checkboxSize label::before {
+    border-width: 16px;
+	cursor: pointer;
+    }
+
+.checkboxLock,
+.checkboxLock label::before{
+    border-width: 10px 20px;
+    border-radius: 5px;
+    transition: box-shadow 0.4s, border 0s;
+	cursor: pointer;
+    }
+
+.checkboxLock label::before{
+    margin: 0;
+	cursor: pointer;
+    }
+.checkboxLockLeft label::before
+	{
+    float: left;
+    margin: 0 12px 0 2px;
+	cursor: pointer;
+   }
+.checkboxLockRight label::before
+	{
+    float: right;
+    margin: 0 2px 0 12px;
+	cursor: pointer;
+   }
+.checkboxLockLeft input:checked + label::before {
+	z-index: -1;
+    border-width: 70px 20px;
+    border-radius: 5px;
+    margin: -50px 12px -75px 2px;
+    border-color: #ee0;
+    transition: box-shadow 0.4s, border 0.6s;
+	cursor: pointer;
+    }
+.checkboxLockRight input:checked + label::before {
+	z-index: -1;
+    border-width: 70px 20px;
+    border-radius: 5px;
+    margin: -50px 2px -75px 12px ;
+    border-color: #f40;
+    transition: box-shadow 0.4s, border 0.6s;
+	cursor: pointer;
+}
+
+
+
+
+.checksInMailContainer { float: right; margin: -2em 4em 0 0; width: 360px; color: #0f0; }
+.checksInMailLabel { width: 250px; color: #0f0; }
+.radioItInLabel { margin: -32px 18px 0; padding: 12px; width: 50px; color: #0f0; }
+.greyScaleContainer { margin: 12px 0 0 -1.4em; width: 500px; color: #0f0; }
+
+
+
+
+#mainBlock {
+  padding: 36px 6px;
+  text-align: center;
+  background-color: #aaa;
+  border-radius: 96px;
+}
+
+.glass .patch, .noGlass .patch, .glass.patch {
   display: inline-block;
   margin: 6px;
   padding: 16px 4px;
   vertical-align: middle;
-  width: 110px;
+  width: 100px;
   height: 150px;
   text-align: center;
-  line-height: 1.1;
+  line-height: 1.35;
+  overflow: hidden;
+  white-space: nowrap;
   border-radius: 20px;
-  text-shadow:  4px 5px 4px var(--textShadow);
-  box-shadow:
-    inset 6px 6px 14px #1346,
-    inset 2px 2px 9px 2px var(--samplesBGhalf),
-          2px 2px 6px #2468;
+  text-shadow:  6px 5px 3px #0003;
+  box-shadow: inset 6px 6px 14px #1237,
+              inset 2px 2px 9px 2px var(--glassShadow,#f419),
+                    2px 2px 6px #2468;
 }
 
-h1 {
+.noGlass .patch {
+  text-shadow: none;
+  box-shadow: none;
+}
+
+.glass.patch {
+  display: inline-block;
+  margin: 0 26px 0 -26px 0;
+  padding: 4px;
+  width: 420px;
+  height: 70px;
+  border-radius: 16px;
+  text-shadow:  6px 5px 3px #0008;
+  box-shadow: inset 6px 6px 14px #1237,
+              inset 2px 2px 9px 2px #ffc8,
+                    2px 2px 6px #2468;
+}
+
+
+h1.centered {   
   position: relative;
-  margin: 16px 0 -14px;
-  padding: 16px 26px 16px 132px;
+  margin: 12px;
+  padding: 0;
+  font-size: 64px;
+  font-weight: 100;
+  }
+
+
+h2 {
+  position: relative;
+  margin: 8px 0 -14px;
+  padding: 6px 16px 8px;
   color: #308;
   top: -16px;
-  text-align: left;
+  text-align: center;
   font-style: oblique;
   background-color: #efe8aa; 
   box-shadow: inset 6px 6px 14px #1349,
@@ -58,54 +732,53 @@ h1 {
                     2px 2px 6px #2468;  
 }
 
-h2, summary {
-  position: relative;
-  margin: 8px 0 0 132px;
-  color: #308;
-  top:-6px;    
-  font-size: 1.4em;
+.basicHeadings h2, .basicHeadings h3 {
+  margin: 24px 0 -18px;
+  padding: 6px 16px 0;
   text-align: left;
-  font-style: oblique;
-}
+  background: none;
+  text-shadow: none;
+  box-shadow: none;  
+  }
 
 h3 {
   position: relative;
-  margin: 12px 0;
-  padding: 4px 24px 22px 162px;
+  margin: 16px 54px -18px;
+  padding: 36px 36px 18px;
   color: #308;
-  top: 18px;
-  font-size: 1.4em;
+  top: -1px;
   text-align: left;
   font-style: oblique;
-  background-color: #efe8aa; 
+  background-color: #eda; 
+  border-radius: 32px;
   box-shadow: inset 6px 6px 14px #1349,
               inset 2px 2px 9px 2px #fff9,
                     2px 2px 6px #2468;  
 }
 
-.inputLabel {position: relative;font-size: 0.6em; top: -8px;}
-
-.inputLabel input {
+#bgCol, h3 input, h3 input:focus {
   position: relative;
-  margin: -12px 0 0 24px;
-  width: 120px;
-  height: 50px;
-  top: 14px;
-  background: currentColor;
-  border: 2px solid #123;
-  border-radius: 18px;
+  margin: 0 0 0 -8px; 
+  padding: 16px;
+  width: 200px;
+  height: 120px;
+  top: -8px;
+  background-color: #a0a0a0;
+  border: 6px solid #777;
+  border-radius: 28px;
 }
+
 
 p {
   position: relative;  
   max-width: 720px;
-  left:112px;
-  margin: 4px 24px;
+  left: 12px;
+  margin: 6px 24px;
   padding: 4px 12px;
   vertical-align: middle;
   text-align: left;
   color: #005;
-  font-size: 18.8px;
+  font-size: 18px;
   font-weight: 400;
 }
 
@@ -116,23 +789,208 @@ p {
   text-align: center;
   font-size: 12px;
 }
-  </style>
 
-</head>
-<body>
-  <h1>Fancy Font Flipping For Fun!<span class="inputLabel"><input id="picker" type="color" onBlur="setBG(value)" onInput="setBG(value)" value="#a0a0a0" /> ⇦ Set Page Background</span> </h1>
-  <details><summary>Automatic Font Color based on Background Lightness (v02)</summary>
-  <p>Each patch has data which also serves as an example. The font is smaller than optimum to stress the critical importance of spatial frequency.
-  <p>The top few lines are those automatically set based on the background color, and should always be easilly readable. The bottom line is the opposite color for comparison purposes, and may often be unreadable.
-  <p>The technology shown here is part of the <a href="https://github.com/Myndex/SAPC-APCA#apca-the-revolution-will-be-readable">SAPC Research Project. </a></details>
-    
-  
-  <div id="mainBlock">
-  </div>
-  <div class="copy">Copyright &copy; 2021 by Myndex Research. All Rights Reserved.
-  </div>
-</body>
+
+.testPanel {
+	Margin: 4.5em -18em;
+	padding: 0 0;
+	width: calc(820px + 36em);
+	font-family:  'HelveticaNeueLT', AvenirLT, Verdana, sans-serif;
+	font-size: 1rem;
+	font-weight: 400;
+	border-radius: 8em;
+	background: #FFF;
+	color: #308;
+	border: 1.6em solid #777;
+
+	box-shadow:
+				0.15em 0.15em 0.3em 0.05em #53B,
+				0.3em 0.3em 0.4em 0.0em #ACF,
+				-0.15em -0.15em 0.4em 0.0em #204,
+
+				0 0 0.4em 0.7em #42B,
+				-0.2em -0.2em 0.2em 0.6em #DEF,
+				-0.7em -0.7em 0.3em 0em #9AB,
+
+				0em 0em 0em 1em #208,
+				0.7em 0.7em 1.6em 0.6em #236;
+	}
+	
+	.flr {float: right;}
+	
+</style>
+
 <script>
+// See: 
+// https://stackoverflow.com/a/69869976/10315269
+// https://stackoverflow.com/questions/1855884/determine-font-color-based-on-background-color/69869976#69869976
+// https://github.com/Myndex/fancyfontflipping
+
+
+////////////////////////////////////////////////////////////////////////////////
+/////////  MYNDEX FRAMEWORK FUNCTIONS  /////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+const cssVar = ( name, value ) => {
+  if(name.substr(0, 2) !== "--") {name = "--" + name; }
+  if(value) { document.documentElement.style.setProperty(name, value) }
+  return getComputedStyle(document.documentElement).getPropertyValue(name);
+}
+
+//   --glassShadow: var(--background);
+//  = cssVar('--textColor', colorToRGB(thisColor));
+
+//        TXTpicker.style.backgroundColor =
+  //      ampSamp3.style.borderColor =
+    //    ampSamp3.style.color = cssVar('--textColor', colorToRGB(thisColor)); 
+
+
+/////  BEGIN DEMO  /////////////////////////////////////////
+
+function setBG (bg = "#a0a0a0") { 
+   const mainBG = document.getElementById('bgCol'),
+         container = document.getElementById('mainBlock');
+
+         cssVar('--glassShadow', bg + '99');
+
+      mainBG.style.backgroundColor =
+   container.style.backgroundColor = cssVar('--background', bg) ;
+}; // Sets the overall page background.
+  // Notice how black or white changes your perception of contrast
+
+
+function setGlass () { 
+   let gls = (glassPatch.checked) ? 'glass' : 'noGlass';
+   const container = document.getElementById('mainBlock');
+   container.setAttribute('class', gls);
+}; // Sets the "glass look" of patches.
+
+
+
+function drawPatches (radioSel = 1) {
+
+   const container = document.getElementById('mainBlock');
+   const greyStatus = document.getElementById('greyScales');
+   const mainBG = document.getElementById('bgCol');
+   
+   container.innerHTML = "";
+
+
+/*  // SWITCH old version
+
+   const rgbTRC   = 2.213;       // The simple sRGB exponent
+   const rgbEnc   = 1 / rgbTRC; // The sRGB inversion
+   const lightExp = 0.7833;    // SAPC perceptual lightness 
+                              //determines center contrast (experimental)
+   const darkExp  = 1 / lightExp; // Inversion of lightExp
+                       // Place exponents in this array to make the grayscale grads
+   const perceptExp = [darkExp,1.0,1/0.75,1/0.678,1/0.5,1/0.4,1/0.333333];
+     let gsc = 0; // grayscale counter
+
+   const greyRows = perceptExp.length;
+     let greyLength = 11 - 1;       // Number of greyscale patches (minus 1)
+   const patches = 1001;           // total patches including greyscale
+   const lo = 0.25, hi = 0.75;      // Mid range area (font enlarging)
+   const centerRange = ( lo + hi ) * 0.508; // flip point
+   const font = 12;             // pick a value 8 to 14
+   const offset = font * 2;  // amount of text size increase for mid contrast
+                              // contrast is related to spatial freq. i.e. size & weight
+
+
+		function getTextAttributes (Rs,Gs,Bs,pExp = darkExp) {
+
+			let textSize = font; 
+			let textWeight = "normal";
+  
+			let Ys = Math.pow(Rs,rgbTRC) * 0.2126 +
+					 Math.pow(Gs,rgbTRC) * 0.7152 +        
+					 Math.pow(Bs,rgbTRC) * 0.0722; // Andy's Easy Luminance Estimate for sRGB.
+												  // For Rec709 HDTV change the 2.2 to 2.4,
+												 // and use different coefficients for P3 etc!!
+ 
+			let Ls = Math.pow(Ys, 1 / pExp);   // Ls is SAPC Screen lightness, similar to L* but 
+											  // for self illuminated monitors & contrast
+   
+							 // perceptual text color flipper. 
+			let textColor = (Ls < centerRange) ? ["#fff","#000"] : ["#000","#fff"]; 
+		 // let textColor = (Ys < 0.4) ? "#fff" : "#000";  // optional luminance text color flipper. 
+
+			if (Ls > lo && Ls < hi) {
+				 let offsetF = offset; 
+				 offsetF = (Ls < centerRange) ? (Ls - lo) * offsetF : (hi - Ls) * offsetF;
+				 textSize = textSize + offsetF;
+				 textWeight = "normal";
+			   }      // scale up fonts for the lower contrast mid luminances.
+					 // **Loosely** based on part of APCA for WCAG 3 beta (spot reading)
+   
+			return [textColor[0],textSize.toFixed(1)+"px",textWeight,(Ys*100).toFixed(1),(Ls*100).toFixed(1), textColor[1], pExp.toFixed(3),]
+		  };  // End getTextAttributes
+
+
+
+  let r = 0.0, g = 0.0, b = 0.0;
+  let elemt;
+  let bgRGB = [0,0,0], bgColor = "#bad", textAttr = [];
+  let i = 0;
+
+
+
+
+  let randomRGB = function (greyValue) {
+    if (greyStatus.checked && (greyValue < greyLength * greyRows + greyRows) ) {// perceptual greyscale
+      if (greyValue > (greyLength * (gsc + 1) + (1 * gsc))) {gsc++};
+      r = g = b = Math.pow(Math.pow((greyValue -
+                 (greyLength*gsc+(gsc*1)))/greyLength,perceptExp[gsc]),rgbEnc); 
+    } else {
+      gsc = 0;
+      r = Math.random();
+      g = Math.random();
+      b = Math.random();
+    };
+    return [r, g, b, perceptExp[gsc]]
+  };  // End randomRGB
+
+
+  let intRGBcolor = function (r, g, b) {  // take decimal RGB and make #hex string
+    return '#'+((r*255)&0xff).toString(16).padStart(2,'0')
+              +((g*255)&0xff).toString(16).padStart(2,'0')
+              +((b*255)&0xff).toString(16).padStart(2,'0');
+    }; // End intRGBcolor
+
+ 
+
+
+
+    for ( ; i < 1001; i++) {
+
+      bgRGB = randomRGB(i);
+      bgColor = intRGBcolor(bgRGB[0], bgRGB[1], bgRGB[2]);
+      textAttr = getTextAttributes(bgRGB[0], bgRGB[1], bgRGB[2], bgRGB[3]);
+
+      elemt = document.createElement('div');
+      elemt.setAttribute('class', 'patch');
+      elemt.innerHTML = bgColor+"<br>"+textAttr[1]+"<br>Ys " + textAttr[3]
+                      + "<br>Ls " + textAttr[4]
+                      + "<br>| | |||||||||| | |<br><span style='position:relative;"
+                      + "top:-6px; color:" + textAttr[5]
+                      + "'>| | |||||||||| | |<br>pExp "
+                      + textAttr[6] + "<br>Pad "+i+"</span>"; // Text on Patches
+      
+      elemt.setAttribute('style','font-size:' + textAttr[1]
+                      + ';font-weight:' + textAttr[2]
+                      + ';background-color:' + bgColor
+                      + ';color:' + textAttr[0]);
+
+      container.appendChild(elemt);
+    };  // End loop
+    
+    
+//  */ // END SWITCH
+
+
+
+// NEW VERSION
+
 /////  FOR DISCUSSION OF THIS TOPIC SEE: ///////////////////////////////////
 /////  https://gist.github.com/Myndex/e1025706436736166561d339fd667493
 /////  OR
@@ -145,65 +1003,75 @@ p {
 
 ////////  APPEARANCE SETTINGS ////////////////////////////
 
-   const textShadow = "0.0";     // text shadow, is an alpha 0.0 to 1.0. 0.0 is OFF
+   //const textShadow = "0.0";     // text shadow, is an alpha 0.0 to 1.0. 0.0 is OFF
                                 // Note that it affects perceived text contrast!
-   const shadowSelect = true; // trendy shadows set true or false
+   //const shadowSelect = true; // trendy shadows set true or false
 
-   const font = 12;             // pick a value 8 to 14
-   const fontWeight = 300;     // pick a value 200,300,400,500,600,700
-   const offset = font * 3.33;// amount of text size increase for mid contrast
+   const font = 12;              // pick a value 8 to 14
+   const fontWeight = 300;      // pick a value 200,300,400,500,600,700
+   const offset = font * 2;  // amount of text size increase for mid contrast
+   const offsetW = 700 - fontWeight; // amount of text weight increase for mid 
                              // contrast is related to spatial frequency
                             // i.e. size & weight of the font
 
    const greyscales = 11; // How many patches of grey from black to white
                          // Set to 0 to disable greyscales
                         // Greyscales are useful to better see flip point
-                       // Suggested values 11, 31, 76 — you want the flip
+                       // Suggested values 11, 33, 55 — you want the flip
                       // in the horizontal middle to see side by side.
+   const greyExtended = 55; // How many patches of grey from black to white
 
-   const greyAlternates = 0; // 1 = show alternate grey exponents.
-                            //  0 = show only main page lightness exponent
-
+   let greyAlternates = 0;  // 1 = show alternate grey exponents
+                           //  0 = show only main page lightness exponent
+   let greyscaleSelect = greyscales;
 ////////   PERCEPTUAL LIGHTNESS SETTINGS ////////////////////////////
 
-   const rgbTRC   = 2.2;   // 2.213;  // 2.4;    // The simple sRGB exponent
-   const rgbEnc   = 1 / rgbTRC;        // The sRGB inversion
-   const lightExp = 0.678 //0.678; // 0.678;  // 0.7833; 
-         // SAPC perceptual contrast lightness (mode a) (experimental)
-   const darkExp  = 1 / lightExp; // Inversion of lightExp
-   const percOffset = 0.03; 
+   const rgbTRC   = 2.4;  // 2.218;  // 2.4; (0.98G)  // The sRGB exponent
+   const rgbEnc   = 1 / rgbTRC;  // The sRGB inversion
+   const rCo = 0.2126729, gCo = 0.7151522, bCo = 0.0721750; // (0.98G)
+   const lightExp = 0.646;  // 0.678;// 0.7833; // 0.646 is APCA Ls
+         // SAPC perceptual screen lightness (mode a) (experimental)
 
-                    // For grayscale based on flip curve (or not)
-   const darkExpGrad = darkExp; // 3.5; // Smoother grad
-   const percOffGrad = percOffset; // 0.3; // Smoother rag
+   const darkExp  = 1 / lightExp; // Inversion of lightExp
+   const percOffset = 0.0;       // offset for perception curve 
+
+                                  // For grayscale based on flip curve (or not)
+   const darkExpGrad = darkExp;   // 1 / 0.46; // darkExp;     // 3.5; // Smoother grad
+   const percOffGrad = percOffset; // 0.28;    //percOffset; // 0.3; // Smoother grad
+
 ////////   FLIP POINT SETTINGS ////////////////////////////
 
-   // const flipPointY = 0.42;    // for Y flip, unused.
-   const flipPointLs = 0.5;      // flip factor
-   const lo = 0.35, hi = 0.65;  // Ls Mid range area (font enlarging) 
-                               // ( lo + hi ) * flipPointLs should be 0.5
-   const centerLs = ( lo + hi ) * flipPointLs; // flip point
+   const flipPointYs = 0.348;    // for Y flip
+   const flipPointLs = 0.5;     // flip factor 
+   const midRange = 0.15;
+
+   const centerPoint = flipPointYs  // ( lo + hi ) * flipPointLs; // flip point
+
+   const lo = centerPoint - midRange;
+   const hi = centerPoint + midRange;  // Ls Mid range area (font enlarging) 
 
 
-////////   GREYSCALE SETTINGS ////////////////////////////
+////////  GREYSCALE SETTINGS  ////////////////////////////
 
                           // Place exponents in this array to 
                          // make additional grayscale grads
-   const perceptExp = [darkExpGrad,3.5,1/0.75,1/0.678,1/0.5,1/0.4,1/0.4108,1/0.333333]; // last is ~LAB
-   const greyOffset = [percOffGrad,0.3,0,0,0,0,0,0.16]; // last is LAB
-   const patches = 1001;    // total patches including greyscale
+   const perceptExp = [darkExpGrad,3.5,1/0.75,1/0.678,1/0.5,1/0.4,1/0.4108,1/0.333333,1.0,1.0]; // last is ~LAB
+   const greyOffset = [percOffGrad,0.3,0.0,0.0,0.0,0.0,0.0,0.16,0.0,0.0]; // last is Lin
+   const patches = 506;    // total patches including greyscale
      let gsc = 0;          // grayscale counter
-   const greyLength = greyscales - 1; 
-   const greyRows = 1 + greyAlternates * (perceptExp.length - 2); // Number of differrent greyscale rows
 
+     let greyLength = greyscales - 1; 
+     let greyRows = 1 + greyAlternates * (perceptExp.length);
+         // Number of differrent greyscale rows
+         
 ////////   DOM VARIABLES  ////////////////////////////
 
-     let container = document.getElementById('mainBlock');
-     let picker = document.getElementById('picker');
+  //   let container = document.getElementById('mainBlock');
+  //   let picker = document.getElementById('picker');
      // container.style.setProperty("--textShadow", "rgba(0,0,0,"+textShadow+")");
-     let boxShadow = (shadowSelect) ?
-         "--textShadow: rgba(0,0,0,"+textShadow+");" :
-         "box-shadow: none; text-shadow:none;";
+  //   let boxShadow = (shadowSelect) ?
+  //       "--textShadow: rgba(0,0,0,"+textShadow+");" :
+  //       "box-shadow: none; text-shadow:none;";
 
 ////////   MISC VARIABLES  ////////////////////////////
 
@@ -216,6 +1084,7 @@ p {
 
 ////////   FUNCTIONS  ////////////////////////////
 
+/* 
 ///// setBG /////
                     // utility to set the underlying BG color
                    // Accessed using the color picker
@@ -227,6 +1096,20 @@ function setBG (bg = "#bbaadd") {
 };   // Sets the overall page background.
     // Notice how black or white changes your perception of contrast
 
+// */ // End SWITCH
+
+                      // 0 = none, 1 = main only, 2 = all
+function radioSelect(radioSel = 1) {
+    greyAlternates = radioSel === 2 ? 1 : 0;
+    greyscaleSelect = radioSel;
+    greyRows = 1 + greyAlternates * (perceptExp.length - 2); //1 row unless alts
+
+    greyLength = radioSel > 2 ? greyExtended - 1 : greyscales - 1; 
+  //  greyLength = radioSel > 2 ? greyscales * radioSel - 1 : greyscales - 1; 
+
+}
+
+    radioSelect(radioSel);
 
 ///// getTextAttributes /////
 
@@ -234,23 +1117,30 @@ function getTextAttributes (Rs,Gs,Bs,pExp = darkExp, pOff = percOffset) { // Do 
 
     let textSize = font; 
     let textWeight = fontWeight;
+    let sizeFac;
   
-    let Ys = Math.pow(Rs,rgbTRC) * 0.2126 +
-             Math.pow(Gs,rgbTRC) * 0.7152 +        
-             Math.pow(Bs,rgbTRC) * 0.0722; // Andy's Easy Luminance Estimate for sRGB.
-                                          // For Rec709 HDTV change the 2.2 to 2.4,
-                                         // and use different coefficients for P3 etc!!
+    let Ys = Math.pow(Rs,rgbTRC) * rCo +
+             Math.pow(Gs,rgbTRC) * gCo +        
+             Math.pow(Bs,rgbTRC) * bCo;   
+            // APCA 0.98G Estimate Screen Luminance for sRGB.
+           // use different coefficients for P3 etc!!
  
-    let Ls = Math.pow(Ys, 1/pExp) * (pOff + 1) - pOff;   // Ls is SAPC Screen lightness, similar to L* but 
-                                      // for self illuminated monitors & contrast
+    let Ls = Math.pow(Ys, 1/pExp) * (pOff + 1) - pOff; 
+            // Ls is SAPC Screen lightness, similar to L* but 
+           // for self illuminated monitors & contrast
    
-                                    // perceptual text color flipper. 
-    let textColor = (Ls < centerLs) ? ["#fff","#000"] : ["#000","#fff"]; 
- // let textColor = (Ys < flipPointY) ? ["#fff","#000"] : ["#000","#fff"];   // alt luminance text color flipper. 
+         // perceptual text color flipper. 
+    // let textColor = (Ls < centerPoint) ? ["#fff","#000"] : ["#000","#fff"]; 
+    let textColor = (Ys < centerPoint) ? ["#fff","#000"] : ["#000","#fff"]; 
+
+// let textColor = (Ys < flipPointY) ? ["#fff","#000"] : ["#000","#fff"]; 
+       // alt luminance text color flipper. 
+
+/*   // Toggle switch
 
     if (Ls > lo && Ls < hi) {  // Determine center based on range.
          let offsetF = offset; 
-         offsetF = (Ls < centerLs) ? (Ls - lo) * offsetF : (hi - Ls) * offsetF;
+         offsetF = (Ls < centerPoint) ? (Ls - lo) * offsetF : (hi - Ls) * offsetF;
          textSize = textSize + offsetF;
          textWeight = fontWeight;
        }      // scale up fonts for the lower contrast mid luminances.
@@ -262,19 +1152,43 @@ function getTextAttributes (Rs,Gs,Bs,pExp = darkExp, pOff = percOffset) { // Do 
 };      // End getTextAttributes
 
 
+/*/ // Toggle Point for Ys version
+
+
+    if (Ys > lo && Ys < hi) {  // Determine center based on range.
+         let offsetF = offset; 
+         offsetF = (Ys < centerPoint) ? (Ys - lo) * offsetF : (hi - Ys) * offsetF;
+         textSize = textSize + ( offsetF * 0.5 ) ;
+         sizeFac = Math.round( offsetF ); // weight increase
+         
+         textWeight = fontWeight + 100 * sizeFac; // to be added to flow
+       }   // scale up fonts for the lower contrast mid luminances.
+          // **Loosely** based on part of APCA for WCAG 3 beta (spot reading)
+
+    return [textColor[0], textSize.toFixed(1) + 'px', textWeight, 
+            (Ys*100).toFixed(1), (Ls*100).toFixed(1), textColor[1],
+            pExp.toFixed(3),]
+
+};  // End getTextAttributes
+
+
+//  */  // End Toggle
+
 
 ///// createRGB /////
 
                      // Creates the greyscale and random colors
                     // There is the assumption that the random values are already
                    // in sRGB space so random colors are better distributed
-  let createRGB = function (LsValue) { // Create random colors and greyscales
-    if (greyscales && LsValue < greyLength * greyRows + greyRows) {// perceptual greyscale
-      if (LsValue > (greyLength * (gsc + 1) + (1 * gsc))) { gsc++ };
-      
-      r = g = b = Math.pow(Math.pow((((LsValue -
-                 (greyLength*gsc+(gsc*1)))/greyLength)+greyOffset[gsc])/
-                 (greyOffset[gsc]+1),perceptExp[gsc]),rgbEnc); 
+  let createRGB = function (greyValue) { // Create random colors and greyscales
+    if (greyscaleSelect && greyValue < greyLength * greyRows + greyRows) {// perceptual greyscale
+      if (greyValue > (greyLength * (gsc + 1) + (1 * gsc))) { gsc++ };
+
+      r = g = b = Math.pow(
+                    Math.pow( (( (greyValue - (greyLength * gsc + (gsc*1))) / 
+                               greyLength) + greyOffset[gsc]) /
+                            (greyOffset[gsc]+1), perceptExp[gsc]),
+                           rgbEnc); 
     } else {
       gsc = 0;
       r = Math.random();
@@ -297,17 +1211,18 @@ function getTextAttributes (Rs,Gs,Bs,pExp = darkExp, pOff = percOffset) { // Do 
 
 
 
+
 /////////  MAIN  //////////////////////
 
-    setBG('#a0a0a0');  // starting BG color
+  // setBG('#a0a0a0');  // starting BG color
 
-///// OUTPUT (NAKED LOOP) /////
+/////  OUTPUT (NAKED LOOP)  /////
 
     for ( ; i < patches; i++) { // output loop
 
       bgRGB = createRGB(i);
       bgColor = intRGBcolor(bgRGB[0], bgRGB[1], bgRGB[2]);
-      textAttr = getTextAttributes(bgRGB[0], bgRGB[1], bgRGB[2]); //, bgRGB[3], bgRGB[4]);
+      textAttr = getTextAttributes(bgRGB[0], bgRGB[1], bgRGB[2], bgRGB[3]); // , bgRGB[4]);
 
       elemt = document.createElement('div');
       elemt.setAttribute('class', 'patch');
@@ -315,10 +1230,10 @@ function getTextAttributes (Rs,Gs,Bs,pExp = darkExp, pOff = percOffset) { // Do 
                       + '; font-weight:' + textAttr[2] 
                       + '; background-color:' + bgColor 
                       + '; color:' + textAttr[0]
-                      + ';' + boxShadow
+                      + ';' // + boxShadow
                         );
       
-      elemt.innerHTML = bgColor+"<br>"+textAttr[1]+"<br>Ys " + textAttr[3]
+      elemt.innerHTML = bgColor+"<br>"+textAttr[1]+textAttr[2]+"<br>Ys " + textAttr[3]
                       + "<br>Ls " + textAttr[4]
                       + "<br>| | |||||||||| | |<br><span style='position:relative;"
                       + "top:-6px; color:" + textAttr[5]
@@ -330,7 +1245,257 @@ function getTextAttributes (Rs,Gs,Bs,pExp = darkExp, pOff = percOffset) { // Do 
 
 /////  END DEMO  ///////////////////////////////////////////////////////////
 //// Copyright © 2021 by Myndex Research. All Rights Reserved. ////////////
-</script>  
+    
+}
+// Copyright © 2021 by Myndex Research. All Rights Reserved.
+/////  END DEMO  ///////////////////////////////////////////
+
+
+</script>
+</head>
+
+
+
+
+
+
+
+
+<body onload="drawPatches(); setBG(); ">
+
+	<a href="./Perception">
+	<header></header></a>
+
+<div class="wrapper">
+	<div class="content">
+	
+ 	<div>
+<h1 class="centered">Flip For Color</h1>
+  			<h1 class="centered cR" style="font-size: 1.8em;">Experimental Site Notice</h1>
+		<p style="position: relative; margin: 0 auto 12px; max-width: 640px; text-align: left;">This is not a production site. Some pages may have unusual formatting or colors as part of a series of live experiments in visual perception of self illuminated displays. If you have any problems reading any pages, or if you find any are particularly easy to read, we'd love to hear about it. Please discuss at the <a href="https://github.com/Myndex/SAPC-APCA/discussions">SAPC GitHub discussions tab</a></p>
+	</div>
+<div class="contrastChart  pie" >
+	<section class="description" style="height:120%;">
+
+	<h2>Automatic Font Color based on Background Lightness</h2>
+
+	  <p>Each patch has data which also serves as an example. The font is smaller than optimum to stress the critical importance of spatial frequency.
+	  <p>The top few lines of text are automatically set based on the background color, and should always be easilly readable. The bottom line is the opposite color for comparison purposes, and may often be unreadable.
+
+	</section>
+	
+  <div class="copyright centered" style="height: 3em; position: absolute; left: 32px; bottom: -20px;">This chart is copyright &copy; 2021 by Myndex Research.  All Rights Reserved.</div>
+</div>
+
+
+<div class="testPanelSeries"> <!-- TEST PANEL SERIES  -->
+<!--
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+
+/ / / / / / / NEW SERIES / / / / / / / / / / / / / / / / / / / / / / / / / / / /
+
+/////////////    MIDDLE CONTRAST FOR FLIP                          /////////////
+////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////
+-->
+<br><br>
+	<h3 class="">
+	
+	<div class="checksInMail checksInMailContainer" >
+			  <span class="glassPatch glass patch">
+			  <input id="glassPatch"
+				class="" type="checkbox"
+			   onclick="setGlass();" checked />
+			  <label class=" checksInMailLabel" for="glassPatch">Draw Trendy<br>Glass Shapes</label>
+			  </span>
+			  
+			  <br><br>
+			  
+			<div class="radioTop greyScaleContainer">
+			  <legend>Reference Greyscales</legend>
+
+			  <input id="greyScale0"
+				class="" name="greyScale" type="radio" value="0"
+			   onclick="drawPatches(0);"   />
+			  <label class=" radioItInLabel" for="greyScale0">None</label>
+			   
+			  <input id="greyScale1"
+				class=""  name="greyScale" type="radio" value="1"
+			   onclick="drawPatches(1);" checked  />
+			  <label class=" radioItInLabel" for="greyScale1">Main</label>
+			   
+			  <input id="greyScaleAll"
+				class=""  name="greyScale" type="radio" value="2"
+			   onclick="drawPatches(2);"   />
+			  <label class=" radioItInLabel" for="greyScaleAll">&nbsp;Alts</label>
+
+			  <input id="greyScaleExt"
+				class=""  name="greyScale" type="radio" value="3"
+			   onclick="drawPatches(3);"   />
+			  <label class=" radioItInLabel" for="greyScaleExt">&nbsp;Extnd</label>
+      </div>
+
+
+
+	</div>
+
+
+
+	<input id="bgCol" type="color" onBlur="setBG(value)" onInput="setBG(value)" value="#a0a0a0" /><br>
+		<label for="bgCol">Click to Set Sample
+		<br>Area Background</label>
+	</h3>
+
+	<div class="testPanel">
+
+	<!-- Insert Panel Here  -->
+
+		<div id="mainBlock" class="glass">
+
+		</div><!-- mainBlock -->
+
+	</div> <!--   END TEST PANEL MIDDLE FLIP -->
+</div><!-- END TEST PANEL SERIES  -->
+
+
+
+<section class="description taller basicHeadings">
+	<h1 class="centered">Discussion</h1>
+	<h2>The 36% Flip</h2>
+<p>If you are only looking for a basic point to flip the text from black to white or vice versa, the cheat is to use the **Y** we just derived, and make the flip point about ` Y = 0.36; `. so for colors higher than 0.4 Y, make the text black `#000` and for colors darker than about 0.36 Y, make the text white `#fff`. Colors in between 0.36 Y and 0.40 Y make for weak contrast backgrounds, and are not recommended for content.
+
+<pre><code>
+  let textColor = (Ys < 0.36) ? "#fff" : "#000"; // Low budget down and dirty text flipper.
+</code></pre>
+<p>Why 36% and not 50%? Our human perception of lightness/darkness and of contrast is not linear. For a self illuminated display, it so happens that 0.36 Y is _about_ middle contrast under most typical conditions involving small text.
+
+<p>Yes it varies (between about 0.34Y and 0.42Y), and yes this is an over simplification. But if you are flipping text black or white, the simple answer can be a useful one, such as for auto-text color in a spreadsheet.
+
+<h2>But I heard 18% was middle?</h2>
+<p>18% is a middle grey known to photographers in particular, associated with Ansel Adams's Zone V, and a useful target for mid-density of the negative. And it's the middle grey between black and white in terms of Munsell value. And for low spatial frequency patches of color under a specific adaptation environment, arranging a collection of uniform tiles, sure, 18.4% is the middle.
+
+<p>But this is "middle grey between a black which is really just very very dark grey, about 2%, and a reference white which is not actually 100%, but less, like 90% usually." Ah human perception. There's a lot of wiggly room in some of these metrics. In particular, the farther we get away from the "threshold" of the "just noticeable difference" (JND) the less accurate are our models of our perception, and the more variables apply to defining that perception.
+
+<p>So, to prepare you as we dig deeper here, I'll let you in on a well kept secret: contrast is not about two colors so much as it's about "spatial frequency" which for our purposes means the font weight and font size. Our luminance processing in our visual cortex is extremely sensitive to changes in spatial frequency, and high spatial frequency items, meaning small thin text like the text you are reading now, are perceived at a much lower contrast and therefore require much more lightness/darkness difference to be readable. (Please see my article "Stop Using Grey Text")
+
+<h2>Perceptual Bonus Round</h2>
+<p>Predicting the perception of a given color and lightness is still a subject of active research, and not entirely settled science. The L* (Lstar) of CIELAB or CIELUV has been used to predict perceptual lightness, and even to predict perceived contrast. However, while L* works well for surface colors in a very defined/controlled environment, we've discovered that it does not work as well for self-illuminated displays and small bits, like text.
+
+<p>This varies depending on not only the display type and calibration, but also your environment, the overall page content, the polarity of the text (dark mode or light mode), size, etc. If you take the standard CIE Y from above, and raise it by around ^0.678, you'll find that 0.5 is typically the middle point to flip the text from white to black.
+
+<p>Perceptual Contrast Note: APCA uses a slightly different calculation to create Ys, estimated screen luminance. The flip point as used in the <code>maxContrast()</code> function is 34.8 Ys, and the exponent to raise that to Ls is 0.646
+</section>
+
+ 
+  
+</div>
+<br><br><br><br>
+
+
+  <div class="gammaContainer" style="">
+  <details class="innerwrapper" style="">
+    <summary>
+      <span class="twistUp"> <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 0 24 24" width="36px" fill="none" > <path d="M0 0h24v24H0V0z" fill="none" /> <path d="M12 4c4.41 0 8 3.59 8 8s-3.59 8-8 8-8-3.59-8-8 3.59-8 8-8m0-2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 13l-4-4h8z" stroke="#ddeeff" fill="#ffffff" /> </svg>
+      </span>  
+  
+      <h2 class=" tal ml25 cW">Monitor gamma check</h2>
+    </summary>
+
+
+
+      <div class="por centered gamma "  style="left: -50px; max-width: 940px; width: 940px;">
+        sRGB gamma target. Ideally the targets appear uniform (i.e. the
+        thick border looks the same as the inner grid). It is important that
+        the image be at 100% and not scaled - make sure your browser says
+        "actual size".<br />
+
+        <p>These gamma targets require a 2:1 retina display.</p>
+
+        <fieldset>
+          <div id="gammaBoxDith96" class="gammaBox">
+            <span class="gammaLabel cGrE">Target #96 (2.6)</span>
+          </div>
+
+          <div id="gammaBoxDithC3" class="gammaBox">
+            <span class="gammaLabel cGr7">Target #c3 (2.6)</span>
+          </div>
+
+          <div id="gammaBoxDithE4" class="gammaBox">
+            <span class="gammaLabel cGr9">Target #e4 (2.6)</span>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div id="gammaBoxDith93" class="gammaBox">
+            <span class="gammaLabel cGrE">Target #93 (2.5)</span>
+          </div>
+
+          <div id="gammaBoxDithC1" class="gammaBox">
+            <span class="gammaLabel cGr7">Target #c1 (2.5)</span>
+          </div>
+
+          <div id="gammaBoxDithE3" class="gammaBox">
+            <span class="gammaLabel cGr9">Target #e3 (2.5)</span>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div id="gammaBoxDith8F" class="gammaBox">
+            <span class="gammaLabel cGrE">Target #8f (2.4)</span>
+          </div>
+
+          <div id="gammaBoxDithBF" class="gammaBox">
+            <span class="gammaLabel cGr7">Target #BF (2.4)</span>
+          </div>
+
+          <div id="gammaBoxDithE2" class="gammaBox">
+            <span class="gammaLabel cGr9">Target #e2 (2.4)</span>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div id="gammaBoxDith88" class="gammaBox">
+            <span class="gammaLabel cGrE">Target #88 (2.2)</span>
+          </div>
+
+          <div id="gammaBoxDithBA" class="gammaBox">
+            <span class="gammaLabel cGr7">Target #ba (2.2)</span>
+          </div>
+
+          <div id="gammaBoxDithE0" class="gammaBox">
+            <span class="gammaLabel cGr9">Target #e0 (2.2)</span>
+          </div>
+        </fieldset>
+      </div>
+    </details>
+ </div>  <!--  Close gamma   -->
+
+
+
+
+<div class="centered"  style="position: relative; padding: 1em; font-size: 1rem; font-weight: normal; font-family: 'Helvetica Neue LT Pro';  color: #000; background:#FFF;   border: 2px solid #666; border-radius: 8px;">Zz end PAD</div>
+
+
+	<footer>
+		<div id="footContent">
+
+			<hr style="margin-bottom: 0.1em;">
+
+			<div class="copyright">Copyright &copy; 1997 – 2026 by MTI.  All Rights Reserved. • Server.06 •<br>
+				<i>"Myndex" and the Myndex Eye Logo are trademarks of Myndex Technologies.</i><br>
+
+
+
+			</div>
+		</div>
+
+		<a href="http://www.myndex.com">
+		<div id="footImg"></div></a>
+
+	</footer>
+<script>(function(w,d,s,a,m,t){a = d.createElement(s);m = d.getElementsByTagName(s)[0];a.defer = true;a.id = 'auditor_app';a.dataset.autorun = '';a.src = 'https://auditor.sitelint.com/auditor.bundle.js?tokenId=510e41be526d99ce630618791f8a18be6fe09048693315edb437cd611ec948dd-myndex';m.parentNode.insertBefore(a, m);
+})(window, document, 'script');</script>
+</body>
 </html>
-  
-  
